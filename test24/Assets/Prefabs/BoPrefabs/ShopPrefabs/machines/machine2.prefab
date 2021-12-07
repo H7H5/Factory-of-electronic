@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7896679951712239565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8982103397399989865}
+  - component: {fileID: 8753366139051205791}
+  m_Layer: 0
+  m_Name: machine2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8982103397399989865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7896679951712239565}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.3049188, y: 1.3392844, z: -146.7819}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8753366139051205791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7896679951712239565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51808508ed79d73458c3f723ce6bc16c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  img: {fileID: 21300000, guid: 0b5c02621883bb54d93f273c48a09386, type: 3}
+  name: MachineElement
+  cost: 150
+  detail: {fileID: 5836024944450128929, guid: ea8d3243b176a374b865b6852d88fc57, type: 3}
+  detailsToModern:
+  - {fileID: 5836024944450128929, guid: ea8d3243b176a374b865b6852d88fc57, type: 3}
+  timeProduceDetail: 20
+  levelMinTimeProduceDetail: 10
+  levelMaxAmountDetail: 50
