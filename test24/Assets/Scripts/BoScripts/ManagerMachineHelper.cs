@@ -342,14 +342,14 @@ public class ManagerMachineHelper : MonoBehaviour
         Purse.Instance.SetMoney(Purse.Instance.money += moveObj.GetComponent<MachineHelper>().price);
         //Purse.money += moveObj.GetComponent<MachineHelper>().price;                                 //Bo
        // moveObj.transform.parent.GetComponent<MachineParentScript>().deleteOneMachineById(moveObj.GetComponent<MachineHelper>().supper_id); //Bo
-        moveObj.transform.parent.GetComponent<MachineParentScript>().deleteOneMachineByIdJSON(moveObj.GetComponent<MachineHelper>().supper_idJSON); //Bo
+        moveObj.transform.parent.GetComponent<MachineParentScript>().DeleteOneMachineByIdJSON(moveObj.GetComponent<MachineHelper>().supper_idJSON); //Bo
         Destroy(moveObj);                                                                           //Bo
     }
 
     public void sendStock ()                                                                        //Bo
     {
        // moveObj.transform.parent.GetComponent<MachineParentScript>().deleteOneMachineById(moveObj.GetComponent<MachineHelper>().supper_id); //Bo
-        moveObj.transform.parent.GetComponent<MachineParentScript>().deleteOneMachineByIdJSON(moveObj.GetComponent<MachineHelper>().supper_idJSON); //Bo
+        moveObj.transform.parent.GetComponent<MachineParentScript>().DeleteOneMachineByIdJSON(moveObj.GetComponent<MachineHelper>().supper_idJSON); //Bo
         Destroy(moveObj);                                                                           //Bo
     }
 
@@ -481,7 +481,7 @@ public class ManagerMachineHelper : MonoBehaviour
     }
     public void upDateDataBase()                                                                     //Bo
     {                                                                                               //Bo
-        moveObj.transform.parent.GetComponent<MachineParentScript>().upDateOneMachineByid(moveObj); //Bo
+        moveObj.transform.parent.GetComponent<MachineParentScript>().UpDateOneMachineByid(moveObj); //Bo
     }                                                                                                //Bo
     public void selectElement(int num)                                //Bo
     {                                                                 //Bo

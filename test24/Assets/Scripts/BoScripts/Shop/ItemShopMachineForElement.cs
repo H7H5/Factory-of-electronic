@@ -29,31 +29,31 @@ public class ItemShopMachineForElement : MonoBehaviour
     public void BuildContent(int idElement)    // вызываем в начале когда строим палитру магазина
     {
         int number = GetNumberMachine(idElement);
-        spriteMachine = characters[number].img;
+        spriteMachine = characters[number].GetImg();
         gameObject.GetComponent<Image>().sprite = spriteMachine;
         currentNumberMachine = number;
-        cost = characters[number].cost;
-        timeProduceDetail = characters[number].timeProduceDetail;                  //Dw
-        levelMinTimeProduceDetail = characters[number].levelMinTimeProduceDetail;  //Dw
-        levelMaxAmountDetail = characters[number].levelMaxAmountDetail;            //Dw
-        detailsToModern = characters[number].detailsToModern;                      //Dw
-        idDetailsToModern = new int[characters[number].detailsToModern.Length];
-        for (int i = 0; i < characters[number].detailsToModern.Length; i++)
+        cost = characters[number].GetPrice();
+        timeProduceDetail = characters[number].GetTimeProduceDetail();                  //Dw
+        levelMinTimeProduceDetail = characters[number].GetLevelMinTimeProduceDetail();  //Dw
+        levelMaxAmountDetail = characters[number].GetLevelMaxAmountDetail();            //Dw
+        detailsToModern = characters[number].GetDetailsToModern();                      //Dw
+        idDetailsToModern = new int[characters[number].GetDetailsToModern().Length];
+        for (int i = 0; i < characters[number].GetDetailsToModern().Length; i++)
         {
-            idDetailsToModern[i] = characters[number].detailsToModern[i].GetComponent<ItemElement>().GetId();
+            idDetailsToModern[i] = characters[number].GetOneDetailsToModern(i).GetComponent<ItemElement>().GetId();
         }
-        detail = characters[number].detail;
+        detail = characters[number].GetDetail();
         idDetail = detail.GetComponent<ItemElement>().GetId();
         BildElementByMachine(number);
     }
     private void BildElementByMachine(int number)
     {
-        GetComponent<SelectElementByShop>().ShowImage(characters[number].detailsToModern.Length);
-        for (int i = 0; i < characters[number].detailsToModern.Length; i++)
+        GetComponent<SelectElementByShop>().ShowImage(characters[number].GetDetailsToModern().Length);
+        for (int i = 0; i < characters[number].GetDetailsToModern().Length; i++)
         {
-            if (DBase.Instance.IsUpgradeElement(characters[number].detailsToModern[i].GetComponent<ItemElement>().GetId()))
+            if (DBase.Instance.IsUpgradeElement(characters[number].GetOneDetailsToModern(i).GetComponent<ItemElement>().GetId()))
             {
-                GetComponent<SelectElementByShop>().ShowImageElement(i, characters[number].detailsToModern[i].GetComponent<ItemElement>().imgStock);
+                GetComponent<SelectElementByShop>().ShowImageElement(i, characters[number].GetOneDetailsToModern(i).GetComponent<ItemElement>().imgStock);
             }
         }
     }
@@ -99,9 +99,9 @@ public class ItemShopMachineForElement : MonoBehaviour
     {
         for (int i = 0; i < characters.Count; i++)
         {
-            for (int j = 0; j < characters[i].detailsToModern.Length; j++)
+            for (int j = 0; j < characters[i].GetDetailsToModern().Length; j++)
             {
-                if (characters[i].detailsToModern[j].GetComponent<ItemElement>().GetId() == idElement)
+                if (characters[i].GetOneDetailsToModern(j).GetComponent<ItemElement>().GetId() == idElement)
                 {
                     return i;
                 }

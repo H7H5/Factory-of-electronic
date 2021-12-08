@@ -51,7 +51,7 @@ public class MoveButton : MonoBehaviour
 
     public void move()
     {
-        moveObj.transform.parent.GetComponent<MachineParentScript>().upDateOneMachineByid(moveObj);
+        moveObj.transform.parent.GetComponent<MachineParentScript>().UpDateOneMachineByid(moveObj);
         moveObj.gameObject.GetComponent<MoveObjects>().stopMove();
     }
 

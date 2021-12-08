@@ -47,7 +47,7 @@ public class MachineDeviceHelper : MonoBehaviour
     public void stopProduce()
     {
         isProduce = false;
-        transform.parent.GetComponent<MachineParentScript>().upDateOneMachineByid(gameObject); 
+        transform.parent.GetComponent<MachineParentScript>().UpDateOneMachineByid(gameObject); 
     }
     public void InitMachine(int x)
     {

@@ -290,13 +290,13 @@ public class ManagerMachineDeviceHelper : MonoBehaviour
     public void sell()                                                                              //Bo
     {
         Purse.Instance.SetMoney(Purse.Instance.money += moveObj.GetComponent<MachineDeviceHelper>().price);
-        moveObj.transform.parent.GetComponent<MachineParentScript>().deleteOneMachineByIdJSONDevice(moveObj.GetComponent<MachineDeviceHelper>().supper_idJSON); //Bo
+        moveObj.transform.parent.GetComponent<MachineParentScript>().DeleteOneMachineByIdJSONDevice(moveObj.GetComponent<MachineDeviceHelper>().supper_idJSON); //Bo
         Destroy(moveObj);                                                                           //Bo
     }
 
     public void sendStock()                                                                        //Bo
     {
-        moveObj.transform.parent.GetComponent<MachineParentScript>().deleteOneMachineByIdJSONDevice(moveObj.GetComponent<MachineDeviceHelper>().supper_idJSON); //Bo
+        moveObj.transform.parent.GetComponent<MachineParentScript>().DeleteOneMachineByIdJSONDevice(moveObj.GetComponent<MachineDeviceHelper>().supper_idJSON); //Bo
         Destroy(moveObj);                                                                           //Bo
     }
     public void stopTimer()
@@ -318,7 +318,7 @@ public class ManagerMachineDeviceHelper : MonoBehaviour
     }
     public void upDateDataBase()                                                                     //Bo
     {                                                                                               //Bo
-        moveObj.transform.parent.GetComponent<MachineParentScript>().upDateOneMachineByid(moveObj); //Bo
+        moveObj.transform.parent.GetComponent<MachineParentScript>().UpDateOneMachineByid(moveObj); //Bo
     }
  
     public void startTimer()

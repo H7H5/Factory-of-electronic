@@ -20,14 +20,14 @@ public class Equipment : MonoBehaviour
         itemShopMachine = item;
         imageMachine.sprite = itemShopMachine.spriteMachine;
         int currentMachine = itemShopMachine.currentNumberMachine;
-        ShowImage(itemShopMachine.characters[currentMachine].detailsToModern.Length);
-        for (int i = 0; i < itemShopMachine.characters[currentMachine].detailsToModern.Length; i++)
+        ShowImage(itemShopMachine.characters[currentMachine].GetDetailsToModern().Length);
+        for (int i = 0; i < itemShopMachine.characters[currentMachine].GetDetailsToModern().Length; i++)
         {
-            if (DBase.Instance.IsUpgradeElement(itemShopMachine.characters[currentMachine].detailsToModern[i].GetComponent<ItemElement>().GetId()))
+            if (DBase.Instance.IsUpgradeElement(itemShopMachine.characters[currentMachine].GetOneDetailsToModern(i).GetComponent<ItemElement>().GetId()))
             {
-                ShowImageElement(i, itemShopMachine.characters[currentMachine].detailsToModern[i].GetComponent<ItemElement>().imgStock,
-                    itemShopMachine.characters[currentMachine].detailsToModern[i].GetComponent<ItemElement>().GetCostMachine());
-                totalCost += itemShopMachine.characters[currentMachine].detailsToModern[i].GetComponent<ItemElement>().GetCostMachine();
+                ShowImageElement(i, itemShopMachine.characters[currentMachine].GetOneDetailsToModern(i).GetComponent<ItemElement>().imgStock,
+                    itemShopMachine.characters[currentMachine].GetOneDetailsToModern(i).GetComponent<ItemElement>().GetCostMachine());
+                totalCost += itemShopMachine.characters[currentMachine].GetOneDetailsToModern(i).GetComponent<ItemElement>().GetCostMachine();
             }
         }
         priceText.text = totalCost.ToString();  

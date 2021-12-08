@@ -28,14 +28,14 @@ public class ItemShopMaschineForDevice : MonoBehaviour
     }
     public void BuildContent(int number)             // вызываем в начале когда строим палитру магазина
     {
-        ImageDevice.sprite = characters[number].imgDevice;
-        gameObject.GetComponent<Image>().sprite = characters[number].img;
+        ImageDevice.sprite = characters[number].GetImgDevice();
+        gameObject.GetComponent<Image>().sprite = characters[number].GetImg();
         currentNumberMachine = number;
-        cost = characters[number].cost;
-        timeProduceDetail = characters[number].timeProduceDetail;                  //Dw
-        levelMinTimeProduceDetail = characters[number].levelMinTimeProduceDetail;  //Dw
-        levelMaxAmountDetail = characters[number].levelMaxAmountDetail;            //Dw
-        device = characters[number].device;
+        cost = characters[number].GetPrice();
+        timeProduceDetail = characters[number].GetTimeProduceDetail();                  //Dw
+        levelMinTimeProduceDetail = characters[number].GetLevelMinTimeProduceDetail();  //Dw
+        levelMaxAmountDetail = characters[number].GetLevelMaxAmountDetail();            //Dw
+        device = characters[number].GetDevice();
         idDevice = device.GetComponent<ItemDevice>().GetId();
         myText.text = cost.ToString();
         imageButton.sprite = Purse.Instance.money >= cost ? button1 : button2;

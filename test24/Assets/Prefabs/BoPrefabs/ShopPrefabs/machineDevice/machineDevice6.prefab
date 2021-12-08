@@ -43,12 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4269561defcd84b84726d18cc25180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  device: {fileID: 7561203064661679315, guid: 0cf3eaf101585dc42a79079e9d05487c, type: 3}
   img: {fileID: 21300000, guid: a589b6a8fc6449b428e0c9d5a7d92a68, type: 3}
   imgDevice: {fileID: 21300000, guid: 6dc538ff497df034a9a9efbee73fde49, type: 3}
-  name: MachineDevice2
-  cost: 780
-  device: {fileID: 7561203064661679315, guid: 0cf3eaf101585dc42a79079e9d05487c, type: 3}
+  price: 6766
   timeProduceDetail: 5
   levelMinTimeProduceDetail: 1
   levelMaxAmountDetail: 5

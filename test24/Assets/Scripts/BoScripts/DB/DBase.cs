@@ -316,4 +316,44 @@ public class DBase : MonoBehaviour
     {
         return unitySQLite.Reader_ConstruktorDevice(id);
     }
+    public void Insert_functionJSON(string s)
+    {
+        unitySQLite.Insert_functionJSON(s);
+    }
+    public void Reader_functionAllidJSON()
+    {
+        unitySQLite.Reader_functionAllidJSON();
+    }
+    public void Update_functionJSON(int id, string data)
+    {
+        unitySQLite.Update_functionJSON(id, data);
+    }
+    public void Insert_functionMachineDevice(string s)
+    {
+        unitySQLite.Insert_functionMachineDevice(s);
+    }
+    public void Reader_functionAllidMachineDevice()
+    {
+        unitySQLite.Reader_functionAllidMachineDevice();
+    }
+    public void Update_functionMachineDevice(int id, string data)
+    {
+        unitySQLite.Update_functionMachineDevice(id, data);
+    }
+    public void Reader_functionJSON()
+    {
+        unitySQLite.Reader_functionJSON();
+    }
+    public void Reader_functionMachineDevice()
+    {
+        unitySQLite.Reader_functionMachineDevice();
+    }
+    public void Delete_functionJSON(int id)
+    {
+        unitySQLite.Delete_functionJSON(id);
+    }
+    public void Delete_functionMachineDevice(int id)
+    {
+        unitySQLite.Delete_functionMachineDevice(id);
+    }
 }
