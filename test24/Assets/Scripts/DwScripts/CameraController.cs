@@ -26,8 +26,21 @@ public class CameraController : MonoBehaviour
     public Vector2 startPositionCursor;
     public Vector2 endPositionCursor;
 
-    public float MovableObjectPositionX { get; set; }
-    public float MovableObjectPositionY { get; set; }
+    private float _MovableObjectPositionX;
+
+    public float MovableObjectPositionX
+    {
+        get { return _MovableObjectPositionX; }
+        set { _MovableObjectPositionX = value; }
+    }
+
+    private float _MovableObjectPositionY;
+
+    public float MovableObjectPositionY
+    {
+        get { return _MovableObjectPositionY; }
+        set { _MovableObjectPositionY = value; }
+    }
 
     private DBase dBase;                   //BO
 
@@ -119,12 +132,12 @@ public class CameraController : MonoBehaviour
         
         if (!isMove && moveToObject)
         {
-            float distance = Vector2.Distance(camera.transform.position, new Vector2(MovableObjectPositionX, MovableObjectPositionY));           
+            float distance = Vector2.Distance(camera.transform.position, new Vector2(_MovableObjectPositionX, _MovableObjectPositionY));           
 
             if (distance > 3)
             {
-                float positionObjectX = Mathf.Clamp(MovableObjectPositionX, -1 * border, border);
-                float positionObjectY = Mathf.Clamp(MovableObjectPositionY, -1 * border, border);
+                float positionObjectX = Mathf.Clamp(_MovableObjectPositionX, -1 * border, border);
+                float positionObjectY = Mathf.Clamp(_MovableObjectPositionY, -1 * border, border);
 
                 transform.position = new Vector3(Mathf.Lerp(transform.position.x, positionObjectX, speedToMovableObject * Time.deltaTime),
                                                  Mathf.Lerp(transform.position.y, positionObjectY, speedToMovableObject * Time.deltaTime),
