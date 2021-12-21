@@ -61,7 +61,7 @@ public class CameraController : MonoBehaviour
         isMove = true;
     }
 
-    public void stopMove()
+    public void StopMove()
     {
         isMove = false;
     }
