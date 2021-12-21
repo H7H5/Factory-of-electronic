@@ -166,7 +166,15 @@ public class DBase : MonoBehaviour
         }
         return retCount;
     }
-    public void addElementOnId(int id)
+    public void AddElementOnIdByCount(int id,int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            AddElementOnId(id);
+        }
+    }
+
+    public void AddElementOnId(int id)
     {
         int count = elementsScripts.Count;
         for (int i = 0; i < count; i++)
@@ -178,7 +186,14 @@ public class DBase : MonoBehaviour
             }
         }
     }
-    public void addDevice(ItemDevice device)
+    public void AddDeviceByCount(ItemDevice device, int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            AddDevice(device);
+        }
+    }
+    public void AddDevice(ItemDevice device)
     {
         int count = devicesScripts.Count;
         for (int i = 0; i < count; i++)

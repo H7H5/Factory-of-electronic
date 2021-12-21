@@ -70,7 +70,7 @@ public class DeviceBilder : MonoBehaviour
             listeners[i].SetImg();
             listeners[i].DestroyChild();
         }
-        DBase.Instance.addDevice(transform.parent.gameObject.GetComponent<ItemDevice>());
+        DBase.Instance.AddDevice(transform.parent.gameObject.GetComponent<ItemDevice>());
         activation = 1;
         BildPanelHelper.Instance.OnButtonCollect(false);
         BildPanelHelper.Instance.Save();

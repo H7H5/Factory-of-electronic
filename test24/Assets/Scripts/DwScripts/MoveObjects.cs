@@ -118,73 +118,63 @@ public class MoveObjects : MonoBehaviour
 
     private void OnMouseUp()
     {
-        cameraController.EndPositionCursor();
-        float distance = Vector2.Distance(cameraController.startPositionCursor, cameraController.endPositionCursor);
-        if (buttonController.isBlocked == false && distance < 0.1)
+        MouseDown = false;
+        if (IsSelectMachine())
         {
-            if (detailProduced.activeInHierarchy == true)
+            if (detailProduced.activeInHierarchy == true) 
             {
-                detailProduced.SetActive(false);
-                
-                if (machineHelper)
-                {
-                    for (int i = 0; i < machineHelper.amountDetails; i++)
-                    {
-                        if (machineHelper.selectedDetail > 0)
-                        {
-                            dBase.addElementOnId(machineHelper.detailsToModern[machineHelper.selectedDetail].GetComponent<ItemElement>().GetId());
-                        }
-                        else
-                        {
-                            dBase.addElementOnId(machineHelper.itemElementDetail.GetId());
-                        }
-                    }
-                    GameObject test = Instantiate(detailProduced, detailProduced.transform.parent);
-                    test.SetActive(true);
-                    test.GetComponent<DetailToInventory>().moveToInventory();
-                    machineHelper.stopProduce();
-                }
-                if (machineDeviceHelper)
-                {
-                    for (int i = 0; i < machineDeviceHelper.amountDetails; i++)
-                    {
-                        dBase.addDevice(machineDeviceHelper.itemDevice);
-                    }
-                    GameObject test = Instantiate(detailProduced, detailProduced.transform.parent);
-                    test.SetActive(true);
-                    test.GetComponent<DetailToInventory>().moveToInventory();
-                    machineDeviceHelper.stopProduce();
-                }
-
-
+                CollectProduct();
             }
             else
             {
-                if (isMove == false)                                                                //Bo
-                {                                                                                   //Bo
-                    buttonController.BlockButtons();
-                    if (ActivButton.activMachine == false)                                          //Bo
-                    {                                                                               //Bo
-                        if (machineHelper)
-                        {
-                            machineMenu.SetActive(true);                                                //Bo
-                            machineMenu.GetComponent<ManagerMachineHelper>().select(gameObject);        //Bo
-                        }
-                        if (machineDeviceHelper)
-                        {
-                            machineDeviceMenu.SetActive(true);                                                //Bo
-                            machineDeviceMenu.GetComponent<ManagerMachineDeviceHelper>().select(gameObject);  //Bo
-                        }
-
-                        cameraController.stopMove();
-
-                        GameObject.Find("BlockButton").GetComponent<ActivButton>().activ(false);    //Bo
-                        ActivButton.activMachine = true;                                            //Bo
-                    }                                                                               //Bo
-                }                                                                                   //Bo
+                SelectMachine();
             }
         }
-        MouseDown = false;
+    }
+    private bool IsSelectMachine()
+    {
+        cameraController.EndPositionCursor();
+        float distance = Vector2.Distance(cameraController.startPositionCursor, cameraController.endPositionCursor);
+        return buttonController.isBlocked == false && distance < 0.1 ? true : false;
+    } 
+    private void CollectProduct()
+    {
+        detailProduced.SetActive(false);
+        if (machineHelper)
+        {
+            dBase.AddElementOnIdByCount(machineHelper.GetIdSelectedDetail(), machineHelper.amountDetails);
+            MoveDetailToStock();
+            machineHelper.stopProduce();
+        }
+        if (machineDeviceHelper)
+        {
+            dBase.AddDeviceByCount(machineDeviceHelper.itemDevice, machineDeviceHelper.amountDetails);
+            MoveDetailToStock();
+            machineDeviceHelper.stopProduce();
+        }
+    }
+    private void MoveDetailToStock()
+    {
+        GameObject test = Instantiate(detailProduced, detailProduced.transform.parent);
+        test.SetActive(true);
+        test.GetComponent<DetailToInventory>().moveToInventory(); 
+    }
+    private void SelectMachine()
+    {
+        if (isMove == false)                                                            
+        {                                                                                  
+            buttonController.BlockButtons();
+            if (machineHelper)
+            {
+                machineMenu.SetActive(true);                                                
+                machineMenu.GetComponent<ManagerMachineHelper>().select(gameObject);        
+            }
+            if (machineDeviceHelper)
+            {
+                machineDeviceMenu.SetActive(true);                                                
+                machineDeviceMenu.GetComponent<ManagerMachineDeviceHelper>().select(gameObject);  
+            }                                                            
+        }                                                                                   
     }
 
     private void checkCanBeInstalled ()
@@ -234,7 +224,7 @@ public class MoveObjects : MonoBehaviour
         startMove();
 
         moveMachinePanel.GetComponent<MoveButton>().select(gameObject,0);                                   //Bo
-        GameObject.Find("BlockButton").GetComponent<ActivButton>().activ(false);                            //Bo
-        ActivButton.activMachine = true;                                                                    //Bo
+        //GameObject.Find("BlockButton").GetComponent<ActivButton>().activ(false);                            //Bo
+        //ActivButton.activMachine = true;                                                                    //Bo
     }                                                                                                       //Bo
 }

@@ -15,7 +15,7 @@ public class MachineHelper : MonoBehaviour
     public int price = 0;
     public Sprite sprt;
     public float timeProduceDetail = 1;                                                      //Dw
-    public float amountDetails = 1;                                                      //Dw
+    public int amountDetails = 1;                                                      //Dw
     public float maxAmountDetails = 1;
     public float levelMaxAmountDetail;
     public float levelMinTimeProduceDetail;
@@ -92,5 +92,9 @@ public class MachineHelper : MonoBehaviour
         {
             onLoadMachine();
         }
+    }
+    public int GetIdSelectedDetail()
+    {
+        return detailsToModern[selectedDetail].GetComponent<ItemElement>().GetId();
     }
 }

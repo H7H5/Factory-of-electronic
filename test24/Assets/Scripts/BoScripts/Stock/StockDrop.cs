@@ -10,7 +10,7 @@ public class StockDrop : MonoBehaviour, IDropHandler
         {  
             if(drag.GetComponent<ProductDrag>())
             {
-                DBase.Instance.addElementOnId(drag.GetComponent<ProductDrag>().id);
+                DBase.Instance.AddElementOnId(drag.GetComponent<ProductDrag>().id);
                 drag.GetComponent<ProductDrag>().oldParentDrop.isFull = false;
                 drag.GetComponent<ProductDrag>().UpdateBasket();
                 Destroy(drag);

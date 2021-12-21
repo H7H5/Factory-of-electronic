@@ -13,8 +13,8 @@ public class MachineDeviceHelper : MonoBehaviour
     public int idDevice;
     public int price = 0;
     public Sprite sprt;
-    public float timeProduceDetail;                                                      //Dw
-    public float amountDetails = 1;                                                      //Dw
+    public float timeProduceDetail;                                                    //Dw
+    public int amountDetails = 1;                                                      //Dw
     public float maxAmountDetails = 1;
     public float levelMaxAmountDetail;
     public float levelMinTimeProduceDetail;

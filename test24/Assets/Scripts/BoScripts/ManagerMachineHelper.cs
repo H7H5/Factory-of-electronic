@@ -445,7 +445,7 @@ public class ManagerMachineHelper : MonoBehaviour
 
     public void getAmountDetails ()
     {
-        machineHelper.amountDetails = sliderAmountProduce.value;
+        machineHelper.amountDetails = (int)sliderAmountProduce.value;
         select(moveObj);
     }
 

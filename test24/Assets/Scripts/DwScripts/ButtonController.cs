@@ -41,7 +41,7 @@ public class ButtonController : MonoBehaviour
     {
         isBlocked = true;
 
-        cameraController.stopMove();
+        cameraController.StopMove();
 
         foreach (GameObject button in buttons)
         {
