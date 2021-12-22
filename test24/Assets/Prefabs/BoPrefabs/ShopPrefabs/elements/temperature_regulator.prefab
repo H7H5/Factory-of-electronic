@@ -43,19 +43,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50042ae7f12d84142b922be0f4c9c816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needScience: 33
-  needMoney: 33
+  container: {fileID: 0}
+  imgStock: {fileID: 21300000, guid: eee4fea5def4a7441b759ff604eb0350, type: 3}
+  img: {fileID: 21300000, guid: 7dc2c4717a9bc9a4e8b70e63ae533eec, type: 3}
+  name: temperature regulator
+  descriptionElement: "\u0440\u0435\u0433\u0443\u043B\u044F\u0442\u043E\u0440 \u0442\u0435\u043C\u043F\u0435\u0440\u0430\u0442\u0443\u0440\u044B"
   needElements:
   - {fileID: 2967275624035485461, guid: 8308a0bdaed938a48baea365308b7a51, type: 3}
   countNeedElements: 38000000
   id: 13
-  img: {fileID: 21300000, guid: 7dc2c4717a9bc9a4e8b70e63ae533eec, type: 3}
-  imgStock: {fileID: 21300000, guid: eee4fea5def4a7441b759ff604eb0350, type: 3}
-  name: temperature regulator
-  cost: 33
+  needScience: 33
+  price: 12
   costMachine: 9000
-  container: {fileID: 0}
-  descriptionElement: "\u0440\u0435\u0433\u0443\u043B\u044F\u0442\u043E\u0440 \u0442\u0435\u043C\u043F\u0435\u0440\u0430\u0442\u0443\u0440\u044B"
   timeProduceDetail: 1
-  levelMinTimeProduceDetail: 1
-  levelMaxAmountDetail: 5

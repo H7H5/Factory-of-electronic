@@ -86,7 +86,7 @@ public class ItemShopMachineForElement : MonoBehaviour
                     machineHelper.selectedDetail = i;
                 }
             }
-            machine1.GetComponent<MoveObjects>().setup();
+            machine1.GetComponent<MoveObjects>().SetupWhenBuying();
             GameObject.Find("Shop").SetActive(false);
             ButtonController.Instance.isBlocked = false;        //Dw
         }

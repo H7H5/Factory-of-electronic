@@ -278,14 +278,14 @@ public class ManagerMachineDeviceHelper : MonoBehaviour
     public void move()                                                                             //Bo
     {
         basket.Hide();                                                                              //Bo
-        moveObj.gameObject.GetComponent<MoveObjects>().startMove();                                 //Bo
+        moveObj.gameObject.GetComponent<MoveObjects>().StartMove();                                 //Bo
         moveMachinePanel.GetComponent<MoveButton>().select(moveObj);                                //Bo
         //timerInPrigress.stopTimerToMoveMachine();
     }
     public void undoMove()                                                                          //Bo
     {
         moveObj.transform.position = StartPosition;                                                 //Bo
-        moveObj.gameObject.GetComponent<MoveObjects>().startMove();                                 //Bo
+        moveObj.gameObject.GetComponent<MoveObjects>().StartMove();                                 //Bo
     }
     public void sell()                                                                              //Bo
     {

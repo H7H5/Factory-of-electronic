@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MachineHelper : MonoBehaviour
+public class MachineHelper : MachineOld
 {
     public List<Sprite> characters = new List<Sprite>();
 
@@ -33,6 +33,7 @@ public class MachineHelper : MonoBehaviour
     public string x;
     public string y;
     public int selectNumberElement = 0;
+    
     void Start()
     {
         if (detail)
@@ -40,6 +41,7 @@ public class MachineHelper : MonoBehaviour
             itemElementDetail = detail.GetComponent<ItemElement>();
             spriteDetail = itemElementDetail.imgStock;
         }
+        
     }
     public void onLoadMachine ()
     {
@@ -97,4 +99,14 @@ public class MachineHelper : MonoBehaviour
     {
         return detailsToModern[selectedDetail].GetComponent<ItemElement>().GetId();
     }
+
+    public override void CollectProduct()
+    {
+        base.detailProduced.SetActive(false);
+        base.MoveDetailToStock();
+        DBase.Instance.AddElementOnIdByCount(GetIdSelectedDetail(), amountDetails);
+        stopProduce();
+    }
+
+
 }

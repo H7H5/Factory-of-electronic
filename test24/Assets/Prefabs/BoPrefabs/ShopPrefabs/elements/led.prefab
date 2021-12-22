@@ -43,19 +43,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50042ae7f12d84142b922be0f4c9c816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needScience: 3
-  needMoney: 222
+  container: {fileID: 0}
+  imgStock: {fileID: 21300000, guid: 6760206cc77c63d4db4de136f787c029, type: 3}
+  img: {fileID: 21300000, guid: 6a57604bc2cf0734d9b5e5d01e1d30b9, type: 3}
+  name: led
+  descriptionElement: "\u0441\u0432\u0435\u0442\u043E \u0434\u0438\u043E\u0434"
   needElements:
   - {fileID: 2967275624035485461, guid: 8308a0bdaed938a48baea365308b7a51, type: 3}
   countNeedElements: 04000000
   id: 8
-  img: {fileID: 21300000, guid: 6a57604bc2cf0734d9b5e5d01e1d30b9, type: 3}
-  imgStock: {fileID: 21300000, guid: 6760206cc77c63d4db4de136f787c029, type: 3}
-  name: led
-  cost: 4
+  needScience: 3
+  price: 67
   costMachine: 960
-  container: {fileID: 0}
-  descriptionElement: "\u0441\u0432\u0435\u0442\u043E \u0434\u0438\u043E\u0434"
   timeProduceDetail: 6
-  levelMinTimeProduceDetail: 1
-  levelMaxAmountDetail: 20

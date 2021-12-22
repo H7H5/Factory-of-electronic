@@ -43,20 +43,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50042ae7f12d84142b922be0f4c9c816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needScience: 222
-  needMoney: 33
+  container: {fileID: 0}
+  imgStock: {fileID: 21300000, guid: f7272ed30bbf9f84d80aec13c254ed4f, type: 3}
+  img: {fileID: 21300000, guid: 7c258b2e9f009614799d5f96c0eff547, type: 3}
+  name: rezistor
+  descriptionElement: "\u041E\u0447\u0435\u043D\u044C \u0445\u043E\u0440\u043E\u0448\u0438\u0439
+    \u0440\u0435\u0437\u0438\u0441\u0442\u043E\u0440"
   needElements:
   - {fileID: 1862613545698587911, guid: 78aefe872dbc5c149973e5440002600c, type: 3}
   countNeedElements: 64000000
   id: 1
-  img: {fileID: 21300000, guid: 7c258b2e9f009614799d5f96c0eff547, type: 3}
-  imgStock: {fileID: 21300000, guid: f7272ed30bbf9f84d80aec13c254ed4f, type: 3}
-  name: rezistor
-  cost: 3
+  needScience: 222
+  price: 56
   costMachine: 2000
-  container: {fileID: 0}
-  descriptionElement: "\u041E\u0447\u0435\u043D\u044C \u0445\u043E\u0440\u043E\u0448\u0438\u0439
-    \u0440\u0435\u0437\u0438\u0441\u0442\u043E\u0440"
   timeProduceDetail: 40
-  levelMinTimeProduceDetail: 20
-  levelMaxAmountDetail: 50

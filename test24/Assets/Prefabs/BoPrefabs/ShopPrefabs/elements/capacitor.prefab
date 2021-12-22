@@ -43,8 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50042ae7f12d84142b922be0f4c9c816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needScience: 789
-  needMoney: 56
+  container: {fileID: 0}
+  imgStock: {fileID: 21300000, guid: e925f8487de2c4a4bb0ec68d04239f30, type: 3}
+  img: {fileID: 21300000, guid: 2ebad3e491ca0a644b68ea318e5b005c, type: 3}
+  name: capacitor
+  descriptionElement: "\u043A\u043E\u043D\u0434\u0435\u043D\u0441\u0430\u0442\u043E\u0440
+    \u0435\u043B\u0435\u043A\u0442\u0440\u043E\u043B\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439
+    (\u043D\u0435 \u043F\u0435\u0440\u0435\u043F\u0443\u0442\u0430\u0439 + \u0438
+    -)"
   needElements:
   - {fileID: 1862613545698587911, guid: f80b50e61b27f2a44a75bce06e56c36b, type: 3}
   - {fileID: 2967275624035485461, guid: 8308a0bdaed938a48baea365308b7a51, type: 3}
@@ -53,16 +59,7 @@ MonoBehaviour:
   - {fileID: 7502382086439189091, guid: c58fd983d5d075541939f4774cef42ab, type: 3}
   countNeedElements: 0400000003000000020000000200000001000000
   id: 2
-  img: {fileID: 21300000, guid: 2ebad3e491ca0a644b68ea318e5b005c, type: 3}
-  imgStock: {fileID: 21300000, guid: e925f8487de2c4a4bb0ec68d04239f30, type: 3}
-  name: capacitor
-  cost: 6
+  needScience: 789
+  price: 76
   costMachine: 800
-  container: {fileID: 0}
-  descriptionElement: "\u043A\u043E\u043D\u0434\u0435\u043D\u0441\u0430\u0442\u043E\u0440
-    \u0435\u043B\u0435\u043A\u0442\u0440\u043E\u043B\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439
-    (\u043D\u0435 \u043F\u0435\u0440\u0435\u043F\u0443\u0442\u0430\u0439 + \u0438
-    -)"
   timeProduceDetail: 8
-  levelMinTimeProduceDetail: 2
-  levelMaxAmountDetail: 30
