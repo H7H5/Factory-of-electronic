@@ -52,7 +52,7 @@ public class MoveButton : MonoBehaviour
     public void move()
     {
         moveObj.transform.parent.GetComponent<MachineParentScript>().UpDateOneMachineByid(moveObj);
-        moveObj.gameObject.GetComponent<MoveObjects>().stopMove();
+        moveObj.gameObject.GetComponent<MoveObjects>().StopMove();
     }
 
     public void undo()
@@ -78,6 +78,6 @@ public class MoveButton : MonoBehaviour
     public void undoMove()
     {
         moveObj.transform.position = StartPosition;
-        moveObj.gameObject.GetComponent<MoveObjects>().stopMove();
+        moveObj.gameObject.GetComponent<MoveObjects>().StopMove();
     }
 }

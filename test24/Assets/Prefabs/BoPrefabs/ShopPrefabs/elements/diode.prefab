@@ -43,21 +43,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50042ae7f12d84142b922be0f4c9c816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needScience: 34
-  needMoney: 233
+  container: {fileID: 0}
+  imgStock: {fileID: 21300000, guid: 1bce4e58ba772414388cd1a6e06efbf7, type: 3}
+  img: {fileID: 21300000, guid: 2a762c6a5ccc4e14e9a70166830caf30, type: 3}
+  name: diode
+  descriptionElement: "\u0432\u044B\u043F\u0440\u044F\u043C\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439
+    \u0434\u0438\u043E\u0434"
   needElements:
   - {fileID: 3639891645397291330, guid: b519541bbdec0304d9366d4c7602ad2c, type: 3}
   - {fileID: 7789039767717754689, guid: ea8d3243b176a374b865b6852d88fc57, type: 3}
   countNeedElements: 0400000002000000
   id: 11
-  img: {fileID: 21300000, guid: 2a762c6a5ccc4e14e9a70166830caf30, type: 3}
-  imgStock: {fileID: 21300000, guid: 1bce4e58ba772414388cd1a6e06efbf7, type: 3}
-  name: diode
-  cost: 5
+  needScience: 34
+  price: 22
   costMachine: 900
-  container: {fileID: 0}
-  descriptionElement: "\u0432\u044B\u043F\u0440\u044F\u043C\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439
-    \u0434\u0438\u043E\u0434"
   timeProduceDetail: 1
-  levelMinTimeProduceDetail: 1
-  levelMaxAmountDetail: 40

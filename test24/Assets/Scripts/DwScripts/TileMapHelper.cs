@@ -5,9 +5,16 @@ using UnityEngine.Tilemaps;
 
 public class TileMapHelper : MonoBehaviour
 {
+    public static TileMapHelper Instance;
     private Tilemap map;
     private Camera mainCamera;
-
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
     void Start()
     {
         map = GetComponent<Tilemap>();

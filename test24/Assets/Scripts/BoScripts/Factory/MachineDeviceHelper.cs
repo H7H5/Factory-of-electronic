@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MachineDeviceHelper : MonoBehaviour
+public class MachineDeviceHelper : MachineOld
 {
     public List<Sprite> characters = new List<Sprite>();
 
@@ -81,5 +81,13 @@ public class MachineDeviceHelper : MonoBehaviour
         {
             onLoadMachine();
         }
+    }
+
+    public override void CollectProduct()
+    {
+        base.detailProduced.SetActive(false);
+        base.MoveDetailToStock();
+        DBase.Instance.AddDeviceByCount(itemDevice, amountDetails);
+        stopProduce();
     }
 }

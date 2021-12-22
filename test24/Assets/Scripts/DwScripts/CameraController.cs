@@ -2,6 +2,7 @@
 
 public class CameraController : MonoBehaviour
 {
+    public static CameraController Instance;
     private float sensitivity = 2f;
     private float minZoom = 2f;
     private float maxZoom = 9f;
@@ -43,6 +44,14 @@ public class CameraController : MonoBehaviour
     }
 
     private DBase dBase;                   //BO
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     void Start()
     {
@@ -164,5 +173,18 @@ public class CameraController : MonoBehaviour
             dBase.SaveFloat(GetComponent<Camera>().orthographicSize, 3);   //BO
             
         }
+    }
+    
+    public bool IsSelectMachine()
+    {
+        EndPositionCursor();
+        float distance = Vector2.Distance(startPositionCursor, endPositionCursor);
+        return ButtonController.Instance.isBlocked == false && distance < 0.1 ? true : false;
+    }
+
+    public void SetPositionWhwenMoveMachine(Transform transformMachine)
+    {
+        MovableObjectPositionX = transformMachine.position.x;
+        MovableObjectPositionY = transformMachine.position.y;
     }
 }

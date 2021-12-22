@@ -43,8 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50042ae7f12d84142b922be0f4c9c816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needScience: 23
-  needMoney: 111
+  container: {fileID: 0}
+  imgStock: {fileID: 21300000, guid: 6242bc2ab8e31a44ea73f47415399126, type: 3}
+  img: {fileID: 21300000, guid: 5b9960199fb8de74bbceed79ba116a7c, type: 3}
+  name: switch
+  descriptionElement: "\u043D\u0443 \u0442\u0430\u043A\u043E\u0435"
   needElements:
   - {fileID: 5767073172556656774, guid: bc4fcf7dad91d8a4281458854b35f4f3, type: 3}
   - {fileID: 7502382086439189091, guid: c58fd983d5d075541939f4774cef42ab, type: 3}
@@ -55,13 +58,7 @@ MonoBehaviour:
   - {fileID: 1862613545698587911, guid: 93393e010b84f9848951751b8f2e32e5, type: 3}
   countNeedElements: 01000000010000000100000001000000010000000100000001000000
   id: 5
-  img: {fileID: 21300000, guid: 5b9960199fb8de74bbceed79ba116a7c, type: 3}
-  imgStock: {fileID: 21300000, guid: 6242bc2ab8e31a44ea73f47415399126, type: 3}
-  name: switch
-  cost: 40
+  needScience: 23
+  price: 21
   costMachine: 6000
-  container: {fileID: 0}
-  descriptionElement: "\u043D\u0443 \u0442\u0430\u043A\u043E\u0435"
   timeProduceDetail: 3
-  levelMinTimeProduceDetail: 1
-  levelMaxAmountDetail: 20

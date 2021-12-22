@@ -43,21 +43,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50042ae7f12d84142b922be0f4c9c816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  needScience: 1000
-  needMoney: 2345
+  container: {fileID: 0}
+  imgStock: {fileID: 21300000, guid: 574d3bbda9ccb264c81b3dec5ca1b4bf, type: 3}
+  img: {fileID: 21300000, guid: 697e15ba28e80d34da55998af0489632, type: 3}
+  name: variable capacitor
+  descriptionElement: "\u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0439
+    \u043A\u043E\u043D\u0434\u0435\u043D\u0441\u0430\u0442\u043E\u0440 \u043D\u0443\u0436\u0435\u043D
+    \u0434\u043B\u044F \u0440\u0430\u0434\u0438\u043E (\u043D\u0430\u0432\u0435\u0440\u043D\u043E\u0435)"
   needElements:
   - {fileID: 5767073172556656774, guid: bc4fcf7dad91d8a4281458854b35f4f3, type: 3}
   countNeedElements: 01000000
   id: 7
-  img: {fileID: 21300000, guid: 697e15ba28e80d34da55998af0489632, type: 3}
-  imgStock: {fileID: 21300000, guid: 574d3bbda9ccb264c81b3dec5ca1b4bf, type: 3}
-  name: variable capacitor
-  cost: 25
+  needScience: 1000
+  price: 77
   costMachine: 3500
-  container: {fileID: 0}
-  descriptionElement: "\u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0439
-    \u043A\u043E\u043D\u0434\u0435\u043D\u0441\u0430\u0442\u043E\u0440 \u043D\u0443\u0436\u0435\u043D
-    \u0434\u043B\u044F \u0440\u0430\u0434\u0438\u043E (\u043D\u0430\u0432\u0435\u0440\u043D\u043E\u0435)"
   timeProduceDetail: 1
-  levelMinTimeProduceDetail: 1
-  levelMaxAmountDetail: 40
