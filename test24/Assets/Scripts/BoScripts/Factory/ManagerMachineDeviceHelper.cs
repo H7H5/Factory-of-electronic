@@ -36,7 +36,7 @@ public class ManagerMachineDeviceHelper : MonoBehaviour
     GameObject dataBase;
     private float curentSlider = 0;
     public MachineDeviceHelper machineDeviceHelper;
-    public TimerDevice timerInPrigress;
+    public Timer timerInPrigress;
     private float productionTime;
     public Text productionTimeText;
     public float amountDetails;
@@ -155,7 +155,7 @@ public class ManagerMachineDeviceHelper : MonoBehaviour
 
     public void ShowProductionTimeText()
     {
-        calculateProductionTime();
+        CalculateProductionTime();
         productionTimeText.text = productionTime.ToString();
     }
     
@@ -304,9 +304,9 @@ public class ManagerMachineDeviceHelper : MonoBehaviour
         activateTimer();
         //timerInPrigress = moveObj.GetComponentInChildren<Timer>();
         //timerInPrigress.stopTimer();
-        machineDeviceHelper.onLoadMachine();
+        machineDeviceHelper.OnLoadMachine();
         buttonExit.GetComponent<Button>().onClick.Invoke();
-        upDateDataBase();                                                                    //Bo
+        UpDateDataBase();                                                                    //Bo
     }
     public void activateTimer()
     {
@@ -316,7 +316,7 @@ public class ManagerMachineDeviceHelper : MonoBehaviour
     {
         moveObj.transform.GetChild(6).gameObject.transform.GetChild(0).gameObject.SetActive(false);
     }
-    public void upDateDataBase()                                                                     //Bo
+    public void UpDateDataBase()                                                                     //Bo
     {                                                                                               //Bo
         moveObj.transform.parent.GetComponent<MachineParentScript>().UpDateOneMachineByid(moveObj); //Bo
     }
@@ -336,21 +336,21 @@ public class ManagerMachineDeviceHelper : MonoBehaviour
             }
             machineDeviceHelper.startTimeDetailProduce = DateTime.UtcNow.ToString();
             moveObj.transform.GetChild(6).gameObject.transform.GetChild(0).gameObject.SetActive(true);
-            timerInPrigress = moveObj.GetComponentInChildren<TimerDevice>();         //
-            calculateProductionTime();
+            timerInPrigress = moveObj.GetComponentInChildren<Timer>();         //
+            CalculateProductionTime();
             ShowProductionTimeText();
             timerInPrigress.productionTime = productionTime;
             timerInPrigress.startTimer();
             sliderAmountProduce.interactable = false;
             buttonController.UnBlockButtons();
-            machineDeviceHelper.startProduce();
+            machineDeviceHelper.StartProduce();
             buttonExit.GetComponent<Button>().onClick.Invoke();
         }
         buildScroll();
-        upDateDataBase();
+        UpDateDataBase();
     }
 
-    public void calculateProductionTime()
+    public void CalculateProductionTime()
     {
         productionTime = machineDeviceHelper.timeProduceDetail * sliderAmountProduce.value;
     }
@@ -368,9 +368,8 @@ public class ManagerMachineDeviceHelper : MonoBehaviour
             sliderAmountProduce.maxValue = machineDeviceHelper.maxAmountDetails;
         }
         select(moveObj);
-        upDateDataBase();                                                                    //Bo
+        UpDateDataBase();                                                                    //Bo
     }
-
     public void upgradeLevelTimeDetails()
     {
         if (Purse.Instance.money > upgradeTimeProduceDetailCost && machineDeviceHelper.timeProduceDetail > machineDeviceHelper.levelMinTimeProduceDetail)
@@ -383,19 +382,12 @@ public class ManagerMachineDeviceHelper : MonoBehaviour
             }
         }
         select(moveObj);
-        upDateDataBase();                                                                    //Bo
+        UpDateDataBase();                                                                    //Bo
     }
+
     public void SetMaxValue()
     {
-        activateTimer();
-
-        timerInPrigress = moveObj.GetComponentInChildren<TimerDevice>();
-
-        sliderAmountProduce.maxValue = machineDeviceHelper.maxAmountDetails;
         sliderAmountProduce.value = machineDeviceHelper.maxAmountDetails;
-
-        disactivateTimer();
-
-        upDateDataBase();                                                                    //Bo
+        UpDateDataBase();                                                                    
     }
 }

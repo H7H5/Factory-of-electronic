@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,20 +8,24 @@ public class MachineOld : MonoBehaviour
     protected GameObject detailProduced;
     protected GameObject timerObject;
     private Timer timer;
-    private TimerDevice timerDevice;
+    public Sprite spriteDetail;
+    public bool isProduce = false;
+    public GameObject[] detailsToModern;
+    public int selectedDetail = 0;
+    public String startTimeDetailProduce;
+    public float timeProduceDetail = 1;
+    public int amountDetails = 1;
+    public float maxAmountDetails = 1;//Dw
+    public float levelMaxAmountDetail;
+    public float levelMinTimeProduceDetail;
+    public DateTime startTimeProduceDetail; //Время Начала производства детали
+    public string x;
+    public string y;
     private void Awake()
     {
         detailProduced = gameObject.transform.GetChild(6).gameObject.transform.GetChild(1).gameObject;
-
         timerObject = gameObject.transform.GetChild(6).gameObject.transform.GetChild(0).gameObject;
-        if (timerObject.GetComponent<Timer>())
-        {
-            timer = timerObject.GetComponent<Timer>();
-        }
-        if (timerObject.GetComponent<TimerDevice>())
-        {
-            timerDevice = timerObject.GetComponent<TimerDevice>();
-        }
+        timer = timerObject.GetComponent<Timer>();
     }
     public virtual void CollectProduct() {
 
@@ -36,24 +41,62 @@ public class MachineOld : MonoBehaviour
         return detailProduced.activeInHierarchy ? true : false;
     }
     public void ShowTimerObject() {
-        if (timer)
+        if (timer.isTimerProgress == true)
         {
-            if (timer.isTimerProgress == true)
-            {
-                timerObject.SetActive(true);
-            }
-        }
-        if (timerDevice)
-        {
-            if (timerDevice.isTimerProgress == true)
-            {
-                timerObject.SetActive(true);
-            }
+            timerObject.SetActive(true);
         }
     }
+    public int id;
 
     public void HideTimerObject()
     {
         timerObject.SetActive(false);
+    }
+    public virtual Sprite GetImageDetail()
+    {
+        return spriteDetail;
+    }
+
+    public void OnLoadMachine()
+    {
+        GameObject timeBar = transform.GetChild(6).gameObject.transform.GetChild(0).gameObject;
+        Timer timer = timeBar.GetComponent<Timer>();
+        timer.loadTimer();
+    }
+    public void StartProduce()
+    {
+        isProduce = true;
+    }
+    public void StopProduce()
+    {
+        isProduce = false;
+        transform.parent.GetComponent<MachineParentScript>().UpDateOneMachineByid(gameObject);
+    }
+
+    public virtual void InitMachine(int x){  }
+
+    public string GetData()
+    {
+        string temp = JsonUtility.ToJson(this, true);
+        return temp;
+    }
+    public void Save()
+    {
+        Vector3 positionMachine = transform.position;
+        x = positionMachine.x.ToString();
+        y = positionMachine.y.ToString();
+    }
+    public void Load(string data)
+    {
+        JsonUtility.FromJsonOverwrite(data, this);
+        float x1 = System.Convert.ToSingle(x);
+        float y1 = System.Convert.ToSingle(y);
+        Vector3 positionMachine = new Vector3(x1, y1, 1);
+        transform.position = positionMachine;
+        InitMachine(id);
+        if (isProduce)
+        {
+            OnLoadMachine();
+        }
     }
 }

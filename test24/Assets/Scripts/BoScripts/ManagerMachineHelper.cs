@@ -399,7 +399,7 @@ public class ManagerMachineHelper : MonoBehaviour
             sliderAmountProduce.interactable = false;
 
             buttonController.UnBlockButtons();
-            machineHelper.startProduce();
+            machineHelper.StartProduce();
             buttonExit.onClick.Invoke();
         }
         else
@@ -414,7 +414,7 @@ public class ManagerMachineHelper : MonoBehaviour
         activateTimer();
         //timerInPrigress = moveObj.GetComponentInChildren<Timer>();
         //timerInPrigress.stopTimer();
-        machineHelper.onLoadMachine();
+        machineHelper.OnLoadMachine();
         buttonExit.onClick.Invoke();
         upDateDataBase();                                                                    //Bo
     }
