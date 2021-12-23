@@ -107,5 +107,4 @@ public class MoveObjects : MonoBehaviour
         UIPanels.Instance.OpenMoveMachinePanel(gameObject);
         StartMove(); 
     } 
-    
 }

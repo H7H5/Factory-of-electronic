@@ -17,7 +17,7 @@ public class Timer : MonoBehaviour
 
     private TimeSpan res;
 
-    public MachineHelper machineHelper;
+    public MachineOld machineHelper;
 
     public Image imageDetail;
 
@@ -25,7 +25,7 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        machineHelper = GetComponentInParent<MachineHelper>();
+        machineHelper = GetComponentInParent<MachineOld>();
     }
 
     void Update()
@@ -36,7 +36,7 @@ public class Timer : MonoBehaviour
             {
                 isTimerProgress = false;
                 machineHelper.isProduce = false;
-                imageDetail.sprite = machineHelper.detailsToModern[machineHelper.selectedDetail].GetComponent<ItemElement>().imgStock;
+                imageDetail.sprite = machineHelper.GetImageDetail();
                 imageDetail.gameObject.SetActive(true);
                 ShowAmountDetails();
                 progressBarMachine.gameObject.SetActive(false);
@@ -61,7 +61,7 @@ public class Timer : MonoBehaviour
         isTimerProgress = true;
         progressBarMachine.gameObject.SetActive(true);
 
-        machineHelper = GetComponentInParent<MachineHelper>();
+        machineHelper = GetComponentInParent<MachineOld>();
         res = DateTime.UtcNow - DateTime.Parse(machineHelper.startTimeDetailProduce);
         resInSeconds = res.Hours * 3600 + res.Minutes * 60 + res.Seconds;
         productionTime = machineHelper.timeProduceDetail * machineHelper.amountDetails;

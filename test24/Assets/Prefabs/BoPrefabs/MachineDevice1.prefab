@@ -855,7 +855,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1265910833}
   - component: {fileID: 1265910834}
-  - component: {fileID: 843503773654359473}
+  - component: {fileID: 8508138312772722472}
   m_Layer: 5
   m_Name: ProgressBarMachine
   m_TagString: Untagged
@@ -935,7 +935,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &843503773654359473
+--- !u!114 &8508138312772722472
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -944,7 +944,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1265910832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc21e266b42fa3744a7ab9892283ac14, type: 3}
+  m_Script: {fileID: 11500000, guid: d09ef0919ae804143841cb4ac0f6e64e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   progressBarMachine: {fileID: 1265910834}
@@ -1455,14 +1455,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MouseDown: 0
-  Canvas: {fileID: 0}
   isMove: 0
   canBeInstalled: 0
-  mainCamera: {fileID: 0}
-  cameraController: {fileID: 0}
-  machineHelper: {fileID: 0}
-  machineDeviceHelper: {fileID: 0}
-  buttonController: {fileID: 0}
+  machineOld: {fileID: 0}
 --- !u!114 &7936953480089556258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1475,6 +1470,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb25e44f1d74bf42b50a240a5f33ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteDetail: {fileID: 0}
+  isProduce: 0
+  detailsToModern: []
+  selectedDetail: 0
+  startTimeDetailProduce: 
+  timeProduceDetail: 0
+  amountDetails: 1
   characters:
   - {fileID: 21300000, guid: 8189b381701378d43b0f2e4f7b6663dd, type: 3}
   supper_id: 0
@@ -1483,14 +1485,9 @@ MonoBehaviour:
   idDevice: 0
   price: 0
   sprt: {fileID: 0}
-  timeProduceDetail: 0
-  amountDetails: 1
   maxAmountDetails: 1
   levelMaxAmountDetail: 0
   levelMinTimeProduceDetail: 0
-  isProduce: 0
-  startTimeDetailProduce: 
-  spriteDetail: {fileID: 0}
   device: {fileID: 0}
   itemDevice: {fileID: 0}
   x: 
