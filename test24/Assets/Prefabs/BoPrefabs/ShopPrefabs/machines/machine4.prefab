@@ -43,13 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51808508ed79d73458c3f723ce6bc16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
-  img: {fileID: 21300000, guid: dbb7c977aaa69ea42ab4d87798456441, type: 3}
-  name: MachineElement
-  cost: 220
   detail: {fileID: 5491545485700082826, guid: 78aefe872dbc5c149973e5440002600c, type: 3}
   detailsToModern:
   - {fileID: 5491545485700082826, guid: 78aefe872dbc5c149973e5440002600c, type: 3}
+  img: {fileID: 21300000, guid: dbb7c977aaa69ea42ab4d87798456441, type: 3}
+  price: 2334
   timeProduceDetail: 20
   levelMinTimeProduceDetail: 10
   levelMaxAmountDetail: 50

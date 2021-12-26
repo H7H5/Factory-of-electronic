@@ -104,7 +104,7 @@ public class MoveObjects : MonoBehaviour
 
     public void SetupWhenBuying()                                                                                     
     {                                                                                                       
-        UIPanels.Instance.OpenMoveMachinePanel(gameObject);
+        UIPanels.Instance.OpenMoveMachinePanel(gameObject,true);
         StartMove(); 
     } 
 }

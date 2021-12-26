@@ -8,6 +8,7 @@ public class UIPanels : MonoBehaviour
     [SerializeField] private GameObject machineMenu;
     [SerializeField] private GameObject machineDeviceMenu;
     [SerializeField] private GameObject moveMachinePanel;
+    [SerializeField] private BasketBoardScript basket;
     private void Awake()
     {
         if (Instance == null)
@@ -29,9 +30,9 @@ public class UIPanels : MonoBehaviour
             machineDeviceMenu.GetComponent<ManagerMachineDeviceHelper>().select(machine);
         } 
     }
-    public void OpenMoveMachinePanel(GameObject machine)
+    public void OpenMoveMachinePanel(GameObject machine, bool start)
     {
         moveMachinePanel.SetActive(true);
-        moveMachinePanel.GetComponent<MoveButton>().select(machine, 0);
+        moveMachinePanel.GetComponent<MoveButton>().select(machine, start);
     }
 }
