@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MachineOld : MonoBehaviour
 {
+    public int price = 0;
     protected GameObject detailProduced;
     protected GameObject timerObject;
     private Timer timer;

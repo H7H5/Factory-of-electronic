@@ -69,7 +69,7 @@ public class ItemShopMachineForElement : MonoBehaviour
             machine1.transform.SetParent(MachineParentScript.Instance.gameObject.transform);
             MachineHelper machineHelper = machine1.GetComponent<MachineHelper>();
             machineHelper.InitMachine(currentNumberMachine);
-            machineHelper.price = cost;
+            machineHelper.price = totalCost;
             machineHelper.timeProduceDetail = timeProduceDetail;                     //Dw
             machineHelper.levelMinTimeProduceDetail = levelMinTimeProduceDetail;     //Dw
             machineHelper.levelMaxAmountDetail = levelMaxAmountDetail;               //Dw

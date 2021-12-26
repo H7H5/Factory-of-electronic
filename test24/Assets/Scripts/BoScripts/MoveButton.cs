@@ -13,8 +13,8 @@ public class MoveButton : MonoBehaviour
     public Button button;
     private Image im;
     public bool canBeInstalled = false;
-    private bool start = false;
-    Vector3 StartPosition;
+    public bool start = false;
+    private Vector3 StartPosition;
 
     void Start()
     {
@@ -36,17 +36,12 @@ public class MoveButton : MonoBehaviour
         }
     }
 
-    public void select(GameObject gameObject)
+    public void select(GameObject gameObject, bool start)
     {
+        gameObject.SetActive(true);
         moveObj = gameObject;
         StartPosition = gameObject.transform.position;
-        start = false;
-    }
-
-    public void select(GameObject gameObject, int x)
-    {
-        moveObj = gameObject;
-        start = true;
+        this.start = start;
     }
 
     public void move()
@@ -60,17 +55,7 @@ public class MoveButton : MonoBehaviour
         undoMove();
         if (start)
         {
-            if (moveObj.GetComponent<MachineHelper>())
-            {
-                Purse.Instance.SetMoney(Purse.Instance.money += moveObj.GetComponent<MachineHelper>().price);
-            }
-            else if (moveObj.GetComponent<MachineDeviceHelper>())
-            {
-                Purse.Instance.SetMoney(Purse.Instance.money += moveObj.GetComponent<MachineDeviceHelper>().price);
-                
-            }
-           
-            //Purse.money += moveObj.GetComponent<MachineHelper>().price;
+            Purse.Instance.SetMoney(Purse.Instance.money += moveObj.GetComponent<MachineOld>().price);
             Destroy(moveObj);
         }
     }

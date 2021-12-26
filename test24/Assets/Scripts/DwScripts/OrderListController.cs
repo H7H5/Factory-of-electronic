@@ -72,7 +72,7 @@ public class OrderListController : MonoBehaviour
     //public ItemDevice itemDevice;
     public string checkPointTime;
 
-    public int rating = 1;
+    public static int rating = 1;
     public List<Order> orders;
     public List<Order> ordersSelected;
     public int countOrders;

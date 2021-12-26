@@ -5,7 +5,7 @@ public class MachineDeviceHelper : MachineOld
     [Header("Properties of Machine")]
     public int supper_idJSON;
     public int idDevice;
-    public int price = 0;
+    
     public Sprite sprt;                                           
     public GameObject device;
     public ItemDevice itemDevice;
