@@ -31,109 +31,22 @@ public class ManagerMachineDeviceHelper : PanelOld
             curentSlider = sliderAmountProduce.value;
         }
     }
-    public override void select(GameObject gameObject)                                                      //Bo
+    public override void select(GameObject Object)                                                      
     {
-        moveObj = gameObject;                                                                       //Bo
-       // StartPosition = gameObject.transform.position;                                              //Bo
-
-        machineHelper = moveObj.GetComponent<MachineDeviceHelper>();
-
-        img.sprite = machineHelper.sprt;                                                            //Bo
-     
-        imageDetail.sprite = machineHelper.device.GetComponent<ItemDevice>().imgStock;
+        InitDataInMachine(Object);
         buildScroll();
+        ShowParameters();
+        CalculateSliderValue();
+        ButtonsON_OFF();
+    }
 
-        //timeProduceDetail = machineHelper.timeProduceDetail;
+    private void InitDataInMachine(GameObject Object)
+    {
+        moveObj = Object;
+        machineHelper = moveObj.GetComponent<MachineDeviceHelper>();
+        img.sprite = machineHelper.sprt;
         amountDetails = machineHelper.amountDetails;
-
-        ShowProductionTimeText();
-        ShowLevelMaxDetails();
-        ShowLevelTimeDetails();
-        ShowUpgradePrices();
-
-        sliderAmountProduce.maxValue = machineHelper.maxAmountDetails;
-        sliderAmountProduce.value = amountDetails;
-
-        if (machineHelper.isProduce == true)
-        {
-            sliderAmountProduce.interactable = false;
-            buttonStart.interactable = false;
-            buttonUpgradeMaxDetail.interactable = false;
-            buttonUpgradeTime.interactable = false;
-            buttonMax.interactable = false;
-            buttonStop.interactable = true;
-            buttonMoveMachine.interactable = false;
-            buttonSellMachine.interactable = false;
-            buttonSendStock.interactable = false;
-        }
-        else
-        {
-            sliderAmountProduce.interactable = true;
-            
-            if (IsNeedElement)
-            {
-                buttonStart.interactable = true;
-            }
-            else
-            {
-                buttonStart.interactable = false;
-            }
-
-            if (Purse.Instance.money >= upgradeAmountDetailsCost)
-            {
-                buttonUpgradeMaxDetail.interactable = true;
-            }
-            else
-            {
-                buttonUpgradeMaxDetail.interactable = false;
-            }
-
-            if (Purse.Instance.money >= upgradeTimeProduceDetailCost)
-            {
-                buttonUpgradeTime.interactable = true;
-            }
-            else
-            {
-                buttonUpgradeTime.interactable = false;
-            }
-            buttonMax.interactable = sliderAmountProduce.value < sliderAmountProduce.maxValue ? true : false;
-            buttonStop.interactable = false;
-            buttonMoveMachine.interactable = true;
-            buttonSellMachine.interactable = true;
-            buttonSendStock.interactable = true;
-        }
-    }
-
-    public void ShowProductionTimeText()
-    {
-        CalculateProductionTime();
-        productionTimeText.text = productionTime.ToString();
-    }
-
-    public override void CalculateProductionTime()
-    {
-        productionTime = machineHelper.timeProduceDetail * sliderAmountProduce.value;
-    }
-
-    public void ShowLevelMaxDetails()
-    {
-        textLevelMaxDetails.text = machineHelper.maxAmountDetails.ToString() + "/" + machineHelper.levelMaxAmountDetail;
-        barLevelMaxDetail.GetComponent<Image>().fillAmount = (float)(machineHelper.maxAmountDetails * (1 / machineHelper.levelMaxAmountDetail));
-        float test = (float)(machineHelper.maxAmountDetails * (1 / machineHelper.levelMaxAmountDetail));
-        test = (int)(test * 100);
-        textPercentLevelMaxDetails.text = test.ToString() + "%";
-    }
-
-    public void ShowLevelTimeDetails()
-    {
-        textLevelTimeDetails.text = machineHelper.timeProduceDetail.ToString() + "/" + machineHelper.levelMinTimeProduceDetail;
-        timeProduceDetailText.text = machineHelper.timeProduceDetail.ToString();
-    }
-
-    public void ShowUpgradePrices()
-    {
-        textUpgradeAmountDetailsCost.text = upgradeAmountDetailsCost.ToString();
-        textUpgradeTimeProduceDetailCost.text = upgradeTimeProduceDetailCost.ToString();
+        imageDetail.sprite = machineHelper.device.GetComponent<ItemDevice>().imgStock;
     }
 
     private void buildScroll()
@@ -142,22 +55,22 @@ public class ManagerMachineDeviceHelper : PanelOld
         {
             Destroy(content.transform.GetChild(i).gameObject);
         }
-        if (machineHelper.device.GetComponent<CreatePartDevice>() )
+        if (machineHelper.device.GetComponent<CreatePartDevice>())
         {
             temp = machineHelper.device.GetComponent<CreatePartDevice>().GetNeedElements();
             idNeedElement1 = machineHelper.device.GetComponent<CreatePartDevice>().GetNeedElements();
-            
+
         }
-        else if(machineHelper.device.transform.GetChild(0).gameObject.GetComponent<DeviceBilder>())
+        else if (machineHelper.device.transform.GetChild(0).gameObject.GetComponent<DeviceBilder>())
         {
             temp = machineHelper.device.transform.GetChild(0).gameObject.GetComponent<DeviceBilder>().GetNeedElements();
             idNeedElement1 = machineHelper.device.transform.GetChild(0).gameObject.GetComponent<DeviceBilder>().GetNeedElements();
-            
+
         }
-       
+
         idNeedElementCount = new List<int>();
         idNeedElement = temp.Distinct().ToList();
-        
+
         for (int i = 0; i < idNeedElement.Count; i++)
         {
             int d = 0;
@@ -170,7 +83,7 @@ public class ManagerMachineDeviceHelper : PanelOld
             }
             idNeedElementCount.Add(d);
         }
-        
+
         scrollbox.GetComponent<Scrollbar>().value = 1.0f;
         List<Vector2> IdAndCount = cortIdNeedElement(idNeedElement, idNeedElementCount);
         for (int i = 0; i < IdAndCount.Count; i++)
@@ -189,10 +102,78 @@ public class ManagerMachineDeviceHelper : PanelOld
         }
     }
 
+    private void ShowParameters()
+    {
+        ShowProductionTimeText();
+        ShowLevelMaxDetails();
+        ShowLevelTimeDetails();
+        ShowUpgradePrices();
+    }
+    public void ShowProductionTimeText()
+    {
+        CalculateProductionTime();
+        productionTimeText.text = productionTime.ToString();
+    }
+    public void ShowLevelMaxDetails()
+    {
+        textLevelMaxDetails.text = machineHelper.maxAmountDetails.ToString() + "/" + machineHelper.levelMaxAmountDetail;
+        barLevelMaxDetail.GetComponent<Image>().fillAmount = (float)(machineHelper.maxAmountDetails * (1 / machineHelper.levelMaxAmountDetail));
+        float test = (float)(machineHelper.maxAmountDetails * (1 / machineHelper.levelMaxAmountDetail));
+        test = (int)(test * 100);
+        textPercentLevelMaxDetails.text = test.ToString() + "%";
+    }
+    public void ShowLevelTimeDetails()
+    {
+        textLevelTimeDetails.text = machineHelper.timeProduceDetail.ToString() + "/" + machineHelper.levelMinTimeProduceDetail;
+        timeProduceDetailText.text = machineHelper.timeProduceDetail.ToString();
+    }
+    public void ShowUpgradePrices()
+    {
+        textUpgradeAmountDetailsCost.text = upgradeAmountDetailsCost.ToString();
+        textUpgradeTimeProduceDetailCost.text = upgradeTimeProduceDetailCost.ToString();
+    }
+
+    public override void CalculateProductionTime()
+    {
+        productionTime = machineHelper.timeProduceDetail * sliderAmountProduce.value;
+    }
+    private void CalculateSliderValue()
+    {
+        sliderAmountProduce.maxValue = machineHelper.maxAmountDetails;
+        sliderAmountProduce.value = amountDetails;
+    }
+
+    private void ButtonsON_OFF()
+    {
+        if (machineHelper.isProduce == true)
+        {
+            sliderAmountProduce.interactable = false;
+            buttonStart.interactable = false;
+            buttonUpgradeMaxDetail.interactable = false;
+            buttonUpgradeTime.interactable = false;
+            buttonMax.interactable = false;
+            buttonStop.interactable = true;
+            buttonMoveMachine.interactable = false;
+            buttonSellMachine.interactable = false;
+            buttonSendStock.interactable = false;
+        }
+        else
+        {
+            sliderAmountProduce.interactable = true;
+            buttonStart.interactable = IsNeedElement ? true : false;
+            buttonUpgradeMaxDetail.interactable = Purse.Instance.money >= upgradeAmountDetailsCost ? true : false;
+            buttonUpgradeTime.interactable = Purse.Instance.money >= upgradeTimeProduceDetailCost ? true : false;
+            buttonMax.interactable = sliderAmountProduce.value < sliderAmountProduce.maxValue ? true : false;
+            buttonStop.interactable = false;
+            buttonMoveMachine.interactable = true;
+            buttonSellMachine.interactable = true;
+            buttonSendStock.interactable = true;
+        }
+    }
+
     public void getAmountDetails()
     {
         machineHelper.amountDetails = (int)sliderAmountProduce.value;
-        select(moveObj);
     }
 
     private List<Vector2> cortIdNeedElement(List<int> TempIdNeedElement, List<int> TempIdNeedElementCount)
@@ -232,26 +213,20 @@ public class ManagerMachineDeviceHelper : PanelOld
         return resultIdAndCount;
     }
 
-    public void move()                                                                             //Bo
-    {
-        //basket.Hide();                                                                              //Bo
+    public void move()                                                                             
+    {                                                                            
         moveObj.gameObject.GetComponent<MoveObjects>().StartMove();
         UIPanels.Instance.OpenMoveMachinePanel(moveObj,false);
-        //moveMachinePanel.GetComponent<MoveButton>().select(moveObj);                                //Bo
-        //timerInPrigress.stopTimerToMoveMachine();
     }
- 
-    public void sell()                                                                              //Bo
+    public void sell()                                                                              
     {
         Purse.Instance.SetMoney(Purse.Instance.money += moveObj.GetComponent<MachineDeviceHelper>().price);
-        moveObj.transform.parent.GetComponent<MachineParentScript>().DeleteOneMachineByIdJSONDevice(moveObj.GetComponent<MachineDeviceHelper>().supper_idJSON); //Bo
-        Destroy(moveObj);                                                                           //Bo
+        sendStock();
     }
-
-    public void sendStock()                                                                        //Bo
+    public void sendStock()                                                                        
     {
-        moveObj.transform.parent.GetComponent<MachineParentScript>().DeleteOneMachineByIdJSONDevice(moveObj.GetComponent<MachineDeviceHelper>().supper_idJSON); //Bo
-        Destroy(moveObj);                                                                           //Bo
+        moveObj.transform.parent.GetComponent<MachineParentScript>().DeleteOneMachineByIdJSONDevice(moveObj.GetComponent<MachineDeviceHelper>().supper_idJSON); 
+        Destroy(moveObj);                                                                           
     }
 
     public void activateTimer()
@@ -259,14 +234,9 @@ public class ManagerMachineDeviceHelper : PanelOld
         moveObj.transform.GetChild(6).gameObject.transform.GetChild(0).gameObject.SetActive(true);
     }
 
-    public void disactivateTimer()
-    {
-        moveObj.transform.GetChild(6).gameObject.transform.GetChild(0).gameObject.SetActive(false);
-    }
-
-    public void UpDateDataBase()                                                                     //Bo
-    {                                                                                               //Bo
-        moveObj.transform.parent.GetComponent<MachineParentScript>().UpDateOneMachineByid(moveObj); //Bo
+    public void UpDateDataBase()                                                                     
+    {                                                                                               
+        moveObj.transform.parent.GetComponent<MachineParentScript>().UpDateOneMachineByid(moveObj); 
     }
  
     public override void startTimer()
@@ -275,21 +245,17 @@ public class ManagerMachineDeviceHelper : PanelOld
         {
             for (int i = 0; i < idNeedElement1.Count; i++)
             {
-
                 for (int j = 0; j < (int)sliderAmountProduce.value; j++)
                 {
-
                     DBase.Instance.GetComponent<DBase>().SubstractID(idNeedElement1[i]);
                 }
             }
             machineHelper.startTimeDetailProduce = DateTime.UtcNow.ToString();
-            moveObj.transform.GetChild(6).gameObject.transform.GetChild(0).gameObject.SetActive(true);
-            timerInPrigress = moveObj.GetComponentInChildren<Timer>();         //
+            activateTimer();
+            timerInPrigress = moveObj.GetComponentInChildren<Timer>();         
             CalculateProductionTime();
-            ShowProductionTimeText();
             timerInPrigress.productionTime = productionTime;
             timerInPrigress.startTimer();
-            sliderAmountProduce.interactable = false;
             ButtonController.Instance.UnBlockButtons();
             machineHelper.StartProduce();
             buttonExit.onClick.Invoke();
@@ -305,7 +271,7 @@ public class ManagerMachineDeviceHelper : PanelOld
         //timerInPrigress.stopTimer();
         machineHelper.OnLoadMachine();
         buttonExit.onClick.Invoke();
-        UpDateDataBase();                                                                    //Bo
+        UpDateDataBase();                                                                    
     }
 
     public void upgradeAmountDetails()
@@ -321,7 +287,7 @@ public class ManagerMachineDeviceHelper : PanelOld
             sliderAmountProduce.maxValue = machineHelper.maxAmountDetails;
         }
         select(moveObj);
-        UpDateDataBase();                                                                    //Bo
+        UpDateDataBase();                                                                    
     }
 
     public void upgradeLevelTimeDetails()
@@ -336,7 +302,7 @@ public class ManagerMachineDeviceHelper : PanelOld
             }
         }
         select(moveObj);
-        UpDateDataBase();                                                                    //Bo
+        UpDateDataBase();                                                                    
     }
 
     public void SetMaxValue()
