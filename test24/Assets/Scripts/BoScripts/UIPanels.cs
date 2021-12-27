@@ -22,12 +22,12 @@ public class UIPanels : MonoBehaviour
         if (machine.GetComponent<MachineHelper>())
         {
             machineMenu.SetActive(true);
-            machineMenu.GetComponent<ManagerMachineHelper>().select(machine); ;
+            machineMenu.GetComponent<PanelOld>().select(machine); ;
         }
         if (machine.GetComponent<MachineDeviceHelper>())
         {
             machineDeviceMenu.SetActive(true);
-            machineDeviceMenu.GetComponent<ManagerMachineDeviceHelper>().select(machine);
+            machineDeviceMenu.GetComponent<PanelOld>().select(machine);
         } 
     }
     public void OpenMoveMachinePanel(GameObject machine, bool start)
