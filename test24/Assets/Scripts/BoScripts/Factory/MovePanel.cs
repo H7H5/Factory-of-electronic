@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class MoveButton : MonoBehaviour
+public class MovePanel : MonoBehaviour
 {
     public Sprite but1;
     public Sprite but2;

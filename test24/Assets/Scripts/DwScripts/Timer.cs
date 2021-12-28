@@ -69,8 +69,9 @@ public class Timer : MonoBehaviour
         time = productionTime - resInSeconds;
     }
 
-    public void startTimer()
+    public void startTimer(float productionTime)
     {
+        this.productionTime = productionTime;
         isTimerProgress = true;
         progressBarMachine.maxValue = productionTime;
         time = productionTime;
