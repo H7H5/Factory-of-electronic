@@ -33,6 +33,6 @@ public class UIPanels : MonoBehaviour
     public void OpenMoveMachinePanel(GameObject machine, bool start)
     {
         moveMachinePanel.SetActive(true);
-        moveMachinePanel.GetComponent<MoveButton>().select(machine, start);
+        moveMachinePanel.GetComponent<MovePanel>().select(machine, start);
     }
 }

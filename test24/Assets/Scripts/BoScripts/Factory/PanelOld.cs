@@ -11,7 +11,6 @@ public class PanelOld : MonoBehaviour
     protected Timer timerInPrigress;
     protected Slider sliderAmountProduce;
     public Text timeProduceDetailText;
-    protected float productionTime;
     public Text productionTimeText;
     public Text textLevelMaxDetails;
     public Text textLevelTimeDetails;
@@ -58,9 +57,6 @@ public class PanelOld : MonoBehaviour
     {
 
     }
-    public virtual void CalculateProductionTime()
-    {
 
-    }
 
 }

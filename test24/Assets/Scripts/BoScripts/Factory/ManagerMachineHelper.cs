@@ -49,8 +49,7 @@ public class ManagerMachineHelper : PanelOld
     }
     public void ShowProductionTimeText()
     {
-        CalculateProductionTime();
-        productionTimeText.text = productionTime.ToString();
+        productionTimeText.text = GetProductionTime().ToString();
     }
     public void ShowPriceProduceText()
     {
@@ -77,9 +76,9 @@ public class ManagerMachineHelper : PanelOld
         textUpgradeTimeProduceDetailCost.text = upgradeTimeProduceDetailCost.ToString();
     }
 
-    public override void CalculateProductionTime()
+    private float GetProductionTime()
     {
-        productionTime = machineHelper.timeProduceDetail * sliderAmountProduce.value;
+        return machineHelper.timeProduceDetail * sliderAmountProduce.value;
     }
     public void CalculatePriceProduce()
     {
@@ -149,10 +148,7 @@ public class ManagerMachineHelper : PanelOld
             machineHelper.startTimeDetailProduce = DateTime.UtcNow.ToString();
             Purse.Instance.SetMoney(Purse.Instance.money -= (int)priceProduce);
             activateTimer();
-            timerInPrigress = moveObj.GetComponentInChildren<Timer>();
-            CalculateProductionTime();
-            timerInPrigress.productionTime = productionTime;
-            timerInPrigress.startTimer();
+            moveObj.GetComponentInChildren<Timer>().startTimer(GetProductionTime());
             ButtonController.Instance.UnBlockButtons();
             machineHelper.StartProduce();
             buttonExit.onClick.Invoke();
