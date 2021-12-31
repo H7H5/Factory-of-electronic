@@ -947,11 +947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09ef0919ae804143841cb4ac0f6e64e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressBarMachine: {fileID: 1265910834}
   progressBarText: {fileID: 1314815321}
-  productionTime: 20
-  isTimerProgress: 0
-  machineHelper: {fileID: 0}
   imageDetail: {fileID: 80602879}
   textAmountDetails: {fileID: 1876831248}
 --- !u!1 &1268927493
@@ -1470,6 +1466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb25e44f1d74bf42b50a240a5f33ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  price: 0
   spriteDetail: {fileID: 0}
   isProduce: 0
   detailsToModern: []
@@ -1477,21 +1474,20 @@ MonoBehaviour:
   startTimeDetailProduce: 
   timeProduceDetail: 0
   amountDetails: 1
-  characters:
-  - {fileID: 21300000, guid: 8189b381701378d43b0f2e4f7b6663dd, type: 3}
-  supper_id: 0
-  supper_idJSON: 0
-  id: 0
-  idDevice: 0
-  price: 0
-  sprt: {fileID: 0}
   maxAmountDetails: 1
   levelMaxAmountDetail: 0
   levelMinTimeProduceDetail: 0
-  device: {fileID: 0}
-  itemDevice: {fileID: 0}
   x: 
   y: 
+  progressBarText: {fileID: 1314815321}
+  imageDetail: {fileID: 80602879}
+  textAmountDetails: {fileID: 1876831248}
+  id: 0
+  supper_idJSON: 0
+  idDevice: 0
+  sprt: {fileID: 0}
+  device: {fileID: 0}
+  itemDevice: {fileID: 0}
 --- !u!1 &7556497450918181660
 GameObject:
   m_ObjectHideFlags: 0
