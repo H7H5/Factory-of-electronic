@@ -251,7 +251,7 @@ public class ManagerMachineDeviceHelper : PanelOld
             }
             machineHelper.startTimeDetailProduce = DateTime.UtcNow.ToString();
             activateTimer();
-            moveObj.GetComponentInChildren<Timer>().startTimer(GetProductionTime());      
+            moveObj.GetComponentInChildren<Timer>().StartTimer(GetProductionTime());      
             ButtonController.Instance.UnBlockButtons();
             machineHelper.StartProduce();
             buttonExit.onClick.Invoke();

@@ -1,31 +1,22 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public Slider progressBarMachine;
-    public Text progressBarText;
-    public float productionTime;
-    public bool isTimerProgress;
-
+    private Slider progressBarMachine;
+    [SerializeField] private Text progressBarText;
+    [SerializeField] private Image imageDetail;
+    [SerializeField] private Text textAmountDetails;
+    private MachineOld machineHelper;
+    private float productionTime;
+    private bool isTimerProgress;
     private float time = 0;
 
-    private int resInSeconds = 0;
-
-    private TimeSpan res;
-
-    public MachineOld machineHelper;
-
-    public Image imageDetail;
-
-    public Text textAmountDetails;
-
-    void Start()
+    void Awake()
     {
         machineHelper = GetComponentInParent<MachineOld>();
+        progressBarMachine = gameObject.GetComponent<Slider>();
     }
 
     void Update()
@@ -33,14 +24,16 @@ public class Timer : MonoBehaviour
         if (isTimerProgress == true)
         {
             if (time <= 0)
-            {
+            {   
                 isTimerProgress = false;
                 machineHelper.isProduce = false;
                 imageDetail.sprite = machineHelper.GetImageDetail();
                 imageDetail.gameObject.SetActive(true);
                 ShowAmountDetails();
-                progressBarMachine.gameObject.SetActive(false);
                 machineHelper.startTimeDetailProduce = "";
+                //machineHelper.FinishProduceDetail();
+                gameObject.SetActive(false);
+               
             }
             
             time -= Time.deltaTime;
@@ -56,20 +49,19 @@ public class Timer : MonoBehaviour
         }
     }
 
-    public void loadTimer()
+    public void LoadTimer()
     {
         isTimerProgress = true;
-        progressBarMachine.gameObject.SetActive(true);
-
+        gameObject.SetActive(true);
         machineHelper = GetComponentInParent<MachineOld>();
-        res = DateTime.UtcNow - DateTime.Parse(machineHelper.startTimeDetailProduce);
-        resInSeconds = res.Hours * 3600 + res.Minutes * 60 + res.Seconds;
+        TimeSpan res = DateTime.UtcNow - DateTime.Parse(machineHelper.startTimeDetailProduce);
+        int resInSeconds = res.Hours * 3600 + res.Minutes * 60 + res.Seconds;
         productionTime = machineHelper.timeProduceDetail * machineHelper.amountDetails;
         progressBarMachine.maxValue = productionTime;
         time = productionTime - resInSeconds;
     }
 
-    public void startTimer(float productionTime)
+    public void StartTimer(float productionTime)
     {
         this.productionTime = productionTime;
         isTimerProgress = true;
@@ -80,5 +72,10 @@ public class Timer : MonoBehaviour
     public void ShowAmountDetails()
     {
         textAmountDetails.text = machineHelper.amountDetails.ToString();
+    }
+
+    public bool IsTimerProgress()
+    {
+        return isTimerProgress;
     }
 }

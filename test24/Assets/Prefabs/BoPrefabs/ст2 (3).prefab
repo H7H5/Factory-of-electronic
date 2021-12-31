@@ -947,11 +947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09ef0919ae804143841cb4ac0f6e64e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressBarMachine: {fileID: 1265910834}
   progressBarText: {fileID: 1314815321}
-  productionTime: 20
-  isTimerProgress: 0
-  machineHelper: {fileID: 0}
   imageDetail: {fileID: 80602879}
   textAmountDetails: {fileID: 1876831248}
 --- !u!1 &1268927493
@@ -1455,14 +1451,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MouseDown: 0
-  Canvas: {fileID: 0}
   isMove: 0
   canBeInstalled: 0
-  mainCamera: {fileID: 0}
-  cameraController: {fileID: 0}
-  machineHelper: {fileID: 0}
-  machineDeviceHelper: {fileID: 0}
-  buttonController: {fileID: 0}
+  machineOld: {fileID: 0}
 --- !u!114 &1901251393206673302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1475,43 +1466,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972ccdc829129294ca9ec42a0b1a2310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characters:
-  - {fileID: 21300000, guid: 48d65530c661b2440910934acbdde4b2, type: 3}
-  - {fileID: 21300000, guid: f76f52dd18395d64892d4b469e1e6b65, type: 3}
-  - {fileID: 21300000, guid: 625d0dbe34a1e2b49a2038dd022d81aa, type: 3}
-  - {fileID: 21300000, guid: 7266d3d19a912424798f32fd3b899b9a, type: 3}
-  - {fileID: 21300000, guid: 08fa7ebf9eac6a647860e11c83099b67, type: 3}
-  - {fileID: 21300000, guid: 529e64af5bc12f24aab4e3a0aff2c7a9, type: 3}
-  - {fileID: 21300000, guid: a636449b34ff0d64e9560d40734f15cf, type: 3}
-  - {fileID: 21300000, guid: 2f79ea6060886d244a8e40c706e7495d, type: 3}
-  - {fileID: 21300000, guid: 96cac2361f45fd54cba1fd4550513d4f, type: 3}
-  - {fileID: 21300000, guid: f9d0ce75b2d972d459fb8a6eab703cda, type: 3}
-  - {fileID: 21300000, guid: 53e6d3bb62f109d47aa0f945a63c72c6, type: 3}
-  - {fileID: 21300000, guid: ef821d258011e4a41be1ff9c0c50ab6a, type: 3}
-  - {fileID: 21300000, guid: 4f104ad626637d847ab7bc08eb7a4d0d, type: 3}
-  supper_id: 0
-  supper_idJSON: 0
-  id: 0
-  idDetail: 0
   price: 0
-  sprt: {fileID: 0}
+  spriteDetail: {fileID: 0}
+  isProduce: 0
+  detailsToModern: []
+  selectedDetail: 0
+  startTimeDetailProduce: 
   timeProduceDetail: 0
   amountDetails: 1
   maxAmountDetails: 1
   levelMaxAmountDetail: 0
   levelMinTimeProduceDetail: 0
-  isProduce: 0
-  startTimeDetailProduce: 
-  spriteDetail: {fileID: 0}
-  detail: {fileID: 0}
-  itemElementDetail: {fileID: 0}
-  detailsToModern: []
-  idDetailsToModern: 
-  boolDetailsToModern: 
-  selectedDetail: 0
-  levelDetailsToModern: 0
   x: 
   y: 
+  progressBarText: {fileID: 1314815321}
+  imageDetail: {fileID: 80602879}
+  textAmountDetails: {fileID: 1876831248}
+  id: 0
+  supper_idJSON: 0
+  idDetail: 0
+  sprt: {fileID: 0}
+  detail: {fileID: 0}
+  itemElementDetail: {fileID: 0}
+  idDetailsToModern: 
+  boolDetailsToModern: 
   selectNumberElement: 0
 --- !u!1 &7556497450918181660
 GameObject:

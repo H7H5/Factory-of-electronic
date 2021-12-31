@@ -148,7 +148,7 @@ public class ManagerMachineHelper : PanelOld
             machineHelper.startTimeDetailProduce = DateTime.UtcNow.ToString();
             Purse.Instance.SetMoney(Purse.Instance.money -= (int)priceProduce);
             activateTimer();
-            moveObj.GetComponentInChildren<Timer>().startTimer(GetProductionTime());
+            moveObj.GetComponentInChildren<Timer>().StartTimer(GetProductionTime());
             ButtonController.Instance.UnBlockButtons();
             machineHelper.StartProduce();
             buttonExit.onClick.Invoke();
