@@ -38,4 +38,5 @@ public class MachineDeviceHelper : MachineOld
     {
         return spriteDetail;
     }
+  
 }

@@ -263,8 +263,8 @@ public class ManagerMachineDeviceHelper : PanelOld
     public override void stopTimer()
     {
         activateTimer();
-        //timerInPrigress = moveObj.GetComponentInChildren<Timer>();
-        //timerInPrigress.stopTimer();
+        timerInPrigress = moveObj.GetComponentInChildren<Timer>();
+        //timerInPrigress.StopTimer();
         machineHelper.OnLoadMachine();
         buttonExit.onClick.Invoke();
         UpDateDataBase();                                                                    
