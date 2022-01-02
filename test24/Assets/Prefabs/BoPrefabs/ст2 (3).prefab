@@ -1466,6 +1466,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972ccdc829129294ca9ec42a0b1a2310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageDetail: {fileID: 0}
+  textAmountDetails: {fileID: 1876831248}
+  test: {fileID: 0}
   price: 0
   spriteDetail: {fileID: 0}
   isProduce: 0
@@ -1479,9 +1482,7 @@ MonoBehaviour:
   levelMinTimeProduceDetail: 0
   x: 
   y: 
-  progressBarText: {fileID: 1314815321}
-  imageDetail: {fileID: 80602879}
-  textAmountDetails: {fileID: 1876831248}
+  can: {fileID: 0}
   id: 0
   supper_idJSON: 0
   idDetail: 0

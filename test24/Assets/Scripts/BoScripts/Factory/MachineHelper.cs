@@ -51,4 +51,5 @@ public class MachineHelper : MachineOld
         return detailsToModern[selectedDetail].GetComponent<ItemElement>().GetId();
     }
    
+
 }

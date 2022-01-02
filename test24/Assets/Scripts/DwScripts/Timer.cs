@@ -4,10 +4,8 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    private Slider progressBarMachine;
     [SerializeField] private Text progressBarText;
-    [SerializeField] private Image imageDetail;
-    [SerializeField] private Text textAmountDetails;
+    private Slider progressBarMachine;
     private MachineOld machineHelper;
     private float productionTime;
     private bool isTimerProgress;
@@ -26,27 +24,22 @@ public class Timer : MonoBehaviour
             if (time <= 0)
             {   
                 isTimerProgress = false;
-                machineHelper.isProduce = false;
-                imageDetail.sprite = machineHelper.GetImageDetail();
-                imageDetail.gameObject.SetActive(true);
-                ShowAmountDetails();
-                machineHelper.startTimeDetailProduce = "";
-                //machineHelper.FinishProduceDetail();
-                gameObject.SetActive(false);
-               
+                machineHelper.FinishProduceDetail();
+                progressBarMachine.gameObject.SetActive(false);
             }
-            
-            time -= Time.deltaTime;
-            float inverseTime = productionTime - time;
-
-            int minutes = Mathf.FloorToInt(time / 60);
-            int seconds = Mathf.FloorToInt(time - minutes * 60);
-            
-            string textTime = string.Format("{0:0}:{1:00}", minutes, seconds);
-            
-            progressBarText.text = textTime;
-            progressBarMachine.value = inverseTime;
+            RunTimer();
         }
+    }
+
+    private void RunTimer()
+    {
+        time -= Time.deltaTime;
+        float inverseTime = productionTime - time;
+        int minutes = Mathf.FloorToInt(time / 60);
+        int seconds = Mathf.FloorToInt(time - minutes * 60);
+        string textTime = string.Format("{0:0}:{1:00}", minutes, seconds);
+        progressBarText.text = textTime;
+        progressBarMachine.value = inverseTime;
     }
 
     public void LoadTimer()
@@ -67,11 +60,6 @@ public class Timer : MonoBehaviour
         isTimerProgress = true;
         progressBarMachine.maxValue = productionTime;
         time = productionTime;
-    }
-
-    public void ShowAmountDetails()
-    {
-        textAmountDetails.text = machineHelper.amountDetails.ToString();
     }
 
     public bool IsTimerProgress()
