@@ -94,10 +94,6 @@ public class OrderListController : MonoBehaviour
         Load();
     }
 
-    void Update()
-    {
-
-    }
     private void Save()
     {
         dataBase.SaveOrderList(rating, 2);
@@ -266,7 +262,7 @@ public class OrderListController : MonoBehaviour
         Save();
     }
 
-    public void GenerateIncome()
+    private void GenerateIncome()
     {
         for (int i = 0; i < orders.Count; i++)
         {
@@ -286,128 +282,156 @@ public class OrderListController : MonoBehaviour
             }
             orders[i].incomeOrder = income + (income * percentIncome) / 100;
         }
-    }
+    }    
 
-    public void GenerateOrders()
+    private List<int> FillListElements()
     {
-        //Сбор с MachineParent данных о станках и формирование
-        //на этой основе заказов Orders
-        List<int> arrayElements = new List<int>();
-        List<int> arrayDevices = new List<int>();
+        List<int> listElements = new List<int>();
         foreach (Transform machine in machineParent.transform)
         {
             if (machine.GetComponent<MachineHelper>() != null)
             {
                 foreach (int idElement in machine.GetComponent<MachineHelper>().idDetailsToModern)
                 {
-                    arrayElements.Add(idElement);
+                    listElements.Add(idElement);
                 }
-            }
-            else if (machine.GetComponent<MachineDeviceHelper>() != null)
-            {
-                arrayDevices.Add(machine.GetComponent<MachineDeviceHelper>().idDevice);
             }
         }
 
         //Добавляет к генерации открытые в науке элементы
         foreach (int idElementDB in dataBase.listIdElementsUpGrade)
         {
-            arrayElements.Add(idElementDB);
+            listElements.Add(idElementDB);
         }
+        return listElements;
+    }
 
-        //Условие если нет ни одного станка
-        if (arrayElements.Count == 0 && arrayDevices.Count == 0)
+    private List<int> FillListDevices()
+    {
+        List<int> listDevices = new List<int>();
+        foreach (Transform machine in machineParent.transform)
         {
-            countOrders = 0;
+            if (machine.GetComponent<MachineDeviceHelper>() != null)
+            {
+                listDevices.Add(machine.GetComponent<MachineDeviceHelper>().idDevice);
+            }
         }
+        return listDevices;
+    }
 
+    private int GenerateRandomType(List<int> listElements, List<int> listDevices)
+    {
+        int typeDevRange = 2;
+        int typeDev;
+        if (listElements.Count > 0 && listDevices.Count == 0)
+        {
+            typeDev = 0;
+        }
+        else if (listElements.Count == 0 && listDevices.Count > 0)
+        {
+            typeDev = 1;
+        }
+        else
+        {
+            typeDev = UnityEngine.Random.Range(0, typeDevRange);
+        }
+        return typeDev;
+    }
+
+    private int GenerateRandomAmount()
+    {
+        int amountDev = UnityEngine.Random.Range(2, 10);
+        amountDev = amountDev + ((amountDev * rating) / 100);
+        return amountDev;
+    }
+
+    private int GenerateProductID(List<int> listElements, List<int> listDevices, int typeProduct)
+    {
+        int productID = 0;
+        if (typeProduct == 0)
+        {
+            int idListElements = UnityEngine.Random.Range(0, listElements.Count);
+            for (int n = 0; n < dataBase.elementsScripts.Count; n++)
+            {
+                if (dataBase.elementsScripts[n].GetId() == listElements[idListElements])
+                {
+                    productID = n;
+                }
+            }
+        }
+        else
+        {
+            int idListDevices = UnityEngine.Random.Range(0, listDevices.Count);
+            for (int m = 0; m < dataBase.devicesScripts.Count; m++)
+            {
+                if (dataBase.devicesScripts[m].GetId() == listDevices[idListDevices])
+                {
+                    productID = m;
+                }
+            }
+        }
+        return productID;
+    }
+
+    private void FillOrders()
+    {
+        List<int> listElements = new List<int>(FillListElements());
+        List<int> listDevices = new List<int>(FillListDevices());
         orders = new List<Order>();
-
         for (int i = 0; i < countOrders; i++)
-        {            
+        {
             orders.Add(new Order());
 
             orders[i].nameCompany = nameCompany[UnityEngine.Random.Range(0, nameCompany.Length)];
             orders[i].countLines = UnityEngine.Random.Range(minLinesOrders, maxLinesOrders);
             orders[i].timeForOrder = UnityEngine.Random.Range(1, 7) * 3600;
 
-            for (int j = 0; j < orders[i].countLines; j++)
-            {
-                int typeDevRange = 1;
-                int typeDev;
-
-                if(arrayElements.Count > 0 && arrayDevices.Count == 0)
-                {
-                    typeDev = 0;
-                }
-                else if (arrayElements.Count == 0 && arrayDevices.Count > 0)
-                {
-                    typeDev = 1;
-                }
-                else
-                {
-                    typeDev = UnityEngine.Random.Range(0, typeDevRange);
-                }
-
-                int idDev = 0;
-                int amountDev = UnityEngine.Random.Range(2, 10);
-
-                //Коррекция генерации количества в зависимости от Рейтинга
-                amountDev = amountDev + ((amountDev * rating) / 100);
-
-                if (typeDev == 0)
-                {
-                    int idArrayElements = UnityEngine.Random.Range(0, arrayElements.Count);
-                    for (int n = 0; n < dataBase.elementsScripts.Count; n++)
-                    {
-                        if(dataBase.elementsScripts[n].GetId() == arrayElements[idArrayElements])
-                        {
-                            idDev = n;
-                        }
-                    }
-                } else
-                {
-                    int idArrayDevices = UnityEngine.Random.Range(0, arrayDevices.Count);
-                    for (int m = 0; m < dataBase.devicesScripts.Count; m++)
-                    {
-                        if (dataBase.devicesScripts[m].GetId() == arrayDevices[idArrayDevices])
-                        {
-                            idDev = m;
-                        }
-                    }
-                }
-                
-                if(orders[i].typeDevice.Count > 0)
-                {
-                    bool isNew = true;
-                    for (int k = 0; k < orders[i].typeDevice.Count; k++)
-                    {
-                        if (orders[i].typeDevice[k] == typeDev && orders[i].idDevice[k] == idDev)
-                        {
-                            orders[i].amountDevice[k] += amountDev;
-                            isNew = false;
-                        }
-                    }
-                    if (isNew == true)
-                    {
-                        orders[i].typeDevice.Add(typeDev);
-                        orders[i].idDevice.Add(idDev);
-                        orders[i].amountDevice.Add(amountDev);
-                    }
-                }
-
-                if(j == 0)
-                {
-                    orders[i].typeDevice.Add(typeDev);
-                    orders[i].idDevice.Add(idDev);
-                    orders[i].amountDevice.Add(amountDev);
-                }
-            }
-            
+            FillLinesWithoutRepetition(listElements, listDevices, i);
         }
+    }
 
+    private void FillLinesWithoutRepetition(List<int> listElements, List<int> listDevices, int i)
+    {
+        for (int j = 0; j < orders[i].countLines; j++)
+        {
+            int productType = GenerateRandomType(listElements, listDevices);
+            int productID = GenerateProductID(listElements, listDevices, productType);
+            int amountDev = GenerateRandomAmount();
+            if (j == 0)
+            {
+                FillOrderLines(productType, productID, amountDev, i);
+                continue;
+            }
+            if (orders[i].typeDevice.Count > 0)
+            {
+                bool isNew = true;
+                for (int k = 0; k < orders[i].typeDevice.Count; k++)
+                {
+                    if (orders[i].typeDevice[k] == productType && orders[i].idDevice[k] == productID)
+                    {
+                        orders[i].amountDevice[k] += amountDev;
+                        isNew = false;
+                    }
+                }
+                if (isNew == true)
+                {
+                    FillOrderLines(productType, productID, amountDev, i);
+                }
+            }            
+        }       
+    }
+
+    private void FillOrderLines(int productType, int productID, int amountDev, int i)
+    {
+        orders[i].typeDevice.Add(productType);
+        orders[i].idDevice.Add(productID);
+        orders[i].amountDevice.Add(amountDev);
+    }
+    
+    public void GenerateOrders()
+    {
+        FillOrders();
         GenerateIncome();
-
         Save();
     }
 }

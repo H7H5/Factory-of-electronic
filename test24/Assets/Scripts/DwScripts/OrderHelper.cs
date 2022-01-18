@@ -89,14 +89,14 @@ public class OrderHelper : MonoBehaviour
     public void TimeTickingClock ()
     {
         TimeSpan diffTime = DateTime.UtcNow - DateTime.Parse(timeStartOrder);
-        int diffInSeconds = diffTime.Hours * 3600 + diffTime.Minutes * 60 + diffTime.Seconds;
+        int diffInSeconds = diffTime.Days * 86400 + diffTime.Hours * 3600 + diffTime.Minutes * 60 + diffTime.Seconds;
         timeLeft = timeForOrder - diffInSeconds;
 
         int hours = timeLeft / 3600;
         int minutes = (timeLeft - (hours * 3600)) / 60;
         int seconds = timeLeft - (hours * 3600) - (minutes * 60);
 
-        if (timeLeft < 0)
+        if (timeLeft <= 0)
         {
             hours = 0;
             minutes = 0;
