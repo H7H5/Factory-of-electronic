@@ -373,8 +373,10 @@ public class OrderListController : MonoBehaviour
         return productID;
     }
 
-    private void FillOrders(List<int> listElements, List<int> listDevices)
+    private void FillOrders()
     {
+        List<int> listElements = new List<int>(FillListElements());
+        List<int> listDevices = new List<int>(FillListDevices());
         orders = new List<Order>();
         for (int i = 0; i < countOrders; i++)
         {
@@ -428,18 +430,7 @@ public class OrderListController : MonoBehaviour
     
     public void GenerateOrders()
     {
-        //Сбор с MachineParent данных о станках и формирование
-        //на этой основе заказов Orders
-        List<int> listElements = new List<int>(FillListElements());
-        List<int> listDevices = new List<int>(FillListDevices());
-
-        //Условие если нет ни одного станка и не открыта ни одна технология
-        if (listElements.Count == 0 && listDevices.Count == 0)
-        {
-            countOrders = 0;
-        }
-
-        FillOrders(listElements, listDevices);
+        FillOrders();
         GenerateIncome();
         Save();
     }
