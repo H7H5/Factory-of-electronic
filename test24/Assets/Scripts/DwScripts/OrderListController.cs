@@ -297,8 +297,6 @@ public class OrderListController : MonoBehaviour
                 }
             }
         }
-
-        //Добавляет к генерации открытые в науке элементы
         foreach (int idElementDB in dataBase.listIdElementsUpGrade)
         {
             listElements.Add(idElementDB);
