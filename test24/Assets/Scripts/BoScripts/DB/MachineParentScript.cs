@@ -65,13 +65,13 @@ public class MachineParentScript : MonoBehaviour
     {
         GameObject machine1 = Instantiate(machine, transform.position, gameObject.transform.rotation);
         machine1.transform.SetParent(transform);
-        machine1.GetComponent<MachineHelper>().Load(data);
+        machine1.GetComponent<MachineOld>().Load(data);
     }
     public void CreateOneMachineDevice(string data)
     {
         GameObject machine1 = Instantiate(machineDevice, transform.position, gameObject.transform.rotation);
         machine1.transform.SetParent(transform);
-        machine1.GetComponent<MachineDeviceHelper>().Load(data);
+        machine1.GetComponent<MachineOld>().Load(data);
     }
     public void DeleteOneMachineByIdJSON(int id)
     {

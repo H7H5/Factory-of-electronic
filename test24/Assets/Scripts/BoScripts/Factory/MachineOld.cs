@@ -2,9 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MachineOld : MonoBehaviour
 {
+    
+    public Image imageDetail;
+    public Text textAmountDetails;
+    public Text test;
+
     public int price = 0;
     protected GameObject detailProduced;
     protected GameObject timerObject;
@@ -22,11 +28,14 @@ public class MachineOld : MonoBehaviour
     public DateTime startTimeProduceDetail; //Время Начала производства детали
     public string x;
     public string y;
+    public GameObject can;
+
     private void Awake()
     {
         detailProduced = gameObject.transform.GetChild(6).gameObject.transform.GetChild(1).gameObject;
         timerObject = gameObject.transform.GetChild(6).gameObject.transform.GetChild(0).gameObject;
         timer = timerObject.GetComponent<Timer>();
+        FindImageDetail();
     }
     public virtual void CollectProduct() {
 
@@ -42,7 +51,7 @@ public class MachineOld : MonoBehaviour
         return detailProduced.activeInHierarchy ? true : false;
     }
     public void ShowTimerObject() {
-        if (timer.isTimerProgress == true)
+        if (timer.IsTimerProgress())
         {
             timerObject.SetActive(true);
         }
@@ -62,7 +71,7 @@ public class MachineOld : MonoBehaviour
     {
         GameObject timeBar = transform.GetChild(6).gameObject.transform.GetChild(0).gameObject;
         Timer timer = timeBar.GetComponent<Timer>();
-        timer.loadTimer();
+        timer.LoadTimer();
     }
     public void StartProduce()
     {
@@ -87,6 +96,11 @@ public class MachineOld : MonoBehaviour
         x = positionMachine.x.ToString();
         y = positionMachine.y.ToString();
     }
+    private void FindImageDetail()
+    {
+        imageDetail = gameObject.transform.GetChild(6).GetChild(1).GetComponent<Image>();
+        textAmountDetails = imageDetail.transform.GetChild(0).GetComponent<Text>();
+    }
     public void Load(string data)
     {
         JsonUtility.FromJsonOverwrite(data, this);
@@ -99,5 +113,15 @@ public class MachineOld : MonoBehaviour
         {
             OnLoadMachine();
         }
+        FindImageDetail();
     }
+    public virtual void FinishProduceDetail()
+    {
+        isProduce = false;
+        imageDetail.sprite = GetImageDetail();
+        imageDetail.gameObject.SetActive(true);
+        textAmountDetails.text = amountDetails.ToString();
+        startTimeDetailProduce = "";
+    }
+
 }

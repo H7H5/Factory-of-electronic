@@ -11,7 +11,6 @@ public class MachineHelper : MachineOld
     public ItemElement itemElementDetail;
     public int[] idDetailsToModern;
     public bool[] boolDetailsToModern;
-    public int levelDetailsToModern;
     public int selectNumberElement = 0;
 
     void Start()
@@ -52,4 +51,5 @@ public class MachineHelper : MachineOld
         return detailsToModern[selectedDetail].GetComponent<ItemElement>().GetId();
     }
    
+
 }
