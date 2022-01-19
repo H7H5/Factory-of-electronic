@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8e1aa5583e7ec43a264d1acbbfa2ae, type: 3}
+  m_Name: electric_plug
+  m_EditorClassIdentifier: 
+  name: electric_plug
+  description: "\u044D\u043B\u0435\u043A\u0442\u0440\u0438\u0447\u0435\u0441\u043A\u0430\u044F
+    \u0432\u0438\u043B\u043A\u0430"
+  sprite: {fileID: 21300000, guid: 9c0f987aa05ce4340a78ffd5cfeda812, type: 3}
+  spriteForShop: {fileID: 21300000, guid: 2b7d8a3c643c35246921e49b79f541c5, type: 3}
+  id: 9
+  needScience: 654
+  price: 434
+  costMachine: 980
+  timeProduce: 7

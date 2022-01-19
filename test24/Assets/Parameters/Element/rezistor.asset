@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8e1aa5583e7ec43a264d1acbbfa2ae, type: 3}
+  m_Name: rezistor
+  m_EditorClassIdentifier: 
+  name: rezistor
+  description: "\u043E\u0447\u0435\u043D\u044C \u0445\u043E\u0440\u043E\u0448\u0438\u0439
+    \u0440\u0435\u0437\u0438\u0441\u0442\u043E\u0440"
+  sprite: {fileID: 21300000, guid: f85bb0731ee4af4449d69e92df8f9d3a, type: 3}
+  spriteForShop: {fileID: 21300000, guid: 7c258b2e9f009614799d5f96c0eff547, type: 3}
+  id: 1
+  needScience: 222
+  price: 56
+  costMachine: 2000
+  timeProduce: 40

@@ -186,8 +186,6 @@ public class OrderListController : MonoBehaviour
         {
             checkPointTime = DateTime.UtcNow.ToString();
 
-            GenerateCountOrders();
-
             GenerateOrders();
 
             orderListHelper.OpenOrderList();
@@ -214,7 +212,6 @@ public class OrderListController : MonoBehaviour
 
     public void Reclame()
     {
-        GenerateCountOrders();
         GenerateOrders();
         SetOpenOrderListColor();
 
@@ -428,6 +425,7 @@ public class OrderListController : MonoBehaviour
     
     public void GenerateOrders()
     {
+        GenerateCountOrders();
         FillOrders();
         GenerateIncome();
         Save();
