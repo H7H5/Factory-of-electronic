@@ -14,6 +14,7 @@ public class DBase : MonoBehaviour
     public List<Sprite> spriteMachinesForDevice = new List<Sprite>();
     public List<ItemElement> elementsScripts = new List<ItemElement>();
     [SerializeField] private List<GameObject> elementsPrefabs = new List<GameObject>();
+    public Element[] elementsParameters;
     public List<ItemDevice> devicesScripts = new List<ItemDevice>();
     [SerializeField] private List<GameObject> devicesPrefabs = new List<GameObject>();
     private unitySQLite unitySQLite;
@@ -250,7 +251,8 @@ public class DBase : MonoBehaviour
     {
         for (int i = 0; i < elementsScripts.Count; i++)
         {
-            elementsScripts[i].SetCount(unitySQLite.Reader_element(elementsScripts[i].GetId()));  
+            elementsScripts[i].SetCount(unitySQLite.Reader_element(elementsScripts[i].GetId()));
+            elementsParameters[i].SetCount(unitySQLite.Reader_element(elementsParameters[i].id));
         }
     }
     private void LoadDevices()

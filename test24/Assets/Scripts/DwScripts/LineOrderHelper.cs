@@ -33,8 +33,10 @@ public class LineOrderHelper : MonoBehaviour
     {
         if (typeDevice == 0)
         {
-            imageDevice.sprite = dataBase.elementsScripts[idDevice].imgStock;
-            textAmountLine.text = dataBase.elementsScripts[idDevice].GetCount() + "/" + amountDevice.ToString();
+            //imageDevice.sprite = dataBase.elementsScripts[idDevice].imgStock;
+            imageDevice.sprite = dataBase.elementsParameters[idDevice].sprite;
+            //textAmountLine.text = dataBase.elementsScripts[idDevice].GetCount() + "/" + amountDevice.ToString();
+            textAmountLine.text = dataBase.elementsParameters[idDevice].GetCount() + "/" + amountDevice.ToString();
             textAmountLine.GetComponent<Text>().alignment = TextAnchor.MiddleRight;
             if (dataBase.elementsScripts[idDevice].GetCount() >= amountDevice)
             {
