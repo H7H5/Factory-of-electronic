@@ -14,6 +14,7 @@ public class Element : ScriptableObject
     public int price;
     public int costMachine;
     public int timeProduce;
+    public int sellPriceScience;
     private int count = 0;
 
     public void SetCount(int c)

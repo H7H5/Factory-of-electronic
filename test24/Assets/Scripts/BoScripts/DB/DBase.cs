@@ -61,8 +61,30 @@ public class DBase : MonoBehaviour
             }
         } 
     }
+
+    public int IdParameters(int idElement)
+    {
+        int toReturn = 1;
+        for (int i = 0; i < elementsParameters.Length; i++)
+        {
+            if (elementsParameters[i].id == idElement)
+            {
+                toReturn = i;
+            }
+        }
+        return toReturn;
+    }
+
     public void sell(ItemElement itemElement)
     {
+        foreach (var elememt in elementsParameters)
+        {
+            if (elememt.id == itemElement.GetId())
+            {
+                Purse.Instance.SetSciense(Purse.Instance.science += elememt.sellPriceScience);
+            }
+        }
+
         int count = elementsScripts.Count;
         for (int i = 0; i < count; i++)
         {
