@@ -22,3 +22,4 @@ MonoBehaviour:
   price: 56
   costMachine: 2000
   timeProduce: 40
+  sellPriceScience: 1
