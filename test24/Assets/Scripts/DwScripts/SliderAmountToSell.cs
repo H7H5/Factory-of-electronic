@@ -6,28 +6,42 @@ using UnityEngine.UI;
 public class SliderAmountToSell : MonoBehaviour
 {
     private Slider sliderAmount;
-    public Text textValue;
+    [SerializeField] private Text textAmount;
 
     private void Awake()
     {
         sliderAmount = GetComponent<Slider>();
-        textValue.text = sliderAmount.value.ToString();
     }
 
     public void ShowSliderValue()
     {
-        textValue.text = sliderAmount.value.ToString();
+        textAmount.text = sliderAmount.value.ToString();       
+    }
+
+    public void ShowMoneyChanges()
+    {
+        MoneyChangesDisplay.Instance.ShowMoneyChanges((int)sliderAmount.value);
     }
 
     public void ChangeSelect(int maxValue)
     {
-        sliderAmount.minValue = 1;
+        sliderAmount.minValue = 0;
         sliderAmount.maxValue = maxValue;
-        sliderAmount.value = 1;
+        sliderAmount.value = 0;
     }
 
     public int GetSliderValue()
     {
         return (int)sliderAmount.value;
+    }
+
+    public void SliderOneStepLeft()
+    {
+        sliderAmount.value -= 1;
+    }
+
+    public void SliderOneStepRight()
+    {
+        sliderAmount.value += 1;
     }
 }

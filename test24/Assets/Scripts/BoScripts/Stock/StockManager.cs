@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class StockManager : MonoBehaviour
 {
@@ -53,7 +54,7 @@ public class StockManager : MonoBehaviour
         image.sprite = itemElement.imgStock;
         text.text = itemElement.GetCount().ToString();
         description.SetElement(itemElement);
-
+      
         int idElementsParameters = DBase.Instance.IdParameters(itemElement.GetId());
         textPriceScience.text = DBase.Instance.elementsParameters[idElementsParameters].sellPriceScience.ToString();
         textPriceMoney.text = DBase.Instance.elementsParameters[idElementsParameters].price.ToString();
