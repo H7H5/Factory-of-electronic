@@ -21,4 +21,10 @@ public class DescriptionHelper : MonoBehaviour
         text.text = device.name;
         text2.text = device.descriptionDevice;
     }
+
+    public void SetDeviceParameters(Device device)
+    {
+        text.text = device.name;
+        text2.text = device.description;
+    }
 }

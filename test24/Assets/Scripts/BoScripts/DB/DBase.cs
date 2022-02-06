@@ -15,6 +15,7 @@ public class DBase : MonoBehaviour
     public List<ItemElement> elementsScripts = new List<ItemElement>();
     [SerializeField] private List<GameObject> elementsPrefabs = new List<GameObject>();
     public Element[] elementsParameters;
+    public Device[] devicesParameters;
     public List<ItemDevice> devicesScripts = new List<ItemDevice>();
     [SerializeField] private List<GameObject> devicesPrefabs = new List<GameObject>();
     private unitySQLite unitySQLite;
@@ -62,12 +63,25 @@ public class DBase : MonoBehaviour
         } 
     }
 
-    public int IdParameters(int idElement)
+    public int IdElementParameters(int idElement)
     {
         int toReturn = 1;
         for (int i = 0; i < elementsParameters.Length; i++)
         {
             if (elementsParameters[i].id == idElement)
+            {
+                toReturn = i;
+            }
+        }
+        return toReturn;
+    }
+
+    public int IdDeviceParameters(int idDevice)
+    {
+        int toReturn = 1;
+        for (int i = 0; i < devicesParameters.Length; i++)
+        {
+            if (devicesParameters[i].id == idDevice)
             {
                 toReturn = i;
             }
@@ -228,6 +242,8 @@ public class DBase : MonoBehaviour
             }
         }
     }
+
+    //Old Prefab system
     public ItemDevice getDeviceElement(int id)
     {
         ItemDevice tempElement;
@@ -240,6 +256,22 @@ public class DBase : MonoBehaviour
                 SaveOneDevicet(i);
                 return tempElement;
                 
+            }
+        }
+        return null;
+    }
+
+    //New Scriptable Object system
+    public Device GetDevice(int id)
+    {
+        Device device;
+        for (int i = 0; i < devicesParameters.Length; i++)
+        {
+            if (devicesParameters[i].id == id)
+            {
+                device = devicesParameters[i];
+                //SaveOneDevicet(i);
+                return device;
             }
         }
         return null;
@@ -271,17 +303,28 @@ public class DBase : MonoBehaviour
     }
     private void LoadElements()
     {
+        //Old Prefab system
         for (int i = 0; i < elementsScripts.Count; i++)
         {
             elementsScripts[i].SetCount(unitySQLite.Reader_element(elementsScripts[i].GetId()));
+        }
+        //New Scriptable Object system
+        for (int i = 0; i < elementsParameters.Length; i++)
+        {
             elementsParameters[i].SetCount(unitySQLite.Reader_element(elementsParameters[i].id));
         }
     }
     private void LoadDevices()
     {
+        //Old Prefab system
         for (int i = 0; i < devicesScripts.Count; i++)
         {
-            devicesScripts[i].SetCount(unitySQLite.Reader_Device(devicesScripts[i].GetId())); 
+            devicesScripts[i].SetCount(unitySQLite.Reader_Device(devicesScripts[i].GetId()));
+        }
+        //New Scriptable Object system
+        for (int i = 0; i < devicesParameters.Length; i++)
+        {
+            devicesParameters[i].SetCount(unitySQLite.Reader_Device(devicesParameters[i].id));
         }
     }
     public int Reader_partDevice(int id)
