@@ -22,6 +22,7 @@ public class Stock : MonoBehaviour
     void Start()
     {
         SwitchBookMark(0);
+        StockManager.Instance.UpdateManagerOfElement();
     }
     public void NewUpdate()
     {
