@@ -78,10 +78,7 @@ public class StockManager : MonoBehaviour
         {
             idDevice = 1;
         }
-
-        Debug.Log(idDevice);
         device = DBase.Instance.GetDevice(idDevice);
-        Debug.Log(device);
         image.sprite = device.sprite;
         text.text = device.GetCount().ToString();
         description.SetDeviceParameters(device);
