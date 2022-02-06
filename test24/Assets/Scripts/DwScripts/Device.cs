@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Element", menuName = "Element")]
-public class Element : ScriptableObject
+[CreateAssetMenu(fileName = "New Device", menuName = "Device")]
+public class Device : ScriptableObject
 {
     public new string name;
     public string description;
@@ -14,8 +14,6 @@ public class Element : ScriptableObject
     public int price;
     public int sellPrice;
     public int sellPriceScience;
-    public int costMachine;
-    public int timeProduce;
 
     private int count = 0;
 

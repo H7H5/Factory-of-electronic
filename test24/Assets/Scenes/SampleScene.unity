@@ -536,6 +536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemElement: {fileID: 0}
   itemDevice: {fileID: 0}
+  idDevice: 0
   slider: {fileID: 480114364}
   image: {fileID: 338196348}
   text: {fileID: 1364156650}
@@ -694,7 +695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &29012842
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8761,6 +8762,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 64fc365038fa65d44b44c7cc7184b065, type: 2}
   - {fileID: 11400000, guid: c063a524ede89564994af8ca09cc5881, type: 2}
   - {fileID: 11400000, guid: fcf658cc37f49fb4ead034127ca8df1f, type: 2}
+  devicesParameters:
+  - {fileID: 11400000, guid: f39839b5942e7ac4a9419f1d2bc1afa7, type: 2}
+  - {fileID: 11400000, guid: 32b925166564c1141a07f3e0f786fb76, type: 2}
+  - {fileID: 11400000, guid: a5afddb4f5d024b47b4eba4f5d46a9c9, type: 2}
+  - {fileID: 11400000, guid: 2302686b7329f7a4290a243f520edeaa, type: 2}
+  - {fileID: 11400000, guid: 42b5ed16a1a0e7b47b0f8c918930472f, type: 2}
+  - {fileID: 11400000, guid: 727a45ae635496a4d9ba459ef93451c3, type: 2}
   devicesScripts:
   - {fileID: 26930491105891263, guid: 951135d4fbb1124419e552143bfe08a7, type: 3}
   - {fileID: -6270716028867474464, guid: 0cf3eaf101585dc42a79079e9d05487c, type: 3}
@@ -48240,39 +48248,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420030}
-        m_MethodName: stopMove
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: activ
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: setActivMachine
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1138270694}
         m_MethodName: SetActive
         m_Mode: 6
@@ -48295,8 +48270,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 22091432}
-        m_MethodName: UpdateManagerOfElement
+      - m_Target: {fileID: 1188363926}
+        m_MethodName: BlockButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -48306,8 +48281,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1188363926}
-        m_MethodName: BlockButtons
+      - m_Target: {fileID: 22091432}
+        m_MethodName: UpdateManagerOfElement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -58650,7 +58625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40.817, y: -17.5}
+  m_AnchoredPosition: {x: 40.817, y: -46}
   m_SizeDelta: {x: 296.9961, y: 97.26393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1364156649
@@ -98766,7 +98741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2050779496
 RectTransform:
   m_ObjectHideFlags: 0
