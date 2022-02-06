@@ -13,11 +13,7 @@ public class CellStockHelper : MonoBehaviour, IPointerClickHandler
             StockManager.Instance.UpdateManagerOfElement();
         }else
         {
-            //StockManager.Instance.itemDevice = itemDevice;
-
-            //New Scriptable Object system
-            StockManager.Instance.idDevice = itemDevice.GetComponent<ItemDevice>().GetId();
-
+            StockManager.Instance.itemDevice = itemDevice;
             StockManager.Instance.UpdateManagerOfDevice();
         }
     }

@@ -12,11 +12,9 @@ public class Element : ScriptableObject
     public int id;
     public int needScience;
     public int price;
-    public int sellPrice;
-    public int sellPriceScience;
     public int costMachine;
     public int timeProduce;
-
+    public int sellPriceScience;
     private int count = 0;
 
     public void SetCount(int c)
