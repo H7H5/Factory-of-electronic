@@ -62,7 +62,8 @@ public class Stock : MonoBehaviour
                 GameObject panel = imgContainer.transform.Find("Panel").gameObject;
                 panel.GetComponent<Image>().sprite = DBase.Instance.devicesScripts[i].imgStock;
                 GameObject textCount = panel.transform.Find("Text").gameObject;
-                textCount.GetComponent<Text>().text = DBase.Instance.devicesScripts[i].GetCount().ToString();
+                //textCount.GetComponent<Text>().text = DBase.Instance.devicesScripts[i].GetCount().ToString();
+                textCount.GetComponent<Text>().text = DBase.Instance.devicesParameters[i].GetCount().ToString();
             }
         }
     }

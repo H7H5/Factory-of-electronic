@@ -20,7 +20,12 @@ public class SliderAmountToSell : MonoBehaviour
 
     public void ShowMoneyChanges()
     {
-        MoneyChangesDisplay.Instance.ShowMoneyChanges((int)sliderAmount.value);
+        StockManager.Instance.ShowMoneyChanges((int)sliderAmount.value);
+    }
+
+    public void ShowScienceChanges()
+    {
+        StockManager.Instance.ShowScienceChanges((int)sliderAmount.value);
     }
 
     public void ChangeSelect(int maxValue)
