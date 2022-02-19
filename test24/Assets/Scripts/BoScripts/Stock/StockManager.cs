@@ -10,6 +10,7 @@ public class StockManager : MonoBehaviour
 
     public int idDevice;
     private Device device;
+    private Element element;
 
     public SliderAmountToSell slider;
     [SerializeField] private Image image;
@@ -31,7 +32,7 @@ public class StockManager : MonoBehaviour
     {
         if (typeItem)
         {
-            DBase.Instance.sell(itemDevice);
+            DBase.Instance.sell(device);
             UpdateManagerOfDevice();
         }else
         {
@@ -39,6 +40,34 @@ public class StockManager : MonoBehaviour
             UpdateManagerOfElement(); 
         }
         Stock.Instance.NewUpdate();
+    }
+
+    public void ShowMoneyChanges(int sliderAmount)
+    {
+        int sellPrice;
+        if (typeItem)
+        {
+            sellPrice = device.sellPrice;
+        }
+        else
+        {
+            sellPrice = element.sellPrice;
+        }
+        MoneyChangesDisplay.Instance.ShowMoneyChanges(sliderAmount * sellPrice);
+    }
+
+    public void ShowScienceChanges(int sliderAmount)
+    {
+        int sellPriceScience;
+        if (typeItem)
+        {
+            sellPriceScience = device.sellPriceScience;
+        }
+        else
+        {
+            sellPriceScience = element.sellPriceScience;
+        }
+        ScienceChangesDisplay.Instance.ShowScienceChanges(sliderAmount * sellPriceScience);
     }
 
     public void SellByAmount()
@@ -60,6 +89,7 @@ public class StockManager : MonoBehaviour
         description.SetElement(itemElement);
       
         int idElementsParameters = DBase.Instance.IdElementParameters(itemElement.GetId());
+        element = DBase.Instance.elementsParameters[idElementsParameters];
         textPriceScience.text = DBase.Instance.elementsParameters[idElementsParameters].sellPriceScience.ToString();
         textPriceMoney.text = DBase.Instance.elementsParameters[idElementsParameters].sellPrice.ToString();
         slider.ChangeSelect(itemElement.GetCount());

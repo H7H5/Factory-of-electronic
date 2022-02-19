@@ -37,6 +37,12 @@ public class MoneyChangesDisplay : MonoBehaviour
         else
         {
             ActivateMoneyChanges();
+            string mathematicalSign = "";
+            if (money > 0)
+            {
+                mathematicalSign = "+";
+            }
+            moneyChangeValue.text = mathematicalSign + money.ToString();
         }
     }
 }

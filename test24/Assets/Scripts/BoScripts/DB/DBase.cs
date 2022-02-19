@@ -109,14 +109,24 @@ public class DBase : MonoBehaviour
             }
         }
     }
-    public void sell(ItemDevice itemDevice)
+    public void sell(Device device)
     {
-        int count = devicesScripts.Count;
-        for (int i = 0; i < count; i++)
+        //int count = devicesScripts.Count;
+        //for (int i = 0; i < count; i++)
+        //{
+        //    if (devicesScripts[i].GetId() == device.id)
+        //    {
+        //        devicesScripts[i].Sell();
+        //        SaveOneDevicet(i);
+        //    }
+        //}
+        for (int i = 0; i < devicesParameters.Length; i++)
         {
-            if (devicesScripts[i].GetId() == itemDevice.GetId())
+            if (device.id == devicesParameters[i].id)
             {
-                devicesScripts[i].Sell();
+                Purse.Instance.SetMoney(Purse.Instance.money += device.sellPrice);
+                Purse.Instance.SetSciense(Purse.Instance.science += device.sellPriceScience);
+                devicesParameters[i].SetCount(devicesParameters[i].GetCount() - 1);
                 SaveOneDevicet(i);
             }
         }
@@ -277,6 +287,22 @@ public class DBase : MonoBehaviour
         return null;
     }
 
+    //New Scriptable Object system
+    public Element GetElement(int id)
+    {
+        Element element;
+        for (int i = 0; i < elementsParameters.Length; i++)
+        {
+            if (elementsParameters[i].id == id)
+            {
+                element = elementsParameters[i];
+                //SaveOneElement(i);
+                return element;
+            }
+        }
+        return null;
+    }
+
     ///
     public void SaveOneElement(int number)
     {
@@ -284,7 +310,8 @@ public class DBase : MonoBehaviour
     }
     public void SaveOneDevicet(int number)
     {
-        unitySQLite.UpdateDevice(devicesScripts[number].GetId(), devicesScripts[number].GetCount(), devicesScripts[number].name);
+        //unitySQLite.UpdateDevice(devicesScripts[number].GetId(), devicesScripts[number].GetCount(), devicesScripts[number].name);
+        unitySQLite.UpdateDevice(devicesParameters[number].id, devicesParameters[number].GetCount(), devicesParameters[number].name);
     }
     public void SaveMoney(int money)
     {

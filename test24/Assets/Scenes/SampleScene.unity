@@ -8763,12 +8763,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c063a524ede89564994af8ca09cc5881, type: 2}
   - {fileID: 11400000, guid: fcf658cc37f49fb4ead034127ca8df1f, type: 2}
   devicesParameters:
-  - {fileID: 11400000, guid: f39839b5942e7ac4a9419f1d2bc1afa7, type: 2}
-  - {fileID: 11400000, guid: 32b925166564c1141a07f3e0f786fb76, type: 2}
   - {fileID: 11400000, guid: a5afddb4f5d024b47b4eba4f5d46a9c9, type: 2}
-  - {fileID: 11400000, guid: 2302686b7329f7a4290a243f520edeaa, type: 2}
   - {fileID: 11400000, guid: 42b5ed16a1a0e7b47b0f8c918930472f, type: 2}
+  - {fileID: 11400000, guid: f39839b5942e7ac4a9419f1d2bc1afa7, type: 2}
+  - {fileID: 11400000, guid: 2302686b7329f7a4290a243f520edeaa, type: 2}
   - {fileID: 11400000, guid: 727a45ae635496a4d9ba459ef93451c3, type: 2}
+  - {fileID: 11400000, guid: 32b925166564c1141a07f3e0f786fb76, type: 2}
   devicesScripts:
   - {fileID: 26930491105891263, guid: 951135d4fbb1124419e552143bfe08a7, type: 3}
   - {fileID: -6270716028867474464, guid: 0cf3eaf101585dc42a79079e9d05487c, type: 3}
@@ -14173,6 +14173,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 480114364}
+        m_MethodName: ShowScienceChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &481373897
 GameObject:
   m_ObjectHideFlags: 0
@@ -19144,6 +19155,100 @@ MonoBehaviour:
   machineDeviceMenu: {fileID: 1999323470}
   moveMachinePanel: {fileID: 946602208}
   basket: {fileID: 1412691131}
+--- !u!1 &686869059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 686869060}
+  - component: {fileID: 686869063}
+  - component: {fileID: 686869062}
+  - component: {fileID: 686869061}
+  m_Layer: 5
+  m_Name: scienceChanges
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &686869060
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686869059}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 954779830}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 348, y: 47}
+  m_SizeDelta: {x: 202.4726, y: 60.89731}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &686869061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686869059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &686869062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686869059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 1b70e7e217ae64640851c3b01bd7cf82, type: 3}
+    m_FontSize: 47
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 47
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 100
+--- !u!222 &686869063
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686869059}
+  m_CullTransparentMesh: 0
 --- !u!1 &703970295
 GameObject:
   m_ObjectHideFlags: 0
@@ -41930,6 +42035,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &797891435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 797891436}
+  - component: {fileID: 797891437}
+  m_Layer: 0
+  m_Name: ScienceChangesDisplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &797891436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797891435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 946913151}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &797891437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797891435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4966f4f355752154d8ff7eb95321e4c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scienceChanges: {fileID: 686869059}
+  scienceChangeValue: {fileID: 686869062}
 --- !u!1 &798692209
 GameObject:
   m_ObjectHideFlags: 0
@@ -47024,6 +47174,7 @@ Transform:
   - {fileID: 20833409}
   - {fileID: 615228712}
   - {fileID: 2141577899}
+  - {fileID: 797891436}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47136,6 +47287,7 @@ RectTransform:
   m_Children:
   - {fileID: 179407082}
   - {fileID: 1787422310}
+  - {fileID: 686869060}
   m_Father: {fileID: 684868993}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -55838,6 +55990,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1188363926}
         m_MethodName: UnBlockButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2141577900}
+        m_MethodName: DisActivateMoneyChanges
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -103124,7 +103287,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1532.7327, y: 0}
+  m_SizeDelta: {x: -1416.5002, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &1659479749634978277
 GameObject:

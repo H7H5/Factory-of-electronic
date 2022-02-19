@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     private Slider progressBarMachine;
     private MachineOld machineHelper;
     private float productionTime;
-    private bool isTimerProgress;
+    public bool isTimerProgress = false;
     private float time = 0;
 
     void Awake()
