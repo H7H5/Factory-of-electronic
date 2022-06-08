@@ -55,6 +55,7 @@ public class ManagerMachineHelper : PanelOld
     {
         CalculatePriceProduce();
         textPriceProduce.text = priceProduce.ToString();
+        MoneyChangesDisplay.Instance.ShowMoneyChanges(-(int)priceProduce);
     }
     public void ShowLevelMaxDetails()
     {
@@ -153,10 +154,6 @@ public class ManagerMachineHelper : PanelOld
             machineHelper.StartProduce();
             buttonExit.onClick.Invoke();
         }
-        else
-        {
-            Debug.Log("Not enought money");
-        }
         upDateDataBase();                                                                    
     }
 
@@ -185,6 +182,21 @@ public class ManagerMachineHelper : PanelOld
     public void getAmountDetails ()
     {
         machineHelper.amountDetails = (int)sliderAmountProduce.value;
+        CheckButtonStartActiv();
+        upDateDataBase();
+    }
+
+    public void CheckButtonStartActiv()
+    {
+        CalculatePriceProduce();
+        if (priceProduce < Purse.Instance.money)
+        {
+            buttonStart.interactable = true;
+        }
+        else
+        {
+            buttonStart.interactable = false;
+        }
     }
 
     public void upgradeAmountDetails ()

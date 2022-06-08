@@ -12,13 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efbbf187dbecdc34ebe9cc52aa6fbcc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 5
+  container: {fileID: 0}
   imgStock: {fileID: 21300000, guid: 602ec427af8b95e42abc3c7aef3740cc, type: 3}
   name: solder
-  cost: 105
-  container: {fileID: 0}
   descriptionDevice: "\u043F\u0430\u044F\u043B\u044C\u043D\u0438\u043A"
-  timeProduceDetail: 0
+  id: 5
+  price: 100
 --- !u!114 &8668308496684354110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31,14 +30,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9bc364f7e6079248a1ce331a28f5998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rectWidth: 0
-  rectHeight: 0
   countDevice: 0
   array: 
   id: 0
   activation: 0
   data: 
-  unitySQLite: {fileID: 0}
 --- !u!1001 &4569393935026590828
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75cf86e35820960458d46104ac4d513c, type: 3}
+  m_Name: solder
+  m_EditorClassIdentifier: 
+  name: solder
+  description: "\u043F\u0430\u044F\u043B\u044C\u043D\u0438\u043A"
+  sprite: {fileID: 21300000, guid: bb44ae82c93eb134896e93405c4f8d1f, type: 3}
+  spriteForShop: {fileID: 21300000, guid: 602ec427af8b95e42abc3c7aef3740cc, type: 3}
+  id: 5
+  needScience: 27000
+  price: 100
+  sellPrice: 50
+  sellPriceScience: 5

@@ -15,6 +15,7 @@ public class DBase : MonoBehaviour
     public List<ItemElement> elementsScripts = new List<ItemElement>();
     [SerializeField] private List<GameObject> elementsPrefabs = new List<GameObject>();
     public Element[] elementsParameters;
+    public Device[] devicesParameters;
     public List<ItemDevice> devicesScripts = new List<ItemDevice>();
     [SerializeField] private List<GameObject> devicesPrefabs = new List<GameObject>();
     private unitySQLite unitySQLite;
@@ -61,8 +62,43 @@ public class DBase : MonoBehaviour
             }
         } 
     }
+
+    public int IdElementParameters(int idElement)
+    {
+        int toReturn = 1;
+        for (int i = 0; i < elementsParameters.Length; i++)
+        {
+            if (elementsParameters[i].id == idElement)
+            {
+                toReturn = i;
+            }
+        }
+        return toReturn;
+    }
+
+    public int IdDeviceParameters(int idDevice)
+    {
+        int toReturn = 1;
+        for (int i = 0; i < devicesParameters.Length; i++)
+        {
+            if (devicesParameters[i].id == idDevice)
+            {
+                toReturn = i;
+            }
+        }
+        return toReturn;
+    }
+
     public void sell(ItemElement itemElement)
     {
+        foreach (var elememt in elementsParameters)
+        {
+            if (elememt.id == itemElement.GetId())
+            {
+                Purse.Instance.SetSciense(Purse.Instance.science += elememt.sellPriceScience);
+            }
+        }
+
         int count = elementsScripts.Count;
         for (int i = 0; i < count; i++)
         {
@@ -73,14 +109,24 @@ public class DBase : MonoBehaviour
             }
         }
     }
-    public void sell(ItemDevice itemDevice)
+    public void sell(Device device)
     {
-        int count = devicesScripts.Count;
-        for (int i = 0; i < count; i++)
+        //int count = devicesScripts.Count;
+        //for (int i = 0; i < count; i++)
+        //{
+        //    if (devicesScripts[i].GetId() == device.id)
+        //    {
+        //        devicesScripts[i].Sell();
+        //        SaveOneDevicet(i);
+        //    }
+        //}
+        for (int i = 0; i < devicesParameters.Length; i++)
         {
-            if (devicesScripts[i].GetId() == itemDevice.GetId())
+            if (device.id == devicesParameters[i].id)
             {
-                devicesScripts[i].Sell();
+                Purse.Instance.SetMoney(Purse.Instance.money += device.sellPrice);
+                Purse.Instance.SetSciense(Purse.Instance.science += device.sellPriceScience);
+                devicesParameters[i].SetCount(devicesParameters[i].GetCount() - 1);
                 SaveOneDevicet(i);
             }
         }
@@ -206,6 +252,8 @@ public class DBase : MonoBehaviour
             }
         }
     }
+
+    //Old Prefab system
     public ItemDevice getDeviceElement(int id)
     {
         ItemDevice tempElement;
@@ -223,6 +271,38 @@ public class DBase : MonoBehaviour
         return null;
     }
 
+    //New Scriptable Object system
+    public Device GetDevice(int id)
+    {
+        Device device;
+        for (int i = 0; i < devicesParameters.Length; i++)
+        {
+            if (devicesParameters[i].id == id)
+            {
+                device = devicesParameters[i];
+                //SaveOneDevicet(i);
+                return device;
+            }
+        }
+        return null;
+    }
+
+    //New Scriptable Object system
+    public Element GetElement(int id)
+    {
+        Element element;
+        for (int i = 0; i < elementsParameters.Length; i++)
+        {
+            if (elementsParameters[i].id == id)
+            {
+                element = elementsParameters[i];
+                //SaveOneElement(i);
+                return element;
+            }
+        }
+        return null;
+    }
+
     ///
     public void SaveOneElement(int number)
     {
@@ -230,7 +310,8 @@ public class DBase : MonoBehaviour
     }
     public void SaveOneDevicet(int number)
     {
-        unitySQLite.UpdateDevice(devicesScripts[number].GetId(), devicesScripts[number].GetCount(), devicesScripts[number].name);
+        //unitySQLite.UpdateDevice(devicesScripts[number].GetId(), devicesScripts[number].GetCount(), devicesScripts[number].name);
+        unitySQLite.UpdateDevice(devicesParameters[number].id, devicesParameters[number].GetCount(), devicesParameters[number].name);
     }
     public void SaveMoney(int money)
     {
@@ -249,17 +330,28 @@ public class DBase : MonoBehaviour
     }
     private void LoadElements()
     {
+        //Old Prefab system
         for (int i = 0; i < elementsScripts.Count; i++)
         {
             elementsScripts[i].SetCount(unitySQLite.Reader_element(elementsScripts[i].GetId()));
+        }
+        //New Scriptable Object system
+        for (int i = 0; i < elementsParameters.Length; i++)
+        {
             elementsParameters[i].SetCount(unitySQLite.Reader_element(elementsParameters[i].id));
         }
     }
     private void LoadDevices()
     {
+        //Old Prefab system
         for (int i = 0; i < devicesScripts.Count; i++)
         {
-            devicesScripts[i].SetCount(unitySQLite.Reader_Device(devicesScripts[i].GetId())); 
+            devicesScripts[i].SetCount(unitySQLite.Reader_Device(devicesScripts[i].GetId()));
+        }
+        //New Scriptable Object system
+        for (int i = 0; i < devicesParameters.Length; i++)
+        {
+            devicesParameters[i].SetCount(unitySQLite.Reader_Device(devicesParameters[i].id));
         }
     }
     public int Reader_partDevice(int id)

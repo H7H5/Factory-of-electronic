@@ -169,7 +169,14 @@ public class OrderHelper : MonoBehaviour
     public void FailureOrder()
     {
         orderListController.failureOrderNumber = numberOrder;
-        orderListController.SetActiveAttention();
+        if(timeLeft > 0)
+        {
+            orderListController.SetActiveAttention();
+        }
+        else
+        {
+            orderListController.RemoveOrderFailure();
+        }
     }
 
     public void SelectOrder ()
