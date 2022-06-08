@@ -8419,6 +8419,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 64fc365038fa65d44b44c7cc7184b065, type: 2}
   - {fileID: 11400000, guid: c063a524ede89564994af8ca09cc5881, type: 2}
   - {fileID: 11400000, guid: fcf658cc37f49fb4ead034127ca8df1f, type: 2}
+  - {fileID: 11400000, guid: 89b24bf954e7bb84ca1ed26e08bb9ce7, type: 2}
   devicesScripts:
   - {fileID: 26930491105891263, guid: 951135d4fbb1124419e552143bfe08a7, type: 3}
   - {fileID: -6270716028867474464, guid: 0cf3eaf101585dc42a79079e9d05487c, type: 3}
@@ -94722,7 +94723,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -45.4541, y: 24.41101}
+  m_AnchoredPosition: {x: -45.454163, y: 24.41101}
   m_SizeDelta: {x: -219.24084, y: -283.97058}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1942304311
