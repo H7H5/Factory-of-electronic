@@ -242,12 +242,13 @@ public class DBase : MonoBehaviour
     }
     public void AddDevice(ItemDevice device)
     {
-        int count = devicesScripts.Count;
+        int count = devicesParameters.Length;
+       
         for (int i = 0; i < count; i++)
         {
-            if (devicesScripts[i].GetId() == device.GetId())
+            if (devicesParameters[i].id == device.GetId())
             {
-                devicesScripts[i].SetCount(devicesScripts[i].GetCount()+1);
+                devicesParameters[i].SetCount(devicesParameters[i].GetCount() + 1);
                 SaveOneDevicet(i);
             }
         }
@@ -312,6 +313,7 @@ public class DBase : MonoBehaviour
     {
         //unitySQLite.UpdateDevice(devicesScripts[number].GetId(), devicesScripts[number].GetCount(), devicesScripts[number].name);
         unitySQLite.UpdateDevice(devicesParameters[number].id, devicesParameters[number].GetCount(), devicesParameters[number].name);
+    
     }
     public void SaveMoney(int money)
     {

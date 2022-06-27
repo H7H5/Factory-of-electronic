@@ -948,8 +948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressBarText: {fileID: 1314815321}
-  imageDetail: {fileID: 80602879}
-  textAmountDetails: {fileID: 1876831248}
+  isTimerProgress: 0
 --- !u!1 &1268927493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,7 +1465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb25e44f1d74bf42b50a240a5f33ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageDetail: {fileID: 80602877}
+  imageDetail: {fileID: 0}
   textAmountDetails: {fileID: 1876831248}
   test: {fileID: 0}
   price: 0
