@@ -29,11 +29,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efbbf187dbecdc34ebe9cc52aa6fbcc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3
+  needScience: 400
+  needElements:
+  - {fileID: 3639891645397291330, guid: b519541bbdec0304d9366d4c7602ad2c, type: 3}
+  - {fileID: 2967275624035485461, guid: 8308a0bdaed938a48baea365308b7a51, type: 3}
+  countNeedElements: 1e00000032000000
   container: {fileID: 0}
   imgStock: {fileID: 21300000, guid: 176b9542d1bd5634693a87162c4e6da5, type: 3}
   name: chandelier
   descriptionDevice: "\u043B\u044E\u0441\u0442\u0440\u0430"
-  id: 3
   price: 700
 --- !u!1001 &452709153626741050
 PrefabInstance:

@@ -9,11 +9,11 @@ public class PanelNeedResourse : MonoBehaviour
     [SerializeField] private UpGradeBilder upGradeBilder;
     [SerializeField] private Text textSciense;
     private bool isfull;
-    private ItemElement curentItemElement;
+    private ItemParent curentItemElement;
     
     public void BildNeedResource(GameObject element)
     {
-        curentItemElement = element.GetComponent<ItemElement>();
+        curentItemElement = element.GetComponent<ItemParent>();
         isfull = true;
         for (int i = 0; i < content.transform.childCount; i++)
         {
