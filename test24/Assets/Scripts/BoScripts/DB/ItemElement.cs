@@ -6,7 +6,7 @@ public class ItemElement : ItemParent
     public Sprite imgStock;
     public Sprite img;
     public new string name;
-    public string descriptionElement = "default element";
+    public string description = "default element";
     
     [SerializeField] private int price;
     [SerializeField] private int costMachine;

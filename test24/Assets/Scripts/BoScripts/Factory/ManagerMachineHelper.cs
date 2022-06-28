@@ -9,7 +9,7 @@ public class ManagerMachineHelper : PanelOld
     public Text textPriceMaterial;
     public Text textPriceOneDetail;
     public Text textPriceProduce;
-    public GameObject[] detailsToModern;
+    public Element[] detailsToModern;
     public int upgradeDetailToModernCost = 100000;
     public MachineHelper machineHelper;
     public SwitchElementManager switchElementManager;    
@@ -33,8 +33,8 @@ public class ManagerMachineHelper : PanelOld
         img.sprite = machineHelper.sprt;
         amountDetails = machineHelper.amountDetails;
         detailsToModern = machineHelper.detailsToModern;
-        imageDetail.sprite = detailsToModern[machineHelper.selectedDetail].GetComponent<ItemElement>().imgStock;
-        priceOneDetail = detailsToModern[machineHelper.selectedDetail].GetComponent<ItemElement>().GetPrice();
+        imageDetail.sprite = detailsToModern[machineHelper.selectedDetail].sprite;
+        priceOneDetail = detailsToModern[machineHelper.selectedDetail].GetPrice();
     }
 
     private void ShowParameters()
@@ -83,7 +83,7 @@ public class ManagerMachineHelper : PanelOld
     }
     public void CalculatePriceProduce()
     {
-        priceProduce = (int)((sliderAmountProduce.value * detailsToModern[machineHelper.selectedDetail].GetComponent<ItemElement>().GetPrice()) / 2);
+        priceProduce = (int)((sliderAmountProduce.value * detailsToModern[machineHelper.selectedDetail].GetPrice()) / 2);
     }
     private void CalculateSliderValue()
     {
@@ -238,8 +238,8 @@ public class ManagerMachineHelper : PanelOld
     {                                                                 //Bo
         machineHelper.selectNumberElement = num;                      //Bo
         machineHelper.selectedDetail =num;                                                                        //BO
-        imageDetail.sprite = detailsToModern[machineHelper.selectedDetail].GetComponent<ItemElement>().imgStock;  //BO
-        priceOneDetail = detailsToModern[machineHelper.selectedDetail].GetComponent<ItemElement>().GetPrice();    //BO
+        imageDetail.sprite = detailsToModern[machineHelper.selectedDetail].sprite;  //BO
+        priceOneDetail = detailsToModern[machineHelper.selectedDetail].GetPrice();    //BO
         textPriceOneDetail.text = priceOneDetail.ToString();                                                      //BO
         textPriceMaterial.text = (priceOneDetail / 2).ToString();                                                 //BO
         ShowPriceProduceText();                                                                                   //BO

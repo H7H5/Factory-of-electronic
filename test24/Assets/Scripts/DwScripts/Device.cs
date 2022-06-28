@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Device", menuName = "Device")]
 public class Device : ScriptableObject
 {
+    public GameObject container;
     public new string name;
     public string description;
     public Sprite sprite;
@@ -17,12 +18,24 @@ public class Device : ScriptableObject
 
     private int count = 0;
 
-    public void SetCount(int c)
+    public int GetPrice()
     {
-        count = c;
+        return price;
     }
     public int GetCount()
     {
         return count;
+    }
+    public void SetCount(int d)
+    {
+        count = d;
+    }
+    public void Sell()
+    {
+        if (count > 0)
+        {
+            count--;
+            Purse.Instance.SetMoney(Purse.Instance.money += price);
+        }
     }
 }
