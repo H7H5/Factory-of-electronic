@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51808508ed79d73458c3f723ce6bc16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detail: {fileID: 5491545485700082826, guid: 6d2a71ee62cd1f241a4bbdb9bc64fcf0, type: 3}
+  detail: {fileID: 11400000, guid: 5bc06a168c90f554980645ccc695617d, type: 2}
   detailsToModern:
-  - {fileID: 5491545485700082826, guid: 6d2a71ee62cd1f241a4bbdb9bc64fcf0, type: 3}
+  - {fileID: 11400000, guid: 5bc06a168c90f554980645ccc695617d, type: 2}
   img: {fileID: 21300000, guid: 5795f9e5b8000314aba5951fb8b9fbec, type: 3}
   price: 6767
   timeProduceDetail: 20

@@ -5,7 +5,7 @@ using TMPro;
 public class StockManager : MonoBehaviour
 {
     public static StockManager Instance;
-    public ItemElement itemElement;
+    public Element currentElement;
     public ItemDevice itemDevice;
 
     public int idDevice;
@@ -36,7 +36,7 @@ public class StockManager : MonoBehaviour
             UpdateManagerOfDevice();
         }else
         {
-            DBase.Instance.sell(itemElement);
+            DBase.Instance.sell(currentElement);
             UpdateManagerOfElement(); 
         }
         Stock.Instance.NewUpdate();
@@ -82,17 +82,17 @@ public class StockManager : MonoBehaviour
     public void UpdateManagerOfElement()
     {
         typeItem = false;
-        id = itemElement == null? 1: itemElement.GetId();
-        itemElement = DBase.Instance.getElement(id);
-        image.sprite = itemElement.imgStock;
-        text.text = itemElement.GetCount().ToString();
-        description.SetElement(itemElement);
+        id = currentElement == null? 1: currentElement.id;
+        currentElement = DBase.Instance.getElement(id);
+        image.sprite = currentElement.sprite;
+        text.text = currentElement.GetCount().ToString();
+        description.SetElement(currentElement);
       
-        int idElementsParameters = DBase.Instance.IdElementParameters(itemElement.GetId());
+        int idElementsParameters = DBase.Instance.IdElementParameters(currentElement.id);
         element = DBase.Instance.elementsParameters[idElementsParameters];
         textPriceScience.text = DBase.Instance.elementsParameters[idElementsParameters].sellPriceScience.ToString();
         textPriceMoney.text = DBase.Instance.elementsParameters[idElementsParameters].sellPrice.ToString();
-        slider.ChangeSelect(itemElement.GetCount());
+        slider.ChangeSelect(currentElement.GetCount());
     }
     public void UpdateManagerOfDevice()
     {

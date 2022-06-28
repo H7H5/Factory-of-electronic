@@ -12,11 +12,11 @@ public class DBase : MonoBehaviour
     public List<int> listIdElementsUpGrade = new List<int>();
     public List<Sprite> spritesMachinForElements = new List<Sprite>();
     public List<Sprite> spriteMachinesForDevice = new List<Sprite>();
-    public List<ItemElement> elementsScripts = new List<ItemElement>();
-    [SerializeField] private List<GameObject> elementsPrefabs = new List<GameObject>();
+    //public List<ItemElement> elementsScripts = new List<ItemElement>();
+    //[SerializeField] private List<GameObject> elementsPrefabs = new List<GameObject>();
     public Element[] elementsParameters;
     public Device[] devicesParameters;
-    public List<ItemDevice> devicesScripts = new List<ItemDevice>();
+    //public List<ItemDevice> devicesScripts = new List<ItemDevice>();
     [SerializeField] private List<GameObject> devicesPrefabs = new List<GameObject>();
     private unitySQLite unitySQLite;
    
@@ -52,12 +52,11 @@ public class DBase : MonoBehaviour
 
     public void addElement(ItemElement element)
     {
-        int count = elementsScripts.Count;
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < elementsParameters.Length; i++)
         {
-            if (elementsScripts[i].name == element.name)
+            if (elementsParameters[i].name == element.name)
             {
-                elementsScripts[i].SetCount(elementsScripts[i].GetCount()+1);
+                elementsParameters[i].SetCount(elementsParameters[i].GetCount()+1);
                 SaveOneElement(i);
             }
         } 
@@ -89,22 +88,20 @@ public class DBase : MonoBehaviour
         return toReturn;
     }
 
-    public void sell(ItemElement itemElement)
+    public void sell(Element element)
     {
         foreach (var elememt in elementsParameters)
         {
-            if (elememt.id == itemElement.GetId())
+            if (elememt.id == element.id)
             {
                 Purse.Instance.SetSciense(Purse.Instance.science += elememt.sellPriceScience);
             }
         }
-
-        int count = elementsScripts.Count;
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < elementsParameters.Length; i++)
         {
-            if (elementsScripts[i].GetId() == itemElement.GetId())
+            if (elementsParameters[i].id == element.id)
             {
-                elementsScripts[i].Sell();
+                elementsParameters[i].Sell();
                 SaveOneElement(i);
             }
         }
@@ -133,16 +130,15 @@ public class DBase : MonoBehaviour
     }
     public void sellMuch(ItemElement itemElement, int sale)
     {
-        int count = elementsScripts.Count;
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < elementsParameters.Length; i++)
         {
-            if (elementsScripts[i].GetId() == itemElement.GetId())
+            if (elementsParameters[i].id == itemElement.GetId())
             {
-                if (elementsScripts[i].GetCount() >= sale)
+                if (elementsParameters[i].GetCount() >= sale)
                 {
                     for (int j = 0; j < sale; j++)
                     {
-                        elementsScripts[i].Substract();
+                        elementsParameters[i].Substract();
                     }
                 }
                 SaveOneElement(i);
@@ -176,39 +172,34 @@ public class DBase : MonoBehaviour
     }
     public void SubstractID(int id)
     {
-        int count = elementsScripts.Count;
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < elementsParameters.Length; i++)
         {
-            if (elementsScripts[i].GetId() == id)
+            if (elementsParameters[i].id == id)
             {
-                elementsScripts[i].Substract();
+                elementsParameters[i].Substract();
                 SaveOneElement(i);
             }
         }
     }
-    public ItemElement getElement(int id)
+    public Element getElement(int id)
     {
-        ItemElement tempElement;
-        int count = elementsScripts.Count;
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < elementsParameters.Length; i++)
         {
-            if (elementsScripts[i].GetId() == id)
+            if (elementsParameters[i].id == id)
             {
-                tempElement = elementsScripts[i];
-                return tempElement;
+                return elementsParameters[i];
             }
         }
         return null;
     }
     public int getCountOnId(int id)
     {
-        int count = elementsScripts.Count;
         int retCount = 0;
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < elementsParameters.Length; i++)
         {
-            if (elementsScripts[i].GetId() == id)
+            if (elementsParameters[i].id == id)
             {
-                retCount = elementsScripts[i].GetCount();
+                retCount = elementsParameters[i].GetCount();
             }
         }
         return retCount;
@@ -223,12 +214,11 @@ public class DBase : MonoBehaviour
 
     public void AddElementOnId(int id)
     {
-        int count = elementsScripts.Count;
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < elementsParameters.Length; i++)
         {
-            if (elementsScripts[i].GetId() == id)
+            if (elementsParameters[i].id == id)
             {
-                elementsScripts[i].SetCount(elementsScripts[i].GetCount() + 1);
+                elementsParameters[i].SetCount(elementsParameters[i].GetCount() + 1);
                 SaveOneElement(i);
             }
         }
@@ -255,15 +245,14 @@ public class DBase : MonoBehaviour
     }
 
     //Old Prefab system
-    public ItemDevice getDeviceElement(int id)
+    public Device getDeviceElement(int id)
     {
-        ItemDevice tempElement;
-        int count = devicesScripts.Count;
-        for (int i = 0; i < count; i++)
+        Device tempElement;
+        for (int i = 0; i < devicesParameters.Length; i++)
         {
-            if (devicesScripts[i].GetId() == id)
+            if (devicesParameters[i].id == id)
             {
-                tempElement = devicesScripts[i];
+                tempElement = devicesParameters[i];
                 SaveOneDevicet(i);
                 return tempElement;
                 
@@ -307,7 +296,7 @@ public class DBase : MonoBehaviour
     ///
     public void SaveOneElement(int number)
     {
-        unitySQLite.UpdateElement(elementsScripts[number].GetId(), elementsScripts[number].GetCount(), elementsScripts[number].name);
+        unitySQLite.UpdateElement(elementsParameters[number].id, elementsParameters[number].GetCount(), elementsParameters[number].name);
     }
     public void SaveOneDevicet(int number)
     {
@@ -333,9 +322,9 @@ public class DBase : MonoBehaviour
     private void LoadElements()
     {
         //Old Prefab system
-        for (int i = 0; i < elementsScripts.Count; i++)
+        for (int i = 0; i < elementsParameters.Length; i++)
         {
-            elementsScripts[i].SetCount(unitySQLite.Reader_element(elementsScripts[i].GetId()));
+            elementsParameters[i].SetCount(unitySQLite.Reader_element(elementsParameters[i].id));
         }
         //New Scriptable Object system
         for (int i = 0; i < elementsParameters.Length; i++)
@@ -346,9 +335,9 @@ public class DBase : MonoBehaviour
     private void LoadDevices()
     {
         //Old Prefab system
-        for (int i = 0; i < devicesScripts.Count; i++)
+        for (int i = 0; i < devicesParameters.Length; i++)
         {
-            devicesScripts[i].SetCount(unitySQLite.Reader_Device(devicesScripts[i].GetId()));
+            devicesParameters[i].SetCount(unitySQLite.Reader_Device(devicesParameters[i].id));
         }
         //New Scriptable Object system
         for (int i = 0; i < devicesParameters.Length; i++)
@@ -372,16 +361,16 @@ public class DBase : MonoBehaviour
     {
         unitySQLite.UpdateClear_partDevice(id, clear);
     }
-    public GameObject getDetailID(int id)
+    public Element getDetailID(int id)
     {
-        for (int i = 0; i < elementsPrefabs.Count; i++)
+        for (int i = 0; i < elementsParameters.Length; i++)
         {
-            if(elementsPrefabs[i].GetComponent<ItemElement>().GetId() == id)
+            if(elementsParameters[i].id == id)
             {
-                return elementsPrefabs[i];
+                return elementsParameters[i];
             }
         }
-        return elementsPrefabs[2];
+        return elementsParameters[2];
     }
     public GameObject getDeviceObj(int id)
     {

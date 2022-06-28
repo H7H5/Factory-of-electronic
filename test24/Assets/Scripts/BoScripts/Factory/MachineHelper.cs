@@ -7,8 +7,8 @@ public class MachineHelper : MachineOld
     public int idDetail;
     
     public Sprite sprt;
-    public GameObject detail;
-    public ItemElement itemElementDetail;
+    public Element detail;
+    //public ItemElement itemElementDetail;
     public int[] idDetailsToModern;
     public bool[] boolDetailsToModern;
     public int selectNumberElement = 0;
@@ -17,8 +17,8 @@ public class MachineHelper : MachineOld
     {
         if (detail)
         {
-            itemElementDetail = detail.GetComponent<ItemElement>();
-            spriteDetail = itemElementDetail.imgStock;
+            //itemElementDetail = detail.GetComponent<ItemElement>();
+            spriteDetail = detail.sprite;
         } 
     }
 
@@ -43,12 +43,12 @@ public class MachineHelper : MachineOld
     }
     public override Sprite GetImageDetail()
     {
-        return detailsToModern[selectedDetail].GetComponent<ItemElement>().imgStock;
+        return detailsToModern[selectedDetail].sprite;
     }
 
     public int GetIdSelectedDetail()
     {
-        return detailsToModern[selectedDetail].GetComponent<ItemElement>().GetId();
+        return detailsToModern[selectedDetail].id;
     }
    
 

@@ -11,7 +11,7 @@ public class ItemDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     
     public void OnBeginDrag(PointerEventData eventData)
     {
-        count = DBase.Instance.getCountOnId(gameObject.GetComponent<CellStockHelper>().itemElement.GetId());
+        count = DBase.Instance.getCountOnId(gameObject.GetComponent<CellStockHelper>().element.id);
         if(count==1)
         {
             text.text = "";

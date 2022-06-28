@@ -3,20 +3,20 @@ using UnityEngine.EventSystems;
 
 public class CellStockHelper : MonoBehaviour, IPointerClickHandler
 {
-    public ItemElement itemElement;
-    public ItemDevice itemDevice;
+    public Element element;
+    public Device device;
     public void OnPointerClick(PointerEventData eventData)
     {
         if(gameObject.GetComponent<ItemDrag>())
         { 
-            StockManager.Instance.itemElement = itemElement;
+            StockManager.Instance.currentElement = element;
             StockManager.Instance.UpdateManagerOfElement();
         }else
         {
             //StockManager.Instance.itemDevice = itemDevice;
 
             //New Scriptable Object system
-            StockManager.Instance.idDevice = itemDevice.GetComponent<ItemDevice>().GetId();
+            StockManager.Instance.idDevice = device.id;
 
             StockManager.Instance.UpdateManagerOfDevice();
         }

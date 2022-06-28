@@ -43,12 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51808508ed79d73458c3f723ce6bc16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detail: {fileID: 5491545485700082826, guid: f80b50e61b27f2a44a75bce06e56c36b, type: 3}
+  detail: {fileID: 11400000, guid: ad2d326a440c3914698c3fefe1bb3019, type: 2}
   detailsToModern:
-  - {fileID: 5491545485700082826, guid: f80b50e61b27f2a44a75bce06e56c36b, type: 3}
-  - {fileID: 1816054849144114647, guid: d63e92fc45f9d254694e03cf634fbab8, type: 3}
-  - {fileID: 5491545485700082826, guid: 93393e010b84f9848951751b8f2e32e5, type: 3}
-  - {fileID: 2798251637241723164, guid: 8308a0bdaed938a48baea365308b7a51, type: 3}
+  - {fileID: 11400000, guid: ad2d326a440c3914698c3fefe1bb3019, type: 2}
+  - {fileID: 11400000, guid: 319e4b935d059d248ab784432b5730e8, type: 2}
+  - {fileID: 11400000, guid: 844631280bee26c448b8f810c201b713, type: 2}
+  - {fileID: 11400000, guid: 7b788a7311240644f9778b86b51eedc3, type: 2}
   img: {fileID: 21300000, guid: 80a1abe5e6e5bc24889d0e1b3a6531c5, type: 3}
   price: 6776
   timeProduceDetail: 20

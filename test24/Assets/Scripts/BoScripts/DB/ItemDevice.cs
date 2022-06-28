@@ -5,7 +5,7 @@ public class ItemDevice : ItemParent
     public GameObject container;
     public Sprite imgStock;
     public new string name;
-    public string descriptionDevice = "default device";
+    public string description = "default device";
 
     [SerializeField] private int price;
     private int count = 0;

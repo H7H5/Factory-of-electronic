@@ -18,7 +18,7 @@ public class OrderHelper : MonoBehaviour
 
     public GameObject dBase;
     public DBase dataBase;
-    public List<ItemDevice> devices;
+    public Device[] devices;
 
     public Text textNameOrganization;
 
@@ -54,7 +54,7 @@ public class OrderHelper : MonoBehaviour
 
         dBase = GameObject.Find("DBase");
         dataBase = dBase.GetComponent<DBase>();
-        devices = dataBase.devicesScripts;
+        devices = dataBase.devicesParameters;
 
         if (orderListController.orderListSelected.activeInHierarchy == true)
         {
@@ -124,13 +124,13 @@ public class OrderHelper : MonoBehaviour
             lineOrderHelper.amountDevice = amountDevice[i];
             if(typeDevice[i] == 0)
             {
-                if (dataBase.elementsScripts[idDevice[i]].GetCount() < amountDevice[i])
+                if (dataBase.elementsParameters[idDevice[i]].GetCount() < amountDevice[i])
                 {
                     isAllGreen = false;
                 }
             }else
             {
-                if (dataBase.devicesScripts[idDevice[i]].GetCount() < amountDevice[i])
+                if (dataBase.devicesParameters[idDevice[i]].GetCount() < amountDevice[i])
                 {
                     isAllGreen = false;
                 }
