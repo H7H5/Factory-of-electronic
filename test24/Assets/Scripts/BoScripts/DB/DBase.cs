@@ -128,11 +128,11 @@ public class DBase : MonoBehaviour
             }
         }
     }
-    public void sellMuch(ItemElement itemElement, int sale)
+    public void sellMuch(Element element, int sale)
     {
         for (int i = 0; i < elementsParameters.Length; i++)
         {
-            if (elementsParameters[i].id == itemElement.GetId())
+            if (elementsParameters[i].id == element.id)
             {
                 if (elementsParameters[i].GetCount() >= sale)
                 {
