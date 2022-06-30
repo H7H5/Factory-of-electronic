@@ -19,7 +19,7 @@ public class UpGradeBilder : MonoBehaviour
         {
             for (int j = 0; j < arrayOnElements.Count; j++)
             {
-                if(ups[i].GetComponent<ItemUpgrade>().element.GetComponent<ItemElement>().GetId() == arrayOnElements[j])
+                if(ups[i].GetComponent<ItemUpgrade>().element.id == arrayOnElements[j])
                 {
                     ups[i].GetComponent<ItemUpgrade>().SetAtivateProgram(true);
                 }
@@ -30,7 +30,7 @@ public class UpGradeBilder : MonoBehaviour
     {
         Bildding(DBase.Instance.listIdElementsUpGrade);
     }
-    public void ActivatePanelNeedResourse(GameObject element)
+    public void ActivatePanelNeedResourse(Element element)
     {
         panelNeedResourse.gameObject.SetActive(true);
         panelNeedResourse.GetComponent<PanelNeedResourse>().BildNeedResource(element);

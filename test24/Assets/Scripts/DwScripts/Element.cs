@@ -20,6 +20,9 @@ public class Element : ScriptableObject
 
     private int count = 0;
 
+    public Element[] needElements;
+    public int[] countNeedElements;
+
     public int GetPrice()
     {
         return price;
