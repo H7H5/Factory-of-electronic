@@ -12,6 +12,12 @@ public class ItemUpgrade : MonoBehaviour
     {
         imageElement = gameObject.GetComponent<Image>();
     }
+    public void Init(Element el)
+    {
+        element = el;
+        button.image.sprite = element.sprite;
+
+    }
     public void SetAtivate(bool activ)
     {
         if (activ)
