@@ -20,14 +20,14 @@ public class OrderListHelper : MonoBehaviour
 
     public GameObject dBase;
     public DBase dataBase;
-    public Device[] devices;
+    public List<ItemDevice> devices;
 
     private float timeDelay = 1f;
 
     void Start()
     {
         dataBase = dBase.GetComponent<DBase>();
-        devices = dataBase.devicesParameters;
+        devices = dataBase.devicesScripts;
 
         orderListController = orderListControllerObject.GetComponent<OrderListController>();
     }

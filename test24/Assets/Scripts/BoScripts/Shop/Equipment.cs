@@ -23,11 +23,11 @@ public class Equipment : MonoBehaviour
         ShowImage(itemShopMachine.characters[currentMachine].GetDetailsToModern().Length);
         for (int i = 0; i < itemShopMachine.characters[currentMachine].GetDetailsToModern().Length; i++)
         {
-            if (DBase.Instance.IsUpgradeElement(itemShopMachine.characters[currentMachine].GetOneDetailsToModern(i).id))
+            if (DBase.Instance.IsUpgradeElement(itemShopMachine.characters[currentMachine].GetOneDetailsToModern(i).GetComponent<ItemElement>().GetId()))
             {
-                ShowImageElement(i, itemShopMachine.characters[currentMachine].GetOneDetailsToModern(i).sprite,
-                    itemShopMachine.characters[currentMachine].GetOneDetailsToModern(i).GetCostMachine());
-                totalCost += itemShopMachine.characters[currentMachine].GetOneDetailsToModern(i).GetCostMachine();
+                ShowImageElement(i, itemShopMachine.characters[currentMachine].GetOneDetailsToModern(i).GetComponent<ItemElement>().imgStock,
+                    itemShopMachine.characters[currentMachine].GetOneDetailsToModern(i).GetComponent<ItemElement>().GetCostMachine());
+                totalCost += itemShopMachine.characters[currentMachine].GetOneDetailsToModern(i).GetComponent<ItemElement>().GetCostMachine();
             }
         }
         priceText.text = totalCost.ToString();  

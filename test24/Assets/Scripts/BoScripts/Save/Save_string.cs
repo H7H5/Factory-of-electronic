@@ -23,7 +23,7 @@ public class Save_string
     public void StartInsertString(unitySQLite unitySQLite)
     {
         Insert_saveString(unitySQLite, 1, "07.05.2021 20:07:57", "checkPointTime");
-        Insert_saveString(unitySQLite, 2, "{ \"\" listIdElementsUpGrade\"\": [8,1] }", "listidUpGradeElements");
+        Insert_saveString(unitySQLite, 2, "{ \"\" listIdElementsUpGrade\"\": [ 8] }", "listidUpGradeElements");
     }
     public void UpdateString(unitySQLite unitySQLite, string value, int id)
     {

@@ -22,7 +22,6 @@ public class Stock : MonoBehaviour
     void Start()
     {
         SwitchBookMark(0);
-        StockManager.Instance.UpdateManagerOfElement();
     }
     public void NewUpdate()
     {
@@ -32,38 +31,37 @@ public class Stock : MonoBehaviour
     private void SetElements()
     {
         foreach (Transform child in placeInStockForElements.transform) Destroy(child.gameObject);
-        int countElement = DBase.Instance.elementsParameters.Length;
+        int countElement = DBase.Instance.elementsScripts.Count;
         for (int i = 0; i < countElement; i++)
         {
-            if (DBase.Instance.elementsParameters[i].GetCount() > 0)
+            if (DBase.Instance.elementsScripts[i].GetCount() > 0)
             {
                 GameObject imgContainer = Instantiate(prefabContainerElement, placeInStockForElements.transform);
-                imgContainer.GetComponent<CellStockHelper>().element = DBase.Instance.elementsParameters[i];
+                imgContainer.GetComponent<CellStockHelper>().itemElement = DBase.Instance.elementsScripts[i];
                 imgContainer.GetComponent<ItemDrag>().Canvas = canvas;
-                DBase.Instance.elementsParameters[i].container = imgContainer;
+                DBase.Instance.elementsScripts[i].container = imgContainer;
                 GameObject panel = imgContainer.transform.Find("Panel").gameObject;
-                panel.GetComponent<Image>().sprite = DBase.Instance.elementsParameters[i].sprite;
+                panel.GetComponent<Image>().sprite = DBase.Instance.elementsScripts[i].imgStock;
                 GameObject textCount = panel.transform.Find("Text").gameObject;
-                textCount.GetComponent<Text>().text = DBase.Instance.elementsParameters[i].GetCount().ToString();
+                textCount.GetComponent<Text>().text = DBase.Instance.elementsScripts[i].GetCount().ToString();
             }
         }
     }
     private void SetDevices()
     {
         foreach (Transform child in placeInStockForDevices.transform) Destroy(child.gameObject);
-        int countDevice = DBase.Instance.devicesParameters.Length;
+        int countDevice = DBase.Instance.devicesScripts.Count;
         for (int i = 0; i < countDevice; i++)
         {
-            if (DBase.Instance.devicesParameters[i].GetCount() > 0)
+            if (DBase.Instance.devicesScripts[i].GetCount() > 0)
             {
                 GameObject imgContainer = Instantiate(prefabContainerDevice, placeInStockForDevices.transform);
-                imgContainer.GetComponent<CellStockHelper>().device = DBase.Instance.devicesParameters[i]; 
-                DBase.Instance.devicesParameters[i].container = imgContainer;
+                imgContainer.GetComponent<CellStockHelper>().itemDevice = DBase.Instance.devicesScripts[i]; 
+                DBase.Instance.devicesScripts[i].container = imgContainer;
                 GameObject panel = imgContainer.transform.Find("Panel").gameObject;
-                panel.GetComponent<Image>().sprite = DBase.Instance.devicesParameters[i].sprite;
+                panel.GetComponent<Image>().sprite = DBase.Instance.devicesScripts[i].imgStock;
                 GameObject textCount = panel.transform.Find("Text").gameObject;
-                //textCount.GetComponent<Text>().text = DBase.Instance.devicesScripts[i].GetCount().ToString();
-                textCount.GetComponent<Text>().text = DBase.Instance.devicesParameters[i].GetCount().ToString();
+                textCount.GetComponent<Text>().text = DBase.Instance.devicesScripts[i].GetCount().ToString();
             }
         }
     }

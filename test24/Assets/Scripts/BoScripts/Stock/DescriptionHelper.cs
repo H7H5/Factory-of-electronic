@@ -6,25 +6,19 @@ public class DescriptionHelper : MonoBehaviour
     
     [SerializeField] private Text text;
     [SerializeField] private Text text2;
-    private Element element;
+    private ItemElement itemElement;
     private ItemDevice itemDevice;
 
-    public void SetElement (Element element1)
+    public void SetElement (ItemElement element)
     {
-        element = element1;
+        itemElement = element;
         text.text = element.name;
-        text2.text = element.description;
+        text2.text = element.descriptionElement;
     }
     public void SetDevice(ItemDevice device)
     {
         itemDevice = device;
         text.text = device.name;
-        text2.text = device.description;
-    }
-
-    public void SetDeviceParameters(Device device)
-    {
-        text.text = device.name;
-        text2.text = device.description;
+        text2.text = device.descriptionDevice;
     }
 }

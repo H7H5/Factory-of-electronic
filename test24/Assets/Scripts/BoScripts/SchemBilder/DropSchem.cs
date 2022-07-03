@@ -27,8 +27,8 @@ public class DropSchem : MonoBehaviour, IDropHandler
         GameObject prod = Instantiate(product, transform);
         prod.transform.position = transform.position;
         prod.GetComponent<ProductDrag>().oldParentDrop = cell.GetComponent<Drop>();
-        Element tempElement = DBase.Instance.getElement(idDetail);
-        prod.transform.GetChild(0).GetComponent<Image>().sprite = tempElement.sprite;
+        ItemElement tempItemElement = DBase.Instance.getElement(idDetail);
+        prod.transform.GetChild(0).GetComponent<Image>().sprite = tempItemElement.imgStock;
         prod.GetComponent<ProductDrag>().id = idDetail;
         gameObject.GetComponent<ElementListener>().SetElement(prod.GetComponent<ProductDrag>().id);
     }

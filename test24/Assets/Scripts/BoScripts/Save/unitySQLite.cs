@@ -1,14 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-//References
+﻿using UnityEngine;
 using Mono.Data.Sqlite;
-using System;
 using System.Data;
-using System.IO;
-using UnityEngine.UI;
-
 public class unitySQLite : MonoBehaviour
 {
     public string conn;

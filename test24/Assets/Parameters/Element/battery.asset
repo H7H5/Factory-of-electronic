@@ -19,7 +19,5 @@ MonoBehaviour:
   id: 4
   needScience: 200
   price: 23
-  sellPrice: 12
-  sellPriceScience: 4
   costMachine: 600
   timeProduce: 9

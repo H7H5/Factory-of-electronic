@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ItemUpgrade : MonoBehaviour
 {
-    public Element element;
+    public GameObject element;
     [SerializeField] private Sprite act;
     [SerializeField] private Sprite noact;
     [SerializeField] private Button button;
@@ -11,12 +11,6 @@ public class ItemUpgrade : MonoBehaviour
     private void Awake()
     {
         imageElement = gameObject.GetComponent<Image>();
-    }
-    public void Init(Element el)
-    {
-        element = el;
-        button.image.sprite = element.sprite;
-
     }
     public void SetAtivate(bool activ)
     {
@@ -47,7 +41,7 @@ public class ItemUpgrade : MonoBehaviour
         {
             imageElement.sprite = act;
             button.interactable = false;
-            UpGradeHelper.Instance.AddOnElement(element.id);
+            UpGradeHelper.Instance.AddOnElement(element.GetComponent<ItemElement>().GetId());
         }
         else
         {

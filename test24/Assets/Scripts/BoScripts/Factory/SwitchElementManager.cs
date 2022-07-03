@@ -16,7 +16,7 @@ public class SwitchElementManager : MonoBehaviour
     private int idModernEL;
     private int CostModern;
     public int numberSelectEl = 0;
-    public void ShowSwitchElementsObj(Element[] detailsToModern, bool[] boolDetailsToModern)
+    public void ShowSwitchElementsObj(GameObject[] detailsToModern, bool[] boolDetailsToModern)
     {
         countElements = detailsToModern.Length;
         for (int i = 0; i < 4; i++)
@@ -29,21 +29,21 @@ public class SwitchElementManager : MonoBehaviour
             {
                 switchElementsObj[i].transform.GetChild(0).GetComponent<Button>().interactable = true;
                 switchElementsObj[i].SetActive(true);
-                switchElementsObj[i].transform.GetChild(0).GetComponent<Image>().sprite = detailsToModern[i].sprite;
+                switchElementsObj[i].transform.GetChild(0).GetComponent<Image>().sprite = detailsToModern[i].GetComponent<ItemElement>().imgStock;
                 switchElementsObj[i].GetComponent<SwitchElement>().isActiv = true;
-                switchElementsObj[i].GetComponent<SwitchElement>().idElement = detailsToModern[i].id;
+                switchElementsObj[i].GetComponent<SwitchElement>().idElement = detailsToModern[i].GetComponent<ItemElement>().GetId();
                 switchElementsObj[i].GetComponent<SwitchElement>().lockImg(false);
             }
             else
             {
-                if (dBase.IsUpgradeElement(detailsToModern[i].id))
+                if (dBase.IsUpgradeElement(detailsToModern[i].GetComponent<ItemElement>().GetId()))
                 {
                     switchElementsObj[i].transform.GetChild(0).GetComponent<Button>().interactable = true;
                     switchElementsObj[i].SetActive(true);
                     switchElementsObj[i].GetComponent<SwitchElement>().lockImg(true);
-                    switchElementsObj[i].transform.GetChild(0).GetComponent<Image>().sprite = detailsToModern[i].sprite;
+                    switchElementsObj[i].transform.GetChild(0).GetComponent<Image>().sprite = detailsToModern[i].GetComponent<ItemElement>().imgStock;
                     switchElementsObj[i].GetComponent<SwitchElement>().isActiv = false;
-                    switchElementsObj[i].GetComponent<SwitchElement>().idElement = detailsToModern[i].id;
+                    switchElementsObj[i].GetComponent<SwitchElement>().idElement = detailsToModern[i].GetComponent<ItemElement>().GetId();
                 }
                 else
                 {
@@ -61,10 +61,10 @@ public class SwitchElementManager : MonoBehaviour
         {
             numberSelectEl = num;
             idModernEL = switchElementsObj[num].GetComponent<SwitchElement>().idElement;
-            CostModern = dBase.getDetailID(idModernEL).GetCostMachine();
-            imageElementModernizatiom.sprite = dBase.getDetailID(idModernEL).sprite;
+            CostModern = dBase.getDetailID(idModernEL).GetComponent<ItemElement>().GetCostMachine();
+            imageElementModernizatiom.sprite = dBase.getDetailID(idModernEL).GetComponent<ItemElement>().imgStock;
             textPriceModernization.text = CostModern.ToString();
-            if (dBase.getDetailID(switchElementsObj[num].GetComponent<SwitchElement>().idElement).GetCostMachine() >= Purse.Instance.money)
+            if (dBase.getDetailID(switchElementsObj[num].GetComponent<SwitchElement>().idElement).GetComponent<ItemElement>().GetCostMachine() >= Purse.Instance.money)
             {
                 buttonModernization.interactable = false;
                

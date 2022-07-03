@@ -18,7 +18,7 @@ public class OrderHelper : MonoBehaviour
 
     public GameObject dBase;
     public DBase dataBase;
-    public Device[] devices;
+    public List<ItemDevice> devices;
 
     public Text textNameOrganization;
 
@@ -54,7 +54,7 @@ public class OrderHelper : MonoBehaviour
 
         dBase = GameObject.Find("DBase");
         dataBase = dBase.GetComponent<DBase>();
-        devices = dataBase.devicesParameters;
+        devices = dataBase.devicesScripts;
 
         if (orderListController.orderListSelected.activeInHierarchy == true)
         {
@@ -124,13 +124,13 @@ public class OrderHelper : MonoBehaviour
             lineOrderHelper.amountDevice = amountDevice[i];
             if(typeDevice[i] == 0)
             {
-                if (dataBase.elementsParameters[idDevice[i]].GetCount() < amountDevice[i])
+                if (dataBase.elementsScripts[idDevice[i]].GetCount() < amountDevice[i])
                 {
                     isAllGreen = false;
                 }
             }else
             {
-                if (dataBase.devicesParameters[idDevice[i]].GetCount() < amountDevice[i])
+                if (dataBase.devicesScripts[idDevice[i]].GetCount() < amountDevice[i])
                 {
                     isAllGreen = false;
                 }
@@ -169,14 +169,7 @@ public class OrderHelper : MonoBehaviour
     public void FailureOrder()
     {
         orderListController.failureOrderNumber = numberOrder;
-        if(timeLeft > 0)
-        {
-            orderListController.SetActiveAttention();
-        }
-        else
-        {
-            orderListController.RemoveOrderFailure();
-        }
+        orderListController.SetActiveAttention();
     }
 
     public void SelectOrder ()

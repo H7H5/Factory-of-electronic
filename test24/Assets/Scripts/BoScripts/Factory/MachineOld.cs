@@ -17,7 +17,7 @@ public class MachineOld : MonoBehaviour
     private Timer timer;
     public Sprite spriteDetail;
     public bool isProduce = false;
-    public Element[] detailsToModern;
+    public GameObject[] detailsToModern;
     public int selectedDetail = 0;
     public String startTimeDetailProduce;
     public float timeProduceDetail = 1;

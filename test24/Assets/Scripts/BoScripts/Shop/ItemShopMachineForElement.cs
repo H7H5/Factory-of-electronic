@@ -11,8 +11,8 @@ public class ItemShopMachineForElement : MonoBehaviour
     [SerializeField] private Sprite button2;
     [SerializeField] private GameObject machine;
     [SerializeField] private GameObject button;
-    private Element detail;
-    private Element[] detailsToModern;
+    private GameObject detail;
+    private GameObject[] detailsToModern;
     private TileMapHelper tileMapHelper;
     private int cost;
     private int timeProduceDetail;                                        //Dw
@@ -40,10 +40,10 @@ public class ItemShopMachineForElement : MonoBehaviour
         idDetailsToModern = new int[characters[number].GetDetailsToModern().Length];
         for (int i = 0; i < characters[number].GetDetailsToModern().Length; i++)
         {
-            idDetailsToModern[i] = characters[number].GetOneDetailsToModern(i).id;
+            idDetailsToModern[i] = characters[number].GetOneDetailsToModern(i).GetComponent<ItemElement>().GetId();
         }
         detail = characters[number].GetDetail();
-        idDetail = detail.id;
+        idDetail = detail.GetComponent<ItemElement>().GetId();
         BildElementByMachine(number);
     }
     private void BildElementByMachine(int number)
@@ -51,9 +51,9 @@ public class ItemShopMachineForElement : MonoBehaviour
         GetComponent<SelectElementByShop>().ShowImage(characters[number].GetDetailsToModern().Length);
         for (int i = 0; i < characters[number].GetDetailsToModern().Length; i++)
         {
-            if (DBase.Instance.IsUpgradeElement(characters[number].GetOneDetailsToModern(i).id))
+            if (DBase.Instance.IsUpgradeElement(characters[number].GetOneDetailsToModern(i).GetComponent<ItemElement>().GetId()))
             {
-                GetComponent<SelectElementByShop>().ShowImageElement(i, characters[number].GetOneDetailsToModern(i).sprite);
+                GetComponent<SelectElementByShop>().ShowImageElement(i, characters[number].GetOneDetailsToModern(i).GetComponent<ItemElement>().imgStock);
             }
         }
     }
@@ -101,7 +101,7 @@ public class ItemShopMachineForElement : MonoBehaviour
         {
             for (int j = 0; j < characters[i].GetDetailsToModern().Length; j++)
             {
-                if (characters[i].GetOneDetailsToModern(j).id == idElement)
+                if (characters[i].GetOneDetailsToModern(j).GetComponent<ItemElement>().GetId() == idElement)
                 {
                     return i;
                 }

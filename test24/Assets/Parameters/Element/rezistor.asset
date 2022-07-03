@@ -12,18 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8e1aa5583e7ec43a264d1acbbfa2ae, type: 3}
   m_Name: rezistor
   m_EditorClassIdentifier: 
-  container: {fileID: 0}
   name: rezistor
   description: "\u043E\u0447\u0435\u043D\u044C \u0445\u043E\u0440\u043E\u0448\u0438\u0439
     \u0440\u0435\u0437\u0438\u0441\u0442\u043E\u0440"
   sprite: {fileID: 21300000, guid: f85bb0731ee4af4449d69e92df8f9d3a, type: 3}
   spriteForShop: {fileID: 21300000, guid: 7c258b2e9f009614799d5f96c0eff547, type: 3}
   id: 1
-  needScience: 1
-  price: 2
-  sellPrice: 1
-  sellPriceScience: 1
-  costMachine: 100
-  timeProduce: 60
-  needElements: []
-  countNeedElements: 
+  needScience: 222
+  price: 56
+  costMachine: 2000
+  timeProduce: 40

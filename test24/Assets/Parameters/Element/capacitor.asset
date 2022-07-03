@@ -12,21 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8e1aa5583e7ec43a264d1acbbfa2ae, type: 3}
   m_Name: capacitor
   m_EditorClassIdentifier: 
-  container: {fileID: 0}
   name: capacitor
   description: "\u043A\u043E\u043D\u0434\u0435\u043D\u0441\u0430\u0442\u043E\u0440
     \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u043B\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439"
   sprite: {fileID: 21300000, guid: ced9a405a9192c849b7550eac3d22cbf, type: 3}
   spriteForShop: {fileID: 21300000, guid: 2ebad3e491ca0a644b68ea318e5b005c, type: 3}
   id: 2
-  needScience: 20
-  price: 6
-  sellPrice: 3
-  sellPriceScience: 1
-  costMachine: 220
-  timeProduce: 80
-  needElements:
-  - {fileID: 11400000, guid: 5bc06a168c90f554980645ccc695617d, type: 2}
-  - {fileID: 11400000, guid: ad2d326a440c3914698c3fefe1bb3019, type: 2}
-  - {fileID: 11400000, guid: 844631280bee26c448b8f810c201b713, type: 2}
-  countNeedElements: 010000000400000004000000
+  needScience: 789
+  price: 76
+  costMachine: 800
+  timeProduce: 8

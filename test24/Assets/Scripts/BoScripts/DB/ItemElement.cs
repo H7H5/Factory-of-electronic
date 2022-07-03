@@ -1,18 +1,24 @@
 ﻿using UnityEngine;
 
-public class ItemElement : ItemParent
+public class ItemElement : MonoBehaviour
 {
     public GameObject container;
     public Sprite imgStock;
     public Sprite img;
     public new string name;
-    public string description = "default element";
-    
+    public string descriptionElement = "default element";
+    public ItemElement[] needElements;
+    public int[] countNeedElements;
+    [SerializeField] private int id;
+    [SerializeField] private int needScience;
     [SerializeField] private int price;
     [SerializeField] private int costMachine;
     [SerializeField] private int timeProduceDetail;                                            //Dw
     private int count = 0;
-    
+    public int GetId()
+    {
+        return id;
+    }
     public int GetPrice()
     {
         return price;
@@ -25,7 +31,10 @@ public class ItemElement : ItemParent
     {
         return costMachine;
     }
-    
+    public int GetNeedScience()
+    {
+        return needScience;
+    }
     public void SetCount(int c)
     {
         count = c;

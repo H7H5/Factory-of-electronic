@@ -43,11 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51808508ed79d73458c3f723ce6bc16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detail: {fileID: 11400000, guid: 64fc365038fa65d44b44c7cc7184b065, type: 2}
+  detail: {fileID: 7502382086439189090, guid: c58fd983d5d075541939f4774cef42ab, type: 3}
   detailsToModern:
-  - {fileID: 11400000, guid: 64fc365038fa65d44b44c7cc7184b065, type: 2}
+  - {fileID: 7502382086439189090, guid: c58fd983d5d075541939f4774cef42ab, type: 3}
   img: {fileID: 21300000, guid: b7d129246a78309468c87fdc238b41dc, type: 3}
   price: 344
-  timeProduceDetail: 50
+  timeProduceDetail: 20
   levelMinTimeProduceDetail: 10
   levelMaxAmountDetail: 50

@@ -2,23 +2,23 @@
 
 public class ItemMachine : MonoBehaviour
 {
-    [SerializeField] private Element detail;
-    [SerializeField] private Element[] detailsToModern;
+    [SerializeField] private GameObject detail;
+    [SerializeField] private GameObject[] detailsToModern;
     [SerializeField] private Sprite img;
     [SerializeField] private int price;
     [SerializeField] private int timeProduceDetail;                                            //Dw
     [SerializeField] private int levelMinTimeProduceDetail;
     [SerializeField] private float levelMaxAmountDetail;
 
-    public Element GetDetail()
+    public GameObject GetDetail()
     {
         return detail;
     }
-    public Element[] GetDetailsToModern()
+    public GameObject[] GetDetailsToModern()
     {
         return detailsToModern;
     }
-    public Element GetOneDetailsToModern(int n)
+    public GameObject GetOneDetailsToModern(int n)
     {
         return detailsToModern[n];
     }
