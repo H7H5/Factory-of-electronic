@@ -8,13 +8,13 @@ public class NeedItemElement : MonoBehaviour
     private int needCount;
     private int countDbaseEl;
 
-    public void Activate(ItemElement element, int countNeed)
+    public void Activate(Element element, int countNeed)
     {
         needCount = countNeed;
-        countDbaseEl = DBase.Instance.getCountOnId(element.GetId());
+        countDbaseEl = DBase.Instance.getCountOnId(element.id);
         textNeedCount.color = countDbaseEl >= countNeed ? Color.green: Color.red;
         textNeedCount.text = countDbaseEl.ToString() +"/"+ countNeed.ToString();
-        image.sprite = element.imgStock;
+        image.sprite = element.sprite;
     }
     public bool IsFull()
     {

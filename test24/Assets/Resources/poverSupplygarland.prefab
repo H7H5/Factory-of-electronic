@@ -129,60 +129,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-6270716028867474464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7561203064661679315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efbbf187dbecdc34ebe9cc52aa6fbcc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 101
-  imgStock: {fileID: 0}
-  name: powerSupplyGagland
-  cost: 100
-  container: {fileID: 0}
-  descriptionDevice: "\u0444\u043E\u043D\u0430\u0440\u0438\u043A"
-  timeProduceDetail: 0
---- !u!114 &2021718322856605717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7561203064661679315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 159a2f5dc75a776419f0ef860f93f407, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  donePanel: {fileID: 5123921562410987362}
-  parentDevice: {fileID: 6709151914968637103, guid: 6debdeaca216cd241a7b53b4a8a9c20b,
-    type: 3}
---- !u!114 &8668308496684354110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7561203064661679315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9bc364f7e6079248a1ce331a28f5998, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rectWidth: 0
-  rectHeight: 0
-  countDevice: 0
-  array: 
-  id: 0
-  activation: 0
-  data: 
-  unitySQLite: {fileID: 0}
 --- !u!1 &5123921562410987362
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,6 +203,56 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-6270716028867474464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7561203064661679315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efbbf187dbecdc34ebe9cc52aa6fbcc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  container: {fileID: 0}
+  imgStock: {fileID: 0}
+  name: powerSupplyGagland
+  descriptionDevice: "\u0444\u043E\u043D\u0430\u0440\u0438\u043A"
+  id: 101
+  price: 150
+--- !u!114 &2021718322856605717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7561203064661679315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159a2f5dc75a776419f0ef860f93f407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  donePanel: {fileID: 5123921562410987362}
+  parentDevice: {fileID: 6709151914968637103, guid: 6debdeaca216cd241a7b53b4a8a9c20b,
+    type: 3}
+--- !u!114 &8668308496684354110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7561203064661679315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9bc364f7e6079248a1ce331a28f5998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countDevice: 0
+  array: 
+  id: 0
+  activation: 0
+  data: 
 --- !u!1001 &140252481029916504
 PrefabInstance:
   m_ObjectHideFlags: 0

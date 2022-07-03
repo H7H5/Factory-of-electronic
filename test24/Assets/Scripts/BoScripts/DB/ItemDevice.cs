@@ -1,19 +1,16 @@
 ﻿using UnityEngine;
 
-public class ItemDevice : MonoBehaviour
+public class ItemDevice : ItemParent
 {
     public GameObject container;
     public Sprite imgStock;
     public new string name;
-    public string descriptionDevice = "default device";
-    [SerializeField] private int id;
+    public string description = "default device";
+
     [SerializeField] private int price;
     private int count = 0;
        
-    public int GetId()
-    {
-        return id;
-    }
+   
     public int GetPrice()
     {
         return price;

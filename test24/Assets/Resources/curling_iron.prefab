@@ -13,12 +13,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 6
+  needScience: 500
+  needElements:
+  - {fileID: 2967275624035485461, guid: 8308a0bdaed938a48baea365308b7a51, type: 3}
+  - {fileID: 5539246000945763418, guid: d63e92fc45f9d254694e03cf634fbab8, type: 3}
+  - {fileID: 1862613545698587911, guid: 6d2a71ee62cd1f241a4bbdb9bc64fcf0, type: 3}
+  countNeedElements: 280000004100000046000000
+  container: {fileID: 0}
   imgStock: {fileID: 21300000, guid: ef5cde34bd3b38d46869ad57ebdfb9e5, type: 3}
   name: curling iron
-  cost: 80
-  container: {fileID: 0}
   descriptionDevice: "\u0434\u043B\u044F \u0436\u0435\u043D\u0449\u0438\u043D"
-  timeProduceDetail: 0
+  price: 600
 --- !u!114 &8668308496684354110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31,14 +36,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9bc364f7e6079248a1ce331a28f5998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rectWidth: 0
-  rectHeight: 0
   countDevice: 0
   array: 
   id: 0
   activation: 0
   data: 
-  unitySQLite: {fileID: 0}
 --- !u!1001 &2825130440657529282
 PrefabInstance:
   m_ObjectHideFlags: 0

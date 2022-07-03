@@ -10,7 +10,7 @@ public class LineOrderHelper : MonoBehaviour
 
     public GameObject dBase;
     public DBase dataBase;
-    public List<ItemDevice> devices;
+    public Device[] devices;
 
     public int typeDevice;
     public int idDevice;
@@ -20,7 +20,7 @@ public class LineOrderHelper : MonoBehaviour
     {
         dBase = GameObject.Find("DBase");
         dataBase = dBase.GetComponent<DBase>();
-        devices = dataBase.devicesScripts;
+        devices = dataBase.devicesParameters;
         UpdateLine();
     }
 
@@ -38,7 +38,7 @@ public class LineOrderHelper : MonoBehaviour
             //textAmountLine.text = dataBase.elementsScripts[idDevice].GetCount() + "/" + amountDevice.ToString();
             textAmountLine.text = dataBase.elementsParameters[idDevice].GetCount() + "/" + amountDevice.ToString();
             textAmountLine.GetComponent<Text>().alignment = TextAnchor.MiddleRight;
-            if (dataBase.elementsScripts[idDevice].GetCount() >= amountDevice)
+            if (dataBase.elementsParameters[idDevice].GetCount() >= amountDevice)
             {
                 textAmountLine.GetComponent<Text>().color = Color.green;
             } 
@@ -49,10 +49,10 @@ public class LineOrderHelper : MonoBehaviour
         }
         else
         {
-            imageDevice.sprite = dataBase.devicesScripts[idDevice].imgStock;
-            textAmountLine.text = dataBase.devicesScripts[idDevice].GetCount() + "/" + amountDevice.ToString();
+            imageDevice.sprite = dataBase.devicesParameters[idDevice].sprite;
+            textAmountLine.text = dataBase.devicesParameters[idDevice].GetCount() + "/" + amountDevice.ToString();
             textAmountLine.GetComponent<Text>().alignment = TextAnchor.MiddleRight;
-            if (dataBase.devicesScripts[idDevice].GetCount() >= amountDevice)
+            if (dataBase.devicesParameters[idDevice].GetCount() >= amountDevice)
             {
                 textAmountLine.GetComponent<Text>().color = Color.green;
             }

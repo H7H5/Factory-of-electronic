@@ -22,11 +22,11 @@ public class Save_integer
     }
     public void StartInsertInteger(unitySQLite unitySQLite)
     {
-        Insert_save_integer(unitySQLite, 1, 100, "money");
+        Insert_save_integer(unitySQLite, 1, 390, "money");
         Insert_save_integer(unitySQLite, 2, 1, "raiting");
         Insert_save_integer(unitySQLite, 3, 0, "countOrders");
         Insert_save_integer(unitySQLite, 4, 0, "countSelectedOrders");
-        Insert_save_integer(unitySQLite, 5, 100, "sciense");
+        Insert_save_integer(unitySQLite, 5, 2, "sciense");
     }
     public void UpdateInteger(unitySQLite unitySQLite, int count,int id)
     {
