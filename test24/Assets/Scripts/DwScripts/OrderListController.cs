@@ -53,7 +53,7 @@ public class OrderListController : MonoBehaviour
     public GameObject attentionRaingDecrease;
     public int failureOrderNumber;
 
-    public List<ItemDevice> devices;
+    public Device[] devices;
 
     private int timeUpdateOrderlist = 3600; //Значение в секундах
 
@@ -84,7 +84,7 @@ public class OrderListController : MonoBehaviour
         orderListHelper = orderList.GetComponent<OrderListHelper>();
 
         dataBase = dBase.GetComponent<DBase>();
-        devices = dataBase.devicesScripts;
+        devices = dataBase.devicesParameters;
 
         checkPointTime = DateTime.UtcNow.ToString();;
         StartCoroutine(TimeDelay());
@@ -238,14 +238,14 @@ public class OrderListController : MonoBehaviour
         {
             if (ordersSelected[key].typeDevice[i] == 0)
             {
-                int count = dataBase.elementsScripts[ordersSelected[key].idDevice[i]].GetCount() - ordersSelected[key].amountDevice[i];
-                dataBase.elementsScripts[ordersSelected[key].idDevice[i]].SetCount(count);
+                int count = dataBase.elementsParameters[ordersSelected[key].idDevice[i]].GetCount() - ordersSelected[key].amountDevice[i];
+                dataBase.elementsParameters[ordersSelected[key].idDevice[i]].SetCount(count);
                 dataBase.SaveOneElement(ordersSelected[key].idDevice[i]);
             }
             else
             {
-                int count = dataBase.devicesScripts[ordersSelected[key].idDevice[i]].GetCount() - ordersSelected[key].amountDevice[i];
-                dataBase.devicesScripts[ordersSelected[key].idDevice[i]].SetCount(count);
+                int count = dataBase.devicesParameters[ordersSelected[key].idDevice[i]].GetCount() - ordersSelected[key].amountDevice[i];
+                dataBase.devicesParameters[ordersSelected[key].idDevice[i]].SetCount(count);
                 dataBase.SaveOneElement(ordersSelected[key].idDevice[i]);
             }
         }
@@ -270,11 +270,11 @@ public class OrderListController : MonoBehaviour
             {
                 if (orders[i].typeDevice[j] == 0)
                 {  
-                    income += dataBase.elementsScripts[orders[i].idDevice[j]].GetPrice() * orders[i].amountDevice[j];
+                    income += dataBase.elementsParameters[orders[i].idDevice[j]].GetPrice() * orders[i].amountDevice[j];
                 }
                 else
                 {
-                    income += dataBase.devicesScripts[orders[i].idDevice[j]].GetPrice() * orders[i].amountDevice[j];
+                    income += dataBase.devicesParameters[orders[i].idDevice[j]].GetPrice() * orders[i].amountDevice[j];
                 }
             }
             orders[i].incomeOrder = income + (income * percentIncome) / 100;
@@ -346,9 +346,9 @@ public class OrderListController : MonoBehaviour
         if (typeProduct == 0)
         {
             int idListElements = UnityEngine.Random.Range(0, listElements.Count);
-            for (int n = 0; n < dataBase.elementsScripts.Count; n++)
+            for (int n = 0; n < dataBase.elementsParameters.Length; n++)
             {
-                if (dataBase.elementsScripts[n].GetId() == listElements[idListElements])
+                if (dataBase.elementsParameters[n].id == listElements[idListElements])
                 {
                     productID = n;
                 }
@@ -357,9 +357,9 @@ public class OrderListController : MonoBehaviour
         else
         {
             int idListDevices = UnityEngine.Random.Range(0, listDevices.Count);
-            for (int m = 0; m < dataBase.devicesScripts.Count; m++)
+            for (int m = 0; m < dataBase.devicesParameters.Length; m++)
             {
-                if (dataBase.devicesScripts[m].GetId() == listDevices[idListDevices])
+                if (dataBase.devicesParameters[m].id == listDevices[idListDevices])
                 {
                     productID = m;
                 }

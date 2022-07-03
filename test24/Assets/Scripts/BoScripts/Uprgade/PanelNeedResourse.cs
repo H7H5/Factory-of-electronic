@@ -9,11 +9,11 @@ public class PanelNeedResourse : MonoBehaviour
     [SerializeField] private UpGradeBilder upGradeBilder;
     [SerializeField] private Text textSciense;
     private bool isfull;
-    private ItemElement curentItemElement;
+    private Element curentItemElement;
     
-    public void BildNeedResource(GameObject element)
+    public void BildNeedResource(Element element)
     {
-        curentItemElement = element.GetComponent<ItemElement>();
+        curentItemElement = element;
         isfull = true;
         for (int i = 0; i < content.transform.childCount; i++)
         {
@@ -30,8 +30,8 @@ public class PanelNeedResourse : MonoBehaviour
                 isfull = false;
             }
         }
-        textSciense.text = curentItemElement.GetNeedScience().ToString();
-        if (curentItemElement.GetNeedScience() > Purse.Instance.science)
+        textSciense.text = curentItemElement.needScience.ToString();
+        if (curentItemElement.needScience > Purse.Instance.science)
         {
             isfull = false;
         }
@@ -44,8 +44,8 @@ public class PanelNeedResourse : MonoBehaviour
         {
             DBase.Instance.sellMuch(curentItemElement.needElements[i], curentItemElement.countNeedElements[i]);
         }
-        UpGradeHelper.Instance.AddOnElement(curentItemElement.GetId());
-        Purse.Instance.SetSciense(Purse.Instance.science - curentItemElement.GetNeedScience());
+        UpGradeHelper.Instance.AddOnElement(curentItemElement.id);
+        Purse.Instance.SetSciense(Purse.Instance.science - curentItemElement.needScience);
         gameObject.SetActive(false);
         upGradeBilder.OnBild();
     }

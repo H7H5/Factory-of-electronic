@@ -13,13 +13,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
+  needScience: 700
+  needElements:
+  - {fileID: 1862613545698587911, guid: d6084d9159668a242b95ebe41589560e, type: 3}
+  - {fileID: 1862613545698587911, guid: 78aefe872dbc5c149973e5440002600c, type: 3}
+  - {fileID: 2967275624035485461, guid: 8308a0bdaed938a48baea365308b7a51, type: 3}
+  - {fileID: 3639891645397291330, guid: b519541bbdec0304d9366d4c7602ad2c, type: 3}
+  countNeedElements: 18000000180000001800000018000000
+  container: {fileID: 0}
   imgStock: {fileID: 21300000, guid: 6dc538ff497df034a9a9efbee73fde49, type: 3}
   name: lamp
-  cost: 100
-  container: {fileID: 0}
   descriptionDevice: "\u043D\u0430\u0441\u0442\u043E\u043B\u044C\u043D\u0430\u044F
     \u043B\u0430\u043C\u043F\u0430"
-  timeProduceDetail: 0
+  price: 250
 --- !u!114 &8668308496684354110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,14 +38,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9bc364f7e6079248a1ce331a28f5998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rectWidth: 0
-  rectHeight: 0
   countDevice: 0
   array: 
   id: 0
   activation: 0
   data: 
-  unitySQLite: {fileID: 0}
 --- !u!1001 &4569393935026590828
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -19,6 +19,8 @@ MonoBehaviour:
   spriteForShop: {fileID: 21300000, guid: 8e01a9dbcce4e4a4bb4c3faf20d2bc73, type: 3}
   id: 12
   needScience: 76
-  price: 1
+  price: 2
+  sellPrice: 1
+  sellPriceScience: 12
   costMachine: 780
   timeProduce: 1
