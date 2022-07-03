@@ -12,12 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75cf86e35820960458d46104ac4d513c, type: 3}
   m_Name: flashlight
   m_EditorClassIdentifier: 
+  container: {fileID: 0}
   name: flashlight
   description: defoult device
   sprite: {fileID: 21300000, guid: e853d06725f49034cb06e3398a0533bb, type: 3}
   spriteForShop: {fileID: 21300000, guid: c34bd3c3725c3c64bbde816c5ecfd892, type: 3}
   id: 1
-  needScience: 22000
+  needScience: 500
   price: 300
   sellPrice: 150
   sellPriceScience: 15
+  needElements:
+  - {fileID: 11400000, guid: aa84578b97a16cd47bd9e520e8867078, type: 2}
+  - {fileID: 11400000, guid: 319e4b935d059d248ab784432b5730e8, type: 2}
+  - {fileID: 11400000, guid: 7b788a7311240644f9778b86b51eedc3, type: 2}
+  countNeedElements: 140000000100000005000000

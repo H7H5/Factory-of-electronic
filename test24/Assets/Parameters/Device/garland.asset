@@ -12,12 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75cf86e35820960458d46104ac4d513c, type: 3}
   m_Name: garland
   m_EditorClassIdentifier: 
+  container: {fileID: 0}
   name: garland
   description: "\u0433\u0438\u0440\u043B\u044F\u043D\u0434\u0430"
   sprite: {fileID: 21300000, guid: 03768978cbdf6be488507d01865115db, type: 3}
   spriteForShop: {fileID: 21300000, guid: dfee99208c5975d458e130a78f3f0c4c, type: 3}
   id: 4
-  needScience: 24000
+  needScience: 300
   price: 200
   sellPrice: 100
   sellPriceScience: 10
+  needElements:
+  - {fileID: 11400000, guid: 844631280bee26c448b8f810c201b713, type: 2}
+  - {fileID: 11400000, guid: ad2d326a440c3914698c3fefe1bb3019, type: 2}
+  - {fileID: 11400000, guid: 08c373fb3abdef447904e204a9e8d252, type: 2}
+  - {fileID: 11400000, guid: 5bc06a168c90f554980645ccc695617d, type: 2}
+  - {fileID: 11400000, guid: 5c98dcd4711c0f64fbce9792b8377f08, type: 2}
+  - {fileID: 11400000, guid: 64fc365038fa65d44b44c7cc7184b065, type: 2}
+  countNeedElements: 0f0000000f0000000a0000000a0000000700000007000000

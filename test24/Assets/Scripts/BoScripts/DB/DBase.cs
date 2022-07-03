@@ -10,6 +10,7 @@ public class DBase : MonoBehaviour
     public GameObject DeviceSelect;
     public GameObject OpenSchema;
     public List<int> listIdElementsUpGrade = new List<int>();
+    public List<int> listIdDevicesUpGrade = new List<int>();
     public List<Sprite> spritesMachinForElements = new List<Sprite>();
     public List<Sprite> spriteMachinesForDevice = new List<Sprite>();
     //public List<ItemElement> elementsScripts = new List<ItemElement>();
@@ -37,6 +38,10 @@ public class DBase : MonoBehaviour
     public void SetListIdElementsUpGrade(List<int> list)
     {
         listIdElementsUpGrade = list;
+    }
+    public void SetListIdDevicesUpGrade(List<int> list)
+    {
+        listIdDevicesUpGrade = list;
     }
     public bool IsUpgradeElement(int id)
     {

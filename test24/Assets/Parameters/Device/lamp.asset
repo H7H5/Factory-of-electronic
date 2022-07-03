@@ -12,12 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75cf86e35820960458d46104ac4d513c, type: 3}
   m_Name: lamp
   m_EditorClassIdentifier: 
+  container: {fileID: 0}
   name: lamp
   description: "\u043D\u0430\u0441\u0442\u043E\u043B\u044C\u043D\u0430\u044F \u043B\u0430\u043C\u043F\u0430"
   sprite: {fileID: 21300000, guid: 60a031f167200d44d860b36e84042099, type: 3}
   spriteForShop: {fileID: 21300000, guid: 6dc538ff497df034a9a9efbee73fde49, type: 3}
   id: 2
-  needScience: 25000
+  needScience: 500
   price: 250
   sellPrice: 125
   sellPriceScience: 12
+  needElements:
+  - {fileID: 11400000, guid: 06442f9d732dd51428162ad1016735f6, type: 2}
+  - {fileID: 11400000, guid: 319e4b935d059d248ab784432b5730e8, type: 2}
+  - {fileID: 11400000, guid: 7b788a7311240644f9778b86b51eedc3, type: 2}
+  countNeedElements: 050000000100000005000000

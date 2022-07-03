@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ItemUpgrade : MonoBehaviour
 {
-    public Element element;
+    public ScriptObjParent scriptObjParent;
     [SerializeField] private Sprite act;
     [SerializeField] private Sprite noact;
     [SerializeField] private Button button;
@@ -12,17 +12,17 @@ public class ItemUpgrade : MonoBehaviour
     {
         imageElement = gameObject.GetComponent<Image>();
     }
-    public void Init(Element el)
+    public void Init(ScriptObjParent el)
     {
-        element = el;
-        button.image.sprite = element.sprite;
+        scriptObjParent = el;
+        button.image.sprite = scriptObjParent.sprite;
 
     }
     public void SetAtivate(bool activ)
     {
         if (activ)
         {
-            UpGradeBilder.Instance.ActivatePanelNeedResourse(element);
+            UpGradeBilder.Instance.ActivatePanelNeedResourse(scriptObjParent);
         }
         else
         {
@@ -47,7 +47,15 @@ public class ItemUpgrade : MonoBehaviour
         {
             imageElement.sprite = act;
             button.interactable = false;
-            UpGradeHelper.Instance.AddOnElement(element.id);
+            if(UpGradeBilder.Instance.mode == 1)
+            {
+                UpGradeHelper.Instance.AddOnElement(scriptObjParent.id);
+            }
+            else if (UpGradeBilder.Instance.mode == 2)
+            {
+                UpGradeHelper.Instance.AddOnDevice(scriptObjParent.id);
+            }
+           
         }
         else
         {
