@@ -66,6 +66,11 @@ public class OrderListController : MonoBehaviour
     public GameObject machineParent;
     private MachineHelper machineHelper;
 
+
+    [SerializeField] private List<GameObject> bookmarks = new List<GameObject>();
+    public int bookMarkSelected = 0;
+
+
     [Header("To Save")]
     [NonSerialized]
     
@@ -92,6 +97,32 @@ public class OrderListController : MonoBehaviour
         ShowTextRating();
 
         Load();
+    }
+
+    public void OpenOrderList()
+    {
+        bookmarks[bookMarkSelected].SetActive(true);
+        bookmarks[bookMarkSelected].gameObject.GetComponent<OrderListHelper>().OpenOrderList();
+
+        //if (bookMarkSelected == 0)
+        //{
+        //    bookmarks[0].SetActive(true);
+        //    bookmarks[0].gameObject.GetComponent<OrderListHelper>().OpenOrderList();
+        //} else
+        //{
+        //    bookmarks[bookMarkSelected].SetActive(true);
+        //    bookmarks[bookMarkSelected].gameObject.GetComponent<OrderListHelper>().OpenOrderList();
+        //}
+    }
+    
+    public void SwitchBookMark(int number)
+    {
+        for (int i = 0; i < bookmarks.Count; i++)
+        {
+            bookmarks[i].SetActive(false);
+        }
+        bookMarkSelected = number;
+        OpenOrderList();
     }
 
     private void Save()
@@ -196,7 +227,7 @@ public class OrderListController : MonoBehaviour
 
     public void SetOpenOrderListColor()
     {
-        if(orderList.activeInHierarchy == true || orderListSelected.activeInHierarchy == true)
+        if(orderList.activeInHierarchy == true || orderListSelected.activeInHierarchy == true || bookMarkSelected == 1)
         {
             openOrderList.GetComponent<Image>().color = Color.white;
         } else

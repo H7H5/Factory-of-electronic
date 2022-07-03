@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SliderAmountToSell : MonoBehaviour
 {
-    private Slider sliderAmount;
+    public Slider sliderAmount;
     [SerializeField] private Text textAmount;
 
     private void Awake()
@@ -28,11 +28,24 @@ public class SliderAmountToSell : MonoBehaviour
         StockManager.Instance.ShowScienceChanges((int)sliderAmount.value);
     }
 
+    private void ShowInfoDisplay()
+    {
+        ShowSliderValue();
+        ShowMoneyChanges();
+        ShowScienceChanges();
+    }
+
     public void ChangeSelect(int maxValue)
     {
-        sliderAmount.minValue = 0;
         sliderAmount.maxValue = maxValue;
-        sliderAmount.value = 0;
+        sliderAmount.value = sliderAmount.minValue;
+        ShowInfoDisplay();
+    }
+
+    public void SetSliderValueMax()
+    {
+        sliderAmount.value = sliderAmount.maxValue;
+        ShowInfoDisplay();
     }
 
     public int GetSliderValue()

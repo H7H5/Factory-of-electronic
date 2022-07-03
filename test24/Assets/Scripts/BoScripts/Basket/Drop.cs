@@ -56,7 +56,7 @@ public class Drop : MonoBehaviour, IDropHandler
         prod.GetComponent<ProductDrag>().oldParentDrop = this;
         Element tempItemElement = DBase.Instance.getElement(idDetail);
         prod.GetComponent<Image>().sprite = imgBackground;
-        prod.transform.GetChild(0).GetComponent<Image>().sprite = tempItemElement.sprite;
+        //prod.transform.GetChild(0).GetComponent<Image>().sprite = tempItemElement.sprite;
         prod.GetComponent<ProductDrag>().id = idDetail;
         isFull = true;
     }

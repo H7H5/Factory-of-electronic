@@ -44,16 +44,17 @@ public class StockManager : MonoBehaviour
 
     public void ShowMoneyChanges(int sliderAmount)
     {
-        int sellPrice;
+        int price;
         if (typeItem)
         {
-            sellPrice = device.sellPrice;
+            price = device.sellPrice;
         }
         else
         {
-            sellPrice = element.sellPrice;
+            price = element.price;
         }
-        MoneyChangesDisplay.Instance.ShowMoneyChanges(sliderAmount * sellPrice);
+        MoneyChangesDisplay.Instance.ShowMoneyChanges(sliderAmount * price);
+        textPriceMoney.text = (sliderAmount * price).ToString();
     }
 
     public void ShowScienceChanges(int sliderAmount)
@@ -68,6 +69,7 @@ public class StockManager : MonoBehaviour
             sellPriceScience = element.sellPriceScience;
         }
         ScienceChangesDisplay.Instance.ShowScienceChanges(sliderAmount * sellPriceScience);
+        textPriceScience.text = (sliderAmount * sellPriceScience).ToString();
     }
 
     public void SellByAmount()
@@ -91,9 +93,12 @@ public class StockManager : MonoBehaviour
         int idElementsParameters = DBase.Instance.IdElementParameters(currentElement.id);
         element = DBase.Instance.elementsParameters[idElementsParameters];
         textPriceScience.text = DBase.Instance.elementsParameters[idElementsParameters].sellPriceScience.ToString();
-        textPriceMoney.text = DBase.Instance.elementsParameters[idElementsParameters].sellPrice.ToString();
+
+        //textPriceMoney.text = DBase.Instance.elementsParameters[idElementsParameters].sellPrice.ToString();
+        textPriceMoney.text = DBase.Instance.elementsParameters[idElementsParameters].price.ToString();
         slider.ChangeSelect(currentElement.GetCount());
     }
+
     public void UpdateManagerOfDevice()
     {
         typeItem = true;

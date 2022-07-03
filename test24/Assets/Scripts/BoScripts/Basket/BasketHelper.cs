@@ -22,7 +22,7 @@ public class BasketHelper : MonoBehaviour
             countActivCels = cels.Count;
         }
         ScrollLeft();
-        Generate();  
+        Generate();
     }
     public void ScrollLeft()
     {
