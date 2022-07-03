@@ -9,11 +9,11 @@ public class PanelNeedResourse : MonoBehaviour
     [SerializeField] private UpGradeBilder upGradeBilder;
     [SerializeField] private Text textSciense;
     private bool isfull;
-    private Element curentItemElement;
+    private ScriptObjParent curentItemElement;
     
-    public void BildNeedResource(Element element)
+    public void BildNeedResource(ScriptObjParent scriptObjParent)
     {
-        curentItemElement = element;
+        curentItemElement = scriptObjParent;
         isfull = true;
         for (int i = 0; i < content.transform.childCount; i++)
         {
@@ -44,7 +44,14 @@ public class PanelNeedResourse : MonoBehaviour
         {
             DBase.Instance.sellMuch(curentItemElement.needElements[i], curentItemElement.countNeedElements[i]);
         }
-        UpGradeHelper.Instance.AddOnElement(curentItemElement.id);
+        if (UpGradeBilder.Instance.mode == 1)
+        {
+            UpGradeHelper.Instance.AddOnElement(curentItemElement.id);
+        }
+        else if (UpGradeBilder.Instance.mode == 2)
+        {
+            UpGradeHelper.Instance.AddOnDevice(curentItemElement.id);
+        }
         Purse.Instance.SetSciense(Purse.Instance.science - curentItemElement.needScience);
         gameObject.SetActive(false);
         upGradeBilder.OnBild();

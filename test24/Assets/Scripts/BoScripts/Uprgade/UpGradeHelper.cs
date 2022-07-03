@@ -5,6 +5,7 @@ public class UpGradeHelper : MonoBehaviour
 {
     public static UpGradeHelper Instance;
     public List<int> listIdElementsUpGrade = new List<int>();
+    public List<int> listIdDevicesUpGrade = new List<int>();
 
     private void Awake()
     {
@@ -26,11 +27,18 @@ public class UpGradeHelper : MonoBehaviour
         string data = DBase.Instance.ReadString(2);
         JsonUtility.FromJsonOverwrite(data, this);
         DBase.Instance.listIdElementsUpGrade = listIdElementsUpGrade;
+        DBase.Instance.listIdDevicesUpGrade = listIdDevicesUpGrade;
     }
     public void AddOnElement(int id)
     {
         listIdElementsUpGrade.Add(id);
         DBase.Instance.SetListIdElementsUpGrade(listIdElementsUpGrade);
+        Save();
+    }
+    public void AddOnDevice(int id)
+    {
+        listIdDevicesUpGrade.Add(id);
+        DBase.Instance.SetListIdDevicesUpGrade(listIdDevicesUpGrade);
         Save();
     }
     IEnumerator Starting()

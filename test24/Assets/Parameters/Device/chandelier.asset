@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75cf86e35820960458d46104ac4d513c, type: 3}
   m_Name: chandelier
   m_EditorClassIdentifier: 
+  container: {fileID: 0}
   name: chandelier
   description: "\u043B\u044E\u0441\u0442\u0440\u0430"
   sprite: {fileID: 21300000, guid: c9e4aa98c340f854b827f999ff5cc496, type: 3}
   spriteForShop: {fileID: 21300000, guid: 176b9542d1bd5634693a87162c4e6da5, type: 3}
   id: 3
-  needScience: 20000
+  needScience: 1000
   price: 700
   sellPrice: 350
   sellPriceScience: 35
+  needElements:
+  - {fileID: 11400000, guid: 319e4b935d059d248ab784432b5730e8, type: 2}
+  countNeedElements: 0a000000
