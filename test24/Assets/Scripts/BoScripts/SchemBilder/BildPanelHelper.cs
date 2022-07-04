@@ -16,7 +16,11 @@ public class BildPanelHelper : MonoBehaviour
     }
     public void OnVisible()
     {
-        TempSave(DBase.Instance.saverDevice);
+        if (DBase.Instance.listIdDevicesUpGrade.Count > 0)
+        {
+            TempSave(DBase.Instance.GetSaverDevice());
+        }
+       
     }
     public void SetDeviceSever(GameObject partDevice)
     {

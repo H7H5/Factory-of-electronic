@@ -12,14 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8e1aa5583e7ec43a264d1acbbfa2ae, type: 3}
   m_Name: switch
   m_EditorClassIdentifier: 
+  container: {fileID: 0}
   name: switch
   description: "\u043D\u0443 \u0442\u0430\u043A\u043E\u0435"
   sprite: {fileID: 21300000, guid: 57d7847188bf2b144a072960d9819f44, type: 3}
   spriteForShop: {fileID: 21300000, guid: 5b9960199fb8de74bbceed79ba116a7c, type: 3}
   id: 5
-  needScience: 23
-  price: 21
+  needScience: 120
+  price: 32
   sellPrice: 11
   sellPriceScience: 5
-  costMachine: 6000
-  timeProduce: 3
+  needElements:
+  - {fileID: 11400000, guid: 5c98dcd4711c0f64fbce9792b8377f08, type: 2}
+  - {fileID: 11400000, guid: 64fc365038fa65d44b44c7cc7184b065, type: 2}
+  - {fileID: 11400000, guid: 5bc06a168c90f554980645ccc695617d, type: 2}
+  countNeedElements: 04000000040000000a000000
+  costMachine: 880
+  timeProduce: 90

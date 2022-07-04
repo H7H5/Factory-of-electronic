@@ -113,9 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b3c1266db46bb4d841537072230b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  product: {fileID: 0}
-  cell: {fileID: 0}
-  dBase: {fileID: 0}
+  product: {fileID: 6201387096430668753, guid: 4fec50c312f54be41b8e8fe0615faae2, type: 3}
 --- !u!114 &793110749814355172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +129,4 @@ MonoBehaviour:
   idElement: 0
   needIdElement: 1
   backPanel: {fileID: 0}
-  deviceBilder: {fileID: 0}
-  noActiv: {fileID: 0}
   imgActivation: {fileID: 0}

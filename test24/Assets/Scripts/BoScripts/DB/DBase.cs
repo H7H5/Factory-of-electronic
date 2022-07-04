@@ -35,6 +35,15 @@ public class DBase : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         Generate();
     }
+
+    public GameObject GetSaverDevice()
+    {
+        if (saverDevice == null)
+        {
+            saverDevice = getDeviceObj(listIdDevicesUpGrade[0]);
+        }
+        return saverDevice;
+    }
     public void SetListIdElementsUpGrade(List<int> list)
     {
         listIdElementsUpGrade = list;

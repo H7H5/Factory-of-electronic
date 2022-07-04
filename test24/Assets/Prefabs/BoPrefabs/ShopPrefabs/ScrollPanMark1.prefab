@@ -640,6 +640,10 @@ MonoBehaviour:
   - {fileID: -8147818181042952393, guid: 1a30b40e9f5ef554d8621bb92b4b6b21, type: 3}
   - {fileID: 6989388899038956048, guid: b2bc2f2fc3a73d441ab85af12b68bcc8, type: 3}
   - {fileID: 2075666630226010258, guid: a77a588af4905ce41855fbbd0c0bf3f1, type: 3}
+  - {fileID: -6004903292177136157, guid: 72952a41971edd1499f1c65716cc4639, type: 3}
+  - {fileID: 8941489043726312843, guid: 9e914b7b1bfd0a74b91d99ca299708b7, type: 3}
+  - {fileID: 4307021336267371677, guid: b84e6a562d586504cbef81f4abf72117, type: 3}
+  - {fileID: -6162700615706083828, guid: 9ae8b0207c5cab24c8c1050456f1e723, type: 3}
   spriteMachine: {fileID: 0}
   currentNumberMachine: 0
   button1: {fileID: 0}

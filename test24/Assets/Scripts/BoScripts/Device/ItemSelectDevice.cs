@@ -4,23 +4,24 @@ using UnityEngine.UI;
 
 public class ItemSelectDevice : MonoBehaviour
 {
-    private int id;
+    public int id;
     [SerializeField] private Button button;
-    public List<Sprite> characters = new List<Sprite>();
     [SerializeField] private List<GameObject> devices = new List<GameObject>();
-    private Sprite sprsteDevice;
-    public void SetImage(int x)
+    public void SetImage(Sprite sprite)
     {
-        if (x < characters.Count)
-        {
-            sprsteDevice = characters[x];
-            button.GetComponent<Image>().sprite = sprsteDevice;
-            id = x;
-        }
+            button.GetComponent<Image>().sprite = sprite;
     }
     public void OnClick()
     {
-        DBase.Instance.SetSaverDevice(devices[id]);
+        GameObject currentDevice = devices[0];
+        for (int i = 0; i < devices.Count; i++)
+        {
+            if (devices[i].GetComponent<ItemDevice>().GetId()==id)
+            {
+                currentDevice = devices[i];
+            }
+        }
+        DBase.Instance.SetSaverDevice(currentDevice);
         DBase.Instance.DeviceSelect.SetActive(false);
         ButtonController.Instance.UnBlockButtons();
         DBase.Instance.OpenSchema.GetComponent<SchemButtonHelper>().OpenSchema();
