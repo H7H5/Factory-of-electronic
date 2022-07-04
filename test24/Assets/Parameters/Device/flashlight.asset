@@ -19,7 +19,7 @@ MonoBehaviour:
   spriteForShop: {fileID: 21300000, guid: c34bd3c3725c3c64bbde816c5ecfd892, type: 3}
   id: 1
   needScience: 500
-  price: 300
+  price: 120
   sellPrice: 150
   sellPriceScience: 15
   needElements:

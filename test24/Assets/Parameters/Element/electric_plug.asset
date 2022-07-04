@@ -12,15 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8e1aa5583e7ec43a264d1acbbfa2ae, type: 3}
   m_Name: electric_plug
   m_EditorClassIdentifier: 
+  container: {fileID: 0}
   name: electric_plug
   description: "\u044D\u043B\u0435\u043A\u0442\u0440\u0438\u0447\u0435\u0441\u043A\u0430\u044F
     \u0432\u0438\u043B\u043A\u0430"
   sprite: {fileID: 21300000, guid: 9c0f987aa05ce4340a78ffd5cfeda812, type: 3}
   spriteForShop: {fileID: 21300000, guid: 2b7d8a3c643c35246921e49b79f541c5, type: 3}
   id: 9
-  needScience: 654
-  price: 43
+  needScience: 130
+  price: 33
   sellPrice: 21
   sellPriceScience: 9
-  costMachine: 980
-  timeProduce: 7
+  needElements:
+  - {fileID: 11400000, guid: 5c98dcd4711c0f64fbce9792b8377f08, type: 2}
+  - {fileID: 11400000, guid: 64fc365038fa65d44b44c7cc7184b065, type: 2}
+  - {fileID: 11400000, guid: 5bc06a168c90f554980645ccc695617d, type: 2}
+  countNeedElements: 05000000060000000c000000
+  costMachine: 910
+  timeProduce: 95

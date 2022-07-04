@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75cf86e35820960458d46104ac4d513c, type: 3}
   m_Name: curling_iron
   m_EditorClassIdentifier: 
+  container: {fileID: 0}
   name: curling_iron
   description: "\u0434\u043B\u044F \u0436\u0435\u043D\u0449\u0438\u043D"
   sprite: {fileID: 21300000, guid: 940badbd964e84844a5680343c8e2a76, type: 3}
   spriteForShop: {fileID: 21300000, guid: ef5cde34bd3b38d46869ad57ebdfb9e5, type: 3}
   id: 6
-  needScience: 21000
+  needScience: 1
   price: 600
   sellPrice: 300
   sellPriceScience: 30
+  needElements: []
+  countNeedElements: 

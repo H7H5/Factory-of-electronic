@@ -7898,7 +7898,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1107002928}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &256703941
 MonoBehaviour:
@@ -7913,8 +7913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 684868989}
-  saverDevice: {fileID: 3488752356393812474, guid: 641113738ae3d19469d702c8a317f3b3,
-    type: 3}
+  saverDevice: {fileID: 0}
   DeviceSelect: {fileID: 1942304309}
   OpenSchema: {fileID: 841692918}
   listIdElementsUpGrade: 
@@ -7947,6 +7946,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5bc06a168c90f554980645ccc695617d, type: 2}
   - {fileID: 11400000, guid: 5c98dcd4711c0f64fbce9792b8377f08, type: 2}
   - {fileID: 11400000, guid: 64fc365038fa65d44b44c7cc7184b065, type: 2}
+  - {fileID: 11400000, guid: aa84578b97a16cd47bd9e520e8867078, type: 2}
+  - {fileID: 11400000, guid: 7b788a7311240644f9778b86b51eedc3, type: 2}
+  - {fileID: 11400000, guid: 06442f9d732dd51428162ad1016735f6, type: 2}
+  - {fileID: 11400000, guid: 319e4b935d059d248ab784432b5730e8, type: 2}
   devicesParameters:
   - {fileID: 11400000, guid: a5afddb4f5d024b47b4eba4f5d46a9c9, type: 2}
   - {fileID: 11400000, guid: 42b5ed16a1a0e7b47b0f8c918930472f, type: 2}
@@ -12481,7 +12484,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -15.40033, y: -17.699951}
+  m_AnchoredPosition: {x: -15.400391, y: -17.699951}
   m_SizeDelta: {x: 25.2406, y: 64.9671}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &465346392
@@ -41740,7 +41743,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1162718036}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48938,7 +48942,6 @@ Transform:
   m_LocalPosition: {x: -0.069066495, y: 0.77974045, z: -6.188965}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1162718036}
   - {fileID: 256703940}
   - {fileID: 1433588790}
   m_Father: {fileID: 0}
@@ -50789,10 +50792,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162718034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.55214, y: 3.9018898, z: -1.2701187}
+  m_LocalPosition: {x: -8.621206, y: 4.68163, z: -7.4590836}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1107002928}
+  m_Father: {fileID: 833153601}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1163192855
@@ -56635,7 +56638,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1107002928}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1433588791
 MonoBehaviour:
@@ -84833,6 +84836,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2035225706}
+        m_MethodName: Init
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1627268836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94156,7 +94170,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -34.21106}
-  m_SizeDelta: {x: -1816.2888, y: -176.92938}
+  m_SizeDelta: {x: -1700.7593, y: -176.92938}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2035225706
 MonoBehaviour:
@@ -98961,7 +98975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.800354, y: -42.799988}
+  m_AnchoredPosition: {x: 12.800293, y: -42.799927}
   m_SizeDelta: {x: -114.820435, y: -259.72192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1659479750261134314
