@@ -74,7 +74,6 @@ public class OrderListController : MonoBehaviour
     [Header("To Save")]
     [NonSerialized]
     
-    //public ItemDevice itemDevice;
     public string checkPointTime;
 
     public static int rating = 1;
@@ -93,7 +92,6 @@ public class OrderListController : MonoBehaviour
 
         checkPointTime = DateTime.UtcNow.ToString();;
         StartCoroutine(TimeDelay());
-        //StartCoroutine(TimeDelayToUpdate());
         ShowTextRating();
 
         Load();
@@ -103,16 +101,6 @@ public class OrderListController : MonoBehaviour
     {
         bookmarks[bookMarkSelected].SetActive(true);
         bookmarks[bookMarkSelected].gameObject.GetComponent<OrderListHelper>().OpenOrderList();
-
-        //if (bookMarkSelected == 0)
-        //{
-        //    bookmarks[0].SetActive(true);
-        //    bookmarks[0].gameObject.GetComponent<OrderListHelper>().OpenOrderList();
-        //} else
-        //{
-        //    bookmarks[bookMarkSelected].SetActive(true);
-        //    bookmarks[bookMarkSelected].gameObject.GetComponent<OrderListHelper>().OpenOrderList();
-        //}
     }
     
     public void SwitchBookMark(int number)
@@ -341,6 +329,10 @@ public class OrderListController : MonoBehaviour
             {
                 listDevices.Add(machine.GetComponent<MachineDeviceHelper>().idDevice);
             }
+        }
+        foreach (int idElementDB in dataBase.listIdDevicesUpGrade)
+        {
+            listDevices.Add(idElementDB);
         }
         return listDevices;
     }
