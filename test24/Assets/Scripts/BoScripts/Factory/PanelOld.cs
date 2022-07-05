@@ -17,7 +17,7 @@ public class PanelOld : MonoBehaviour
     public Text textPercentLevelMaxDetails;
     public Text textUpgradeAmountDetailsCost;
     public Text textUpgradeTimeProduceDetailCost;
-    public int upgradeAmountDetailsCost = 15000;
+    public int upgradeAmountDetailsCost;
     public int upgradeTimeProduceDetailCost = 30000;
     public float amountDetails;
     public Image imageDetail;
