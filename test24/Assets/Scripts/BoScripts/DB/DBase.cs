@@ -237,20 +237,20 @@ public class DBase : MonoBehaviour
             }
         }
     }
-    public void AddDeviceByCount(ItemDevice device, int count)
+    public void AddDeviceByCount(Device device, int count)
     {
         for (int i = 0; i < count; i++)
         {
             AddDevice(device);
         }
     }
-    public void AddDevice(ItemDevice device)
+    public void AddDevice(Device device)
     {
         int count = devicesParameters.Length;
        
         for (int i = 0; i < count; i++)
         {
-            if (devicesParameters[i].id == device.GetId())
+            if (devicesParameters[i].id == device.id)
             {
                 devicesParameters[i].SetCount(devicesParameters[i].GetCount() + 1);
                 SaveOneDevicet(i);

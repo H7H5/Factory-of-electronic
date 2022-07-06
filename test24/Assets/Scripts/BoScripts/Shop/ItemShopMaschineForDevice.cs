@@ -12,7 +12,8 @@ public class ItemShopMaschineForDevice : MonoBehaviour
     [SerializeField] private Text myText;
     [SerializeField] private GameObject button;
     [SerializeField] private Image imageButton;
-    private GameObject device;
+    private GameObject deviceObj;
+    private Device device;
     private TileMapHelper tileMapHelper;
     private int currentNumberMachine = 0;
     private int cost;
@@ -26,8 +27,9 @@ public class ItemShopMaschineForDevice : MonoBehaviour
         GameObject grid = GameObject.Find("Grid");                       //Dw
         tileMapHelper = grid.GetComponentInChildren<TileMapHelper>();    //Dw
     }
-    public void BuildContent(int number)             // вызываем в начале когда строим палитру магазина
+    public void BuildContent(int idElement)             // вызываем в начале когда строим палитру магазина
     {
+        int number = GetNumberMachine(idElement);
         ImageDevice.sprite = characters[number].GetImgDevice();
         gameObject.GetComponent<Image>().sprite = characters[number].GetImg();
         currentNumberMachine = number;
@@ -36,7 +38,8 @@ public class ItemShopMaschineForDevice : MonoBehaviour
         levelMinTimeProduceDetail = characters[number].GetLevelMinTimeProduceDetail();  //Dw
         levelMaxAmountDetail = characters[number].GetLevelMaxAmountDetail();            //Dw
         device = characters[number].GetDevice();
-        idDevice = device.GetComponent<ItemDevice>().GetId();
+        idDevice = device.id;
+        deviceObj = characters[number].GetDeviceObj();
         myText.text = cost.ToString();
         imageButton.sprite = Purse.Instance.money >= cost ? button1 : button2;
     }
@@ -55,11 +58,25 @@ public class ItemShopMaschineForDevice : MonoBehaviour
             machineDeviceHelper.timeProduceDetail = timeProduceDetail;                     //Dw
             machineDeviceHelper.levelMinTimeProduceDetail = levelMinTimeProduceDetail;     //Dw
             machineDeviceHelper.levelMaxAmountDetail = levelMaxAmountDetail;               //Dw
+            machineDeviceHelper.deviceObj = deviceObj;
             machineDeviceHelper.device = device;
             machineDeviceHelper.idDevice = idDevice;
             machine1.GetComponent<MoveObjects>().SetupWhenBuying();
             GameObject.Find("Shop").SetActive(false);
             ButtonController.Instance.isBlocked = false; //Dw
         }
-    } 
+    }
+
+    private int GetNumberMachine(int idElement)
+    {
+        for (int i = 0; i < characters.Count; i++)
+        {
+
+            if (characters[i].GetDevice().id == idElement)
+            {
+                return i;
+            }
+        }
+        return 0;
+    }
 }
