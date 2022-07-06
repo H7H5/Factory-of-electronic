@@ -2,7 +2,8 @@
 
 public class ItemElementMachineD : MonoBehaviour
 {
-    [SerializeField] private GameObject device;
+    [SerializeField] private Device device;
+    [SerializeField] private GameObject deviceObj;
     [SerializeField] private Sprite img;
     [SerializeField] private Sprite imgDevice;
     [SerializeField] private int price;
@@ -11,9 +12,13 @@ public class ItemElementMachineD : MonoBehaviour
     [SerializeField] private int levelMinTimeProduceDetail;
     [SerializeField] private float levelMaxAmountDetail;
 
-    public GameObject GetDevice()
+    public Device GetDevice()
     {
         return device;
+    }
+    public GameObject GetDeviceObj()
+    {
+        return deviceObj;
     }
     public Sprite GetImg()
     {

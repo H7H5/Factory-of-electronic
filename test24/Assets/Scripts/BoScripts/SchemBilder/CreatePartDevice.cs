@@ -59,7 +59,7 @@ public class CreatePartDevice : MonoBehaviour
                 buttons[i].GetComponent<Image>().sprite = button2;
             }
         }
-        DBase.Instance.AddDevice(transform.GetComponent<ItemDevice>());
+        DBase.Instance.AddDevice(transform.GetComponent<Device>());
         BildPanelHelper.Instance.OnButtonCollect(false);
         BildPanelHelper.Instance.Save();
     }

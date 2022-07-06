@@ -43,10 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4269561defcd84b84726d18cc25180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  device: {fileID: 1760430406325497620, guid: 951135d4fbb1124419e552143bfe08a7, type: 3}
+  device: {fileID: 11400000, guid: 42b5ed16a1a0e7b47b0f8c918930472f, type: 2}
+  deviceObj: {fileID: 7561203064661679315, guid: 0cf3eaf101585dc42a79079e9d05487c,
+    type: 3}
   img: {fileID: 21300000, guid: 2b542128d562e9947843e29ddcaf49fa, type: 3}
-  imgDevice: {fileID: 21300000, guid: c34bd3c3725c3c64bbde816c5ecfd892, type: 3}
-  price: 332
-  timeProduceDetail: 5
+  imgDevice: {fileID: 21300000, guid: 6dc538ff497df034a9a9efbee73fde49, type: 3}
+  price: 500
+  timeProduceDetail: 40
   levelMinTimeProduceDetail: 1
   levelMaxAmountDetail: 5

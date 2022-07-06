@@ -46,7 +46,7 @@ public class ManagerMachineDeviceHelper : PanelOld
         machineHelper = moveObj.GetComponent<MachineDeviceHelper>();
         img.sprite = machineHelper.sprt;
         amountDetails = machineHelper.amountDetails;
-        imageDetail.sprite = machineHelper.device.GetComponent<ItemDevice>().imgStock;
+        imageDetail.sprite = machineHelper.device.sprite;
     }
 
     private void buildScroll()
@@ -55,16 +55,16 @@ public class ManagerMachineDeviceHelper : PanelOld
         {
             Destroy(content.transform.GetChild(i).gameObject);
         }
-        if (machineHelper.device.GetComponent<CreatePartDevice>())
+        if (machineHelper.deviceObj.GetComponent<CreatePartDevice>())
         {
-            temp = machineHelper.device.GetComponent<CreatePartDevice>().GetNeedElements();
-            idNeedElement1 = machineHelper.device.GetComponent<CreatePartDevice>().GetNeedElements();
+            temp = machineHelper.deviceObj.GetComponent<CreatePartDevice>().GetNeedElements();
+            idNeedElement1 = machineHelper.deviceObj.GetComponent<CreatePartDevice>().GetNeedElements();
 
         }
-        else if (machineHelper.device.transform.GetChild(0).gameObject.GetComponent<DeviceBilder>())
+        else if (machineHelper.deviceObj.transform.GetChild(0).gameObject.GetComponent<DeviceBilder>())
         {
-            temp = machineHelper.device.transform.GetChild(0).gameObject.GetComponent<DeviceBilder>().GetNeedElements();
-            idNeedElement1 = machineHelper.device.transform.GetChild(0).gameObject.GetComponent<DeviceBilder>().GetNeedElements();
+            temp = machineHelper.deviceObj.transform.GetChild(0).gameObject.GetComponent<DeviceBilder>().GetNeedElements();
+            idNeedElement1 = machineHelper.deviceObj.transform.GetChild(0).gameObject.GetComponent<DeviceBilder>().GetNeedElements();
 
         }
 
@@ -89,8 +89,8 @@ public class ManagerMachineDeviceHelper : PanelOld
         for (int i = 0; i < IdAndCount.Count; i++)
         {
             GameObject TempNeedElement = Instantiate(NeedElement, content.transform);
-            TempNeedElement.GetComponent<ItemNeedElement>().img.sprite = DBase.Instance.GetComponent<DBase>().elementsParameters[(int)IdAndCount[i].x - 1].sprite;
-            TempNeedElement.GetComponent<ItemNeedElement>().SetTextNeedElements(DBase.Instance.GetComponent<DBase>().elementsParameters[(int)IdAndCount[i].x - 1].GetCount(), (int)IdAndCount[i].y * (int)sliderAmountProduce.value);
+            TempNeedElement.GetComponent<ItemNeedElement>().img.sprite = DBase.Instance.GetComponent<DBase>().getElement(idNeedElement[i]).sprite;
+            TempNeedElement.GetComponent<ItemNeedElement>().SetTextNeedElements(DBase.Instance.GetComponent<DBase>().getElement(idNeedElement[i]).GetCount(), (int)IdAndCount[i].y * (int)sliderAmountProduce.value);
         }
         if (!IsNeedElement)
         {
@@ -186,7 +186,7 @@ public class ManagerMachineDeviceHelper : PanelOld
         List<Vector2> maxIdAndCount = new List<Vector2>();
         for (int i = 0; i < TempIdNeedElement.Count; i++)
         {
-            if (DBase.Instance.GetComponent<DBase>().elementsParameters[TempIdNeedElement[i] - 1].GetCount() >= TempIdNeedElementCount[i] * (int)sliderAmountProduce.value)
+            if (DBase.Instance.GetComponent<DBase>().getElement(TempIdNeedElement[i]).GetCount() >= TempIdNeedElementCount[i] * (int)sliderAmountProduce.value)
             {
                 max.Add(TempIdNeedElement[i]);
                 maxIdAndCount.Add(new Vector2(TempIdNeedElement[i], TempIdNeedElementCount[i]));

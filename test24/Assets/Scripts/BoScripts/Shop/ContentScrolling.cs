@@ -80,12 +80,12 @@ public class ContentScrolling : MonoBehaviour
         if (mode == 3) return;
         scrollbox.GetComponent<Scrollbar>().value = 0.0f;
         Clear();
-        currentPanel = ScrollPrefab3.GetComponent<ItemShopMaschineForDevice>().characters.Count;
+        currentPanel = DBase.Instance.listIdDevicesUpGrade.Count;
         panels = new GameObject[currentPanel];
         for (int i = 0; i < currentPanel; i++)
         {
             panels[i] = Instantiate(ScrollPrefab3, transform, false);
-            panels[i].GetComponent<ItemShopMaschineForDevice>().BuildContent(i);
+            panels[i].GetComponent<ItemShopMaschineForDevice>().BuildContent(DBase.Instance.listIdDevicesUpGrade[i]);
             if (i == 0) continue;
             panels[i].transform.localPosition = new Vector2(panels[i - 1].transform.localPosition.x +
                 ScrollPrefab1.GetComponent<RectTransform>().sizeDelta.x , panels[i].transform.localPosition.y);

@@ -7,15 +7,14 @@ public class MachineDeviceHelper : MachineOld
     public int idDevice;
     
     public Sprite sprt;                                           
-    public GameObject device;
-    public ItemDevice itemDevice;
+    public GameObject deviceObj;
+    public Device device;
 
     void Start()
     {
-        if (device)
+        if (deviceObj)
         {
-            itemDevice = device.GetComponent<ItemDevice>();
-            spriteDetail = itemDevice.imgStock;
+            spriteDetail = device.sprite;
         }
     }
   
@@ -24,14 +23,14 @@ public class MachineDeviceHelper : MachineOld
         id = x;
         gameObject.GetComponent<SpriteRenderer>().sprite = DBase.Instance.spriteMachinesForDevice[x];
         sprt = DBase.Instance.spriteMachinesForDevice[x];
-        device = DBase.Instance.getDeviceObj(idDevice);
+        deviceObj = DBase.Instance.getDeviceObj(idDevice);
     }
    
     public override void CollectProduct()
     {
         base.detailProduced.SetActive(false);
         base.MoveDetailToStock();
-        DBase.Instance.AddDeviceByCount(itemDevice, amountDetails);
+        DBase.Instance.AddDeviceByCount(device, amountDetails);
         StopProduce();
     }
     public override Sprite GetImageDetail()

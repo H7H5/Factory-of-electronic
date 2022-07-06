@@ -43,9 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4269561defcd84b84726d18cc25180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  device: {fileID: 7561203064661679315, guid: e68e7a91880200b44a0e876a129ca06b, type: 3}
+  device: {fileID: 11400000, guid: 727a45ae635496a4d9ba459ef93451c3, type: 2}
+  deviceObj: {fileID: 7561203064661679315, guid: 7cf890fe970bcc14b860aae9538c8262,
+    type: 3}
   img: {fileID: 21300000, guid: b4cbf6834fd6519459e0704331d8ab00, type: 3}
-  imgDevice: {fileID: 21300000, guid: ef5cde34bd3b38d46869ad57ebdfb9e5, type: 3}
+  imgDevice: {fileID: 21300000, guid: 602ec427af8b95e42abc3c7aef3740cc, type: 3}
   price: 3312
   timeProduceDetail: 5
   levelMinTimeProduceDetail: 1
