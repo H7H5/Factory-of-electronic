@@ -25,8 +25,8 @@ public class MachineHelper : MachineOld
     public override void InitMachine(int x)
     {
         id = x;
-        gameObject.GetComponent<SpriteRenderer>().sprite = DBase.Instance.spritesMachinForElements[x];
-        sprt = DBase.Instance.spritesMachinForElements[x];
+        gameObject.GetComponent<SpriteRenderer>().sprite = machine.sprite;
+        sprt = machine.sprite;
         detail = DBase.Instance.getDetailID(idDetail);
         for (int i = 0; i < idDetailsToModern.Length; i++)
         {
