@@ -12,22 +12,23 @@ public class Equipment : MonoBehaviour
     [SerializeField] private Button button;
     private ItemShopMachineForElement itemShopMachine;
     private int totalCost = 0;
-    private bool[] boolDetailsToModern;                                  
+    private bool[] boolDetailsToModern;
+    int currentMachine = 0;
 
     public void Activation(ItemShopMachineForElement item)
     {
         totalCost = 0;
         itemShopMachine = item;
         imageMachine.sprite = itemShopMachine.spriteMachine;
-        int currentMachine = itemShopMachine.currentNumberMachine;
-        ShowImage(itemShopMachine.characters[currentMachine].GetDetailsToModern().Length);
-        for (int i = 0; i < itemShopMachine.characters[currentMachine].GetDetailsToModern().Length; i++)
+        currentMachine = itemShopMachine.currentNumberMachine;
+        ShowImage(itemShopMachine.machines[currentMachine].GetDetailsToModern().Length);
+        for (int i = 0; i < itemShopMachine.machines[currentMachine].GetDetailsToModern().Length; i++)
         {
-            if (DBase.Instance.IsUpgradeElement(itemShopMachine.characters[currentMachine].GetOneDetailsToModern(i).id))
+            if (DBase.Instance.IsUpgradeElement(itemShopMachine.machines[currentMachine].GetOneDetailsToModern(i).id))
             {
-                ShowImageElement(i, itemShopMachine.characters[currentMachine].GetOneDetailsToModern(i).sprite,
-                    itemShopMachine.characters[currentMachine].GetOneDetailsToModern(i).GetCostMachine());
-                totalCost += itemShopMachine.characters[currentMachine].GetOneDetailsToModern(i).GetCostMachine();
+                ShowImageElement(i, itemShopMachine.machines[currentMachine].GetOneDetailsToModern(i).sprite,
+                    itemShopMachine.machines[currentMachine].GetOneDetailsToModern(i).GetCostMachine());
+                totalCost += itemShopMachine.machines[currentMachine].GetOneDetailsToModern(i).GetCostMachine();
             }
         }
         priceText.text = totalCost.ToString();  
@@ -76,7 +77,7 @@ public class Equipment : MonoBehaviour
     public void BuyNow()
     {
         SetBoolArray();
-        itemShopMachine.BuyThisMachine(totalCost, boolDetailsToModern);
+        itemShopMachine.BuyThisMachine(totalCost, boolDetailsToModern, currentMachine);
         gameObject.SetActive(false);
     }
     private void SetBoolArray()

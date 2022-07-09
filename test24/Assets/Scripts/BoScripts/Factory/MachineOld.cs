@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MachineOld : MonoBehaviour
 {
-    
+    public Machine machine;
     public Image imageDetail;
     public Text textAmountDetails;
     public Text test;

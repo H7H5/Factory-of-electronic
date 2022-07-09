@@ -647,6 +647,19 @@ MonoBehaviour:
   - {fileID: 2724095456226630921, guid: 40571adc14d513446b0334d9d097fb38, type: 3}
   - {fileID: 570168851961380855, guid: e9865be48718b2e41b0d06f93e811de5, type: 3}
   - {fileID: -4075251156113067299, guid: a9e2cbd22ed49b6449cc88ad18db8a9a, type: 3}
+  machines:
+  - {fileID: 11400000, guid: b797243eb37d55e4dbd7b66e49bb5114, type: 2}
+  - {fileID: 11400000, guid: 04d84c155d7ee184b9899b4694202828, type: 2}
+  - {fileID: 11400000, guid: 0ed52c71427e32443ac7b35c88bb1bc2, type: 2}
+  - {fileID: 11400000, guid: 2e0e73b743d2ffa4f9e5b2f931ae45b4, type: 2}
+  - {fileID: 11400000, guid: 30bb27b6cca7a59479e4a67f3adc2930, type: 2}
+  - {fileID: 11400000, guid: 4e6f2e51341614744b900f3f784e7165, type: 2}
+  - {fileID: 11400000, guid: c9f29de48897e784ab511be08982cb5d, type: 2}
+  - {fileID: 11400000, guid: eed73da5f38f9e04999803c6817cee4b, type: 2}
+  - {fileID: 11400000, guid: d871a476558ad56438210a3d00a4aae5, type: 2}
+  - {fileID: 11400000, guid: df3dbf3f5c98b4348981eb1fe92d0f10, type: 2}
+  - {fileID: 11400000, guid: e1dee44f7a7a733448ee1b961eca4b92, type: 2}
+  - {fileID: 11400000, guid: d10793f6e6391054b8c76d1412234115, type: 2}
   spriteMachine: {fileID: 0}
   currentNumberMachine: 0
   button1: {fileID: 0}

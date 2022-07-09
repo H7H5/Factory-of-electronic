@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ItemShopMachineForElement : MonoBehaviour
 {
-    public List<ItemMachine> characters = new List<ItemMachine>();
+    public List<Machine> machines = new List<Machine>();
     public Sprite spriteMachine;
     public int currentNumberMachine = 0;
     [SerializeField] private Sprite button1;
@@ -29,36 +29,35 @@ public class ItemShopMachineForElement : MonoBehaviour
     public void BuildContent(int idElement)    // вызываем в начале когда строим палитру магазина
     {
         int number = GetNumberMachine(idElement);
-        spriteMachine = characters[number].GetImg();
+        spriteMachine = machines[number].spriteForShop;
         gameObject.GetComponent<Image>().sprite = spriteMachine;
         currentNumberMachine = number;
-        cost = characters[number].GetPrice();
-        timeProduceDetail = characters[number].GetTimeProduceDetail();                  //Dw
-        levelMinTimeProduceDetail = characters[number].GetLevelMinTimeProduceDetail();  //Dw
-        levelMaxAmountDetail = characters[number].GetLevelMaxAmountDetail();            //Dw
-        detailsToModern = characters[number].GetDetailsToModern();                      //Dw
-        idDetailsToModern = new int[characters[number].GetDetailsToModern().Length];
-        for (int i = 0; i < characters[number].GetDetailsToModern().Length; i++)
+        timeProduceDetail = machines[number].GetTimeProduceDetail();                  //Dw
+        levelMinTimeProduceDetail = machines[number].GetLevelMinTimeProduceDetail();  //Dw
+        levelMaxAmountDetail = machines[number].GetLevelMaxAmountDetail();            //Dw
+        detailsToModern = machines[number].GetDetailsToModern();                      //Dw
+        idDetailsToModern = new int[machines[number].GetDetailsToModern().Length];
+        for (int i = 0; i < machines[number].GetDetailsToModern().Length; i++)
         {
-            idDetailsToModern[i] = characters[number].GetOneDetailsToModern(i).id;
+            idDetailsToModern[i] = machines[number].GetOneDetailsToModern(i).id;
         }
-        detail = characters[number].GetDetail();
+        detail = machines[number].GetDetail();
         idDetail = detail.id;
         BildElementByMachine(number);
     }
     private void BildElementByMachine(int number)
     {
-        GetComponent<SelectElementByShop>().ShowImage(characters[number].GetDetailsToModern().Length);
-        for (int i = 0; i < characters[number].GetDetailsToModern().Length; i++)
+        GetComponent<SelectElementByShop>().ShowImage(machines[number].GetDetailsToModern().Length);
+        for (int i = 0; i < machines[number].GetDetailsToModern().Length; i++)
         {
-            if (DBase.Instance.IsUpgradeElement(characters[number].GetOneDetailsToModern(i).id))
+            if (DBase.Instance.IsUpgradeElement(machines[number].GetOneDetailsToModern(i).id))
             {
-                GetComponent<SelectElementByShop>().ShowImageElement(i, characters[number].GetOneDetailsToModern(i).sprite);
+                GetComponent<SelectElementByShop>().ShowImageElement(i, machines[number].GetOneDetailsToModern(i).sprite);
             }
         }
     }
 
-    public void BuyThisMachine(int totalCost, bool []boolDetailsToModern)    // вызываем когда покупаем станок
+    public void BuyThisMachine(int totalCost, bool []boolDetailsToModern, int currentMachine)    // вызываем когда покупаем станок
     {
         transform.parent.GetComponent<ContentScrolling>().Clear();
         if (Purse.Instance.money >= totalCost)
@@ -68,6 +67,7 @@ public class ItemShopMachineForElement : MonoBehaviour
             GameObject machine1 = Instantiate(machine, tilePositionCamera, gameObject.transform.rotation);    //Dw
             machine1.transform.SetParent(MachineParentScript.Instance.gameObject.transform);
             MachineHelper machineHelper = machine1.GetComponent<MachineHelper>();
+            machineHelper.machine = machines[currentMachine];
             machineHelper.InitMachine(currentNumberMachine);
             machineHelper.price = totalCost;
             machineHelper.timeProduceDetail = timeProduceDetail;                     //Dw
@@ -97,11 +97,11 @@ public class ItemShopMachineForElement : MonoBehaviour
     }
     private int GetNumberMachine( int idElement)
     {
-        for (int i = 0; i < characters.Count; i++)
+        for (int i = 0; i < machines.Count; i++)
         {
-            for (int j = 0; j < characters[i].GetDetailsToModern().Length; j++)
+            for (int j = 0; j < machines[i].GetDetailsToModern().Length; j++)
             {
-                if (characters[i].GetOneDetailsToModern(j).id == idElement)
+                if (machines[i].GetOneDetailsToModern(j).id == idElement)
                 {
                     return i;
                 }
