@@ -64,7 +64,7 @@ public class DBase : MonoBehaviour
         return false;
     }
 
-    public void addElement(ItemElement element)
+    public void addElement(Element element)
     {
         for (int i = 0; i < elementsParameters.Length; i++)
         {
@@ -390,7 +390,7 @@ public class DBase : MonoBehaviour
     {
         for (int i = 0; i < devicesPrefabs.Count; i++)
         {
-            if (devicesPrefabs[i].GetComponent<ItemDevice>().GetId() == id)
+            if (devicesPrefabs[i].GetComponent<ItemDevice>().device.id == id)
             {
                 return devicesPrefabs[i];
             }

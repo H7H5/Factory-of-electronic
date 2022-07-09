@@ -6,7 +6,6 @@ public class StockManager : MonoBehaviour
 {
     public static StockManager Instance;
     public Element currentElement;
-    public ItemDevice itemDevice;
 
     public int idDevice;
     private Device device;
@@ -116,7 +115,7 @@ public class StockManager : MonoBehaviour
         device = DBase.Instance.GetDevice(idDevice);
         image.sprite = device.sprite;
         text.text = device.GetCount().ToString();
-        description.SetDeviceParameters(device);
+        description.SetDevice(device);
 
         textPriceScience.text = device.sellPriceScience.ToString();
         textPriceMoney.text = device.sellPrice.ToString();

@@ -536,7 +536,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentElement: {fileID: 0}
-  itemDevice: {fileID: 0}
   idDevice: 0
   slider: {fileID: 480114364}
   image: {fileID: 338196348}
@@ -7950,6 +7949,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7b788a7311240644f9778b86b51eedc3, type: 2}
   - {fileID: 11400000, guid: 06442f9d732dd51428162ad1016735f6, type: 2}
   - {fileID: 11400000, guid: 319e4b935d059d248ab784432b5730e8, type: 2}
+  - {fileID: 11400000, guid: c063a524ede89564994af8ca09cc5881, type: 2}
+  - {fileID: 11400000, guid: fcf658cc37f49fb4ead034127ca8df1f, type: 2}
   devicesParameters:
   - {fileID: 11400000, guid: a5afddb4f5d024b47b4eba4f5d46a9c9, type: 2}
   - {fileID: 11400000, guid: 42b5ed16a1a0e7b47b0f8c918930472f, type: 2}

@@ -12,14 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8e1aa5583e7ec43a264d1acbbfa2ae, type: 3}
   m_Name: temperature_regulator
   m_EditorClassIdentifier: 
+  container: {fileID: 0}
   name: temperature_regulator
   description: "\u0440\u0435\u0433\u0443\u043B\u044F\u0442\u043E\u0440 \u0442\u0435\u043C\u043F\u0435\u0440\u0430\u0442\u0443\u0440\u044B"
   sprite: {fileID: 21300000, guid: eee4fea5def4a7441b759ff604eb0350, type: 3}
   spriteForShop: {fileID: 21300000, guid: 7dc2c4717a9bc9a4e8b70e63ae533eec, type: 3}
   id: 13
-  needScience: 33
-  price: 12
+  needScience: 1600
+  price: 260
   sellPrice: 6
   sellPriceScience: 13
-  costMachine: 9000
-  timeProduce: 1
+  needElements:
+  - {fileID: 11400000, guid: c063a524ede89564994af8ca09cc5881, type: 2}
+  - {fileID: 11400000, guid: 319e4b935d059d248ab784432b5730e8, type: 2}
+  - {fileID: 11400000, guid: ad2d326a440c3914698c3fefe1bb3019, type: 2}
+  countNeedElements: 020000000a00000064000000
+  costMachine: 8500
+  timeProduce: 600

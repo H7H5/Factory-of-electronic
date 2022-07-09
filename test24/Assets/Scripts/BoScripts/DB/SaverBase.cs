@@ -12,7 +12,7 @@ public class SaverBase : MonoBehaviour
     {
         countDevice = transform.GetChild(0).transform.childCount;
         array = new int[countDevice];
-        id = gameObject.GetComponent<ItemDevice>().GetId();
+        id = gameObject.GetComponent<ItemDevice>().device.id;
     }
     public void Save()
     {

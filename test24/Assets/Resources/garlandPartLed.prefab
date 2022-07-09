@@ -12,12 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efbbf187dbecdc34ebe9cc52aa6fbcc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  container: {fileID: 0}
-  imgStock: {fileID: 0}
-  name: garlandPartLed
-  descriptionDevice: "\u0444\u043E\u043D\u0430\u0440\u0438\u043A"
-  id: 102
-  price: 200
+  device: {fileID: 11400000, guid: e598638253be7c84dbf628cffe84565a, type: 2}
 --- !u!114 &472218628953481711
 MonoBehaviour:
   m_ObjectHideFlags: 0

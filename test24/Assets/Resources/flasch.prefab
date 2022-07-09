@@ -12,17 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efbbf187dbecdc34ebe9cc52aa6fbcc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 1
-  needScience: 600
-  needElements:
-  - {fileID: 1862613545698587911, guid: f80b50e61b27f2a44a75bce06e56c36b, type: 3}
-  - {fileID: 7789039767717754689, guid: ea8d3243b176a374b865b6852d88fc57, type: 3}
-  countNeedElements: 7b000000e9000000
-  container: {fileID: 0}
-  imgStock: {fileID: 21300000, guid: c34bd3c3725c3c64bbde816c5ecfd892, type: 3}
-  name: flashlight
-  descriptionDevice: default device
-  price: 300
+  device: {fileID: 11400000, guid: a5afddb4f5d024b47b4eba4f5d46a9c9, type: 2}
 --- !u!114 &472218628953481711
 MonoBehaviour:
   m_ObjectHideFlags: 0

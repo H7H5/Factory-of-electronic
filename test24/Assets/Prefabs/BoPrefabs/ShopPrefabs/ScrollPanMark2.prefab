@@ -334,19 +334,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characters:
-  - {fileID: 5767073172556656774, guid: bc4fcf7dad91d8a4281458854b35f4f3, type: 3}
-  - {fileID: 7789039767717754689, guid: ea8d3243b176a374b865b6852d88fc57, type: 3}
-  - {fileID: 5539246000945763418, guid: d63e92fc45f9d254694e03cf634fbab8, type: 3}
-  - {fileID: 3639891645397291330, guid: b519541bbdec0304d9366d4c7602ad2c, type: 3}
-  - {fileID: 2967275624035485461, guid: 8308a0bdaed938a48baea365308b7a51, type: 3}
-  - {fileID: 7502382086439189091, guid: c58fd983d5d075541939f4774cef42ab, type: 3}
-  - {fileID: 1862613545698587911, guid: 93393e010b84f9848951751b8f2e32e5, type: 3}
-  - {fileID: 1862613545698587911, guid: 78aefe872dbc5c149973e5440002600c, type: 3}
-  - {fileID: 1862613545698587911, guid: 508bfba11b5d9d04f9d68b20fa61eb59, type: 3}
-  - {fileID: 1862613545698587911, guid: 9f7f2e90ea69e774da2ad71738e4c2f4, type: 3}
-  - {fileID: 1862613545698587911, guid: d6084d9159668a242b95ebe41589560e, type: 3}
-  - {fileID: 1862613545698587911, guid: 6d2a71ee62cd1f241a4bbdb9bc64fcf0, type: 3}
-  - {fileID: 1862613545698587911, guid: f80b50e61b27f2a44a75bce06e56c36b, type: 3}
+  - {fileID: 11400000, guid: aa84578b97a16cd47bd9e520e8867078, type: 2}
+  - {fileID: 11400000, guid: 08c373fb3abdef447904e204a9e8d252, type: 2}
+  - {fileID: 11400000, guid: 5c98dcd4711c0f64fbce9792b8377f08, type: 2}
+  - {fileID: 11400000, guid: 64fc365038fa65d44b44c7cc7184b065, type: 2}
+  - {fileID: 11400000, guid: 06442f9d732dd51428162ad1016735f6, type: 2}
+  - {fileID: 11400000, guid: c063a524ede89564994af8ca09cc5881, type: 2}
+  - {fileID: 11400000, guid: ad2d326a440c3914698c3fefe1bb3019, type: 2}
+  - {fileID: 11400000, guid: 319e4b935d059d248ab784432b5730e8, type: 2}
+  - {fileID: 11400000, guid: 844631280bee26c448b8f810c201b713, type: 2}
+  - {fileID: 11400000, guid: 7b788a7311240644f9778b86b51eedc3, type: 2}
+  - {fileID: 11400000, guid: fcf658cc37f49fb4ead034127ca8df1f, type: 2}
+  - {fileID: 11400000, guid: 5bc06a168c90f554980645ccc695617d, type: 2}
+  - {fileID: 11400000, guid: 81356fb47787b2e40af13657a1871331, type: 2}
   button1: {fileID: 21300000, guid: 673919b00a23d584eb41abf101e86255, type: 3}
   button2: {fileID: 21300000, guid: cd7226ccee0b2d740a11078c3af858f8, type: 3}
   textPrice: {fileID: 8040333935953015864}

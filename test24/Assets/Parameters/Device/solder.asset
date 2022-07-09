@@ -18,9 +18,11 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: bb44ae82c93eb134896e93405c4f8d1f, type: 3}
   spriteForShop: {fileID: 21300000, guid: 602ec427af8b95e42abc3c7aef3740cc, type: 3}
   id: 5
-  needScience: 0
-  price: 100
+  needScience: 750
+  price: 160
   sellPrice: 50
   sellPriceScience: 5
-  needElements: []
-  countNeedElements: 
+  needElements:
+  - {fileID: 11400000, guid: c063a524ede89564994af8ca09cc5881, type: 2}
+  - {fileID: 11400000, guid: 06442f9d732dd51428162ad1016735f6, type: 2}
+  countNeedElements: 0100000005000000
