@@ -45,8 +45,8 @@ public class CreatePartDevice : MonoBehaviour
     {
         for (int i = 0; i < listeners.Count; i++)
         {
-            DBase.Instance.UpdateClear_partDevice(listeners[i].transform.GetComponent<ItemDevice>().GetId(), 1);
-            DBase.Instance.Update_partDevice(listeners[i].transform.GetComponent<ItemDevice>().GetId(), 0);
+            DBase.Instance.UpdateClear_partDevice(listeners[i].transform.GetComponent<ItemDevice>().device.id, 1);
+            DBase.Instance.Update_partDevice(listeners[i].transform.GetComponent<ItemDevice>().device.id, 0);
         }
         for (int i = 0; i < listeners.Count; i++)
         {
@@ -59,7 +59,7 @@ public class CreatePartDevice : MonoBehaviour
                 buttons[i].GetComponent<Image>().sprite = button2;
             }
         }
-        DBase.Instance.AddDevice(transform.GetComponent<Device>());
+        DBase.Instance.AddDevice(transform.GetComponent<ItemDevice>().device);
         BildPanelHelper.Instance.OnButtonCollect(false);
         BildPanelHelper.Instance.Save();
     }

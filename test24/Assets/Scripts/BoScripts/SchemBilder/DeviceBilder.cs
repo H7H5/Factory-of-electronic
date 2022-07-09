@@ -25,9 +25,9 @@ public class DeviceBilder : MonoBehaviour
     private void UpdatePartDevice(bool collectedDevice)
     {
         OnePartDevice onePartDevice = transform.parent.GetComponent<OnePartDevice>();
-        if (onePartDevice.ReadClear_partDevice(transform.parent.GetComponent<ItemDevice>().GetId()) == 1)
+        if (onePartDevice.ReadClear_partDevice(transform.parent.GetComponent<ItemDevice>().device.id) == 1)
         {
-            onePartDevice.UpdateClear_partDevice(transform.parent.GetComponent<ItemDevice>().GetId(), 0);
+            onePartDevice.UpdateClear_partDevice(transform.parent.GetComponent<ItemDevice>().device.id, 0);
             Collect();
             transform.parent.GetComponent<SaverBase>().Save();
         }
@@ -70,7 +70,7 @@ public class DeviceBilder : MonoBehaviour
             listeners[i].SetImg();
             listeners[i].DestroyChild();
         }
-        DBase.Instance.AddDevice(transform.parent.gameObject.GetComponent<Device>());
+        DBase.Instance.AddDevice(transform.parent.gameObject.GetComponent<ItemDevice>().device);
         activation = 1;
         BildPanelHelper.Instance.OnButtonCollect(false);
         BildPanelHelper.Instance.Save();

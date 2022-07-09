@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ItemShopElement : MonoBehaviour
 {
-    public List<ItemElement> characters = new List<ItemElement>();
+    public List<Element> characters = new List<Element>();
     [SerializeField] private Sprite button1;
     [SerializeField] private Sprite button2;
     [SerializeField] private Text textPrice;
@@ -15,7 +15,7 @@ public class ItemShopElement : MonoBehaviour
 
     public void BuildContent(int number) // вызываем в начале когда строим палитру магазина
     {
-        gameObject.GetComponent<Image>().sprite = characters[number].img;
+        gameObject.GetComponent<Image>().sprite = characters[number].spriteForShop;
         currentNumberElement = number;
         price = characters[number].GetPrice();
         textPrice.text = price.ToString();

@@ -16,7 +16,7 @@ public class ItemSelectDevice : MonoBehaviour
         GameObject currentDevice = devices[0];
         for (int i = 0; i < devices.Count; i++)
         {
-            if (devices[i].GetComponent<ItemDevice>().GetId()==id)
+            if (devices[i].GetComponent<ItemDevice>().device.id==id)
             {
                 currentDevice = devices[i];
             }

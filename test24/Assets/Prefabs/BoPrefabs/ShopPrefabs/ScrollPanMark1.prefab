@@ -644,6 +644,9 @@ MonoBehaviour:
   - {fileID: 8941489043726312843, guid: 9e914b7b1bfd0a74b91d99ca299708b7, type: 3}
   - {fileID: 4307021336267371677, guid: b84e6a562d586504cbef81f4abf72117, type: 3}
   - {fileID: -6162700615706083828, guid: 9ae8b0207c5cab24c8c1050456f1e723, type: 3}
+  - {fileID: 2724095456226630921, guid: 40571adc14d513446b0334d9d097fb38, type: 3}
+  - {fileID: 570168851961380855, guid: e9865be48718b2e41b0d06f93e811de5, type: 3}
+  - {fileID: -4075251156113067299, guid: a9e2cbd22ed49b6449cc88ad18db8a9a, type: 3}
   spriteMachine: {fileID: 0}
   currentNumberMachine: 0
   button1: {fileID: 0}
