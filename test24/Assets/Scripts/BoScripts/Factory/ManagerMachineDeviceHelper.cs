@@ -47,6 +47,7 @@ public class ManagerMachineDeviceHelper : PanelOld
         img.sprite = machineHelper.sprt;
         amountDetails = machineHelper.amountDetails;
         imageDetail.sprite = machineHelper.device.sprite;
+        upgradeAmountDetailsCost = Convert.ToInt32(machineHelper.price * 1.5);
     }
 
     private void buildScroll()

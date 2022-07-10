@@ -70,6 +70,8 @@ public class OrderListController : MonoBehaviour
     [SerializeField] private List<GameObject> bookmarks = new List<GameObject>();
     public int bookMarkSelected = 0;
 
+    public bool newOrdersInList = false;
+
 
     [Header("To Save")]
     [NonSerialized]
@@ -93,14 +95,28 @@ public class OrderListController : MonoBehaviour
         checkPointTime = DateTime.UtcNow.ToString();;
         StartCoroutine(TimeDelay());
         ShowTextRating();
+        SetColorOrdersIcon();
 
         Load();
+    }
+
+    public void SetColorOrdersIcon()
+    {
+        if (newOrdersInList == true)
+        {
+            openOrderList.GetComponent<Image>().color = Color.green;
+        } 
+        else
+        {
+            openOrderList.GetComponent<Image>().color = Color.white;
+        }
     }
 
     public void OpenOrderList()
     {
         bookmarks[bookMarkSelected].SetActive(true);
-        bookmarks[bookMarkSelected].gameObject.GetComponent<OrderListHelper>().OpenOrderList();
+        //bookmarks[bookMarkSelected].gameObject.GetComponent<OrderListHelper>().OpenOrderList();
+        orderListHelper.OpenOrderList();
     }
     
     public void SwitchBookMark(int number)
@@ -183,9 +199,9 @@ public class OrderListController : MonoBehaviour
             rating = 1;
         }
         ordersSelected.RemoveAt(failureOrderNumber);
-        orderListHelper.OpenOrderList();
         ShowTextRating();
         countSelectedOrders = ordersSelected.Count;
+        orderListHelper.OpenOrderList();
 
         Save();
     }
@@ -209,20 +225,21 @@ public class OrderListController : MonoBehaviour
 
             orderListHelper.OpenOrderList();
 
-            SetOpenOrderListColor();
+            newOrdersInList = true;
+            SetColorOrdersIcon();
         }
     }
 
-    public void SetOpenOrderListColor()
-    {
-        if(orderList.activeInHierarchy == true || orderListSelected.activeInHierarchy == true || bookMarkSelected == 1)
-        {
-            openOrderList.GetComponent<Image>().color = Color.white;
-        } else
-        {
-            openOrderList.GetComponent<Image>().color = Color.green;
-        }
-    }
+    //public void SetOpenOrderListColor()
+    //{
+    //    if(orderList.activeInHierarchy == true || orderListSelected.activeInHierarchy == true || bookMarkSelected == 1)
+    //    {
+    //        openOrderList.GetComponent<Image>().color = Color.white;
+    //    } else
+    //    {
+    //        openOrderList.GetComponent<Image>().color = Color.green;
+    //    }
+    //}
 
     public void GenerateCountOrders()
     {
@@ -232,7 +249,9 @@ public class OrderListController : MonoBehaviour
     public void Reclame()
     {
         GenerateOrders();
-        SetOpenOrderListColor();
+        //SetOpenOrderListColor();
+        newOrdersInList = true;
+        SetColorOrdersIcon();
 
         orderListHelper.OpenOrderList();
 
@@ -244,9 +263,9 @@ public class OrderListController : MonoBehaviour
         orders[key].timeStartOrder = DateTime.UtcNow.ToString();
         ordersSelected.Add(orders[key]);
         orders.RemoveAt(key);
-        orderListHelper.OpenOrderList();
         countOrders = orders.Count;
         countSelectedOrders = ordersSelected.Count;
+        orderListHelper.OpenOrderList();
 
         Save();
     }
@@ -272,8 +291,8 @@ public class OrderListController : MonoBehaviour
         rating += ratingSuccessBy;
         ShowTextRating();
         ordersSelected.RemoveAt(key);
-        orderListHelper.OpenOrderList();
         countSelectedOrders = ordersSelected.Count;
+        orderListHelper.OpenOrderList();
 
         Save();
     }
