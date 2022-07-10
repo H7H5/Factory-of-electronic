@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a8aa3a23b578ce45b1c464aca81e90f, type: 3}
+  m_Name: MachineDevice3
+  m_EditorClassIdentifier: 
+  device: {fileID: 11400000, guid: 42b5ed16a1a0e7b47b0f8c918930472f, type: 2}
+  deviceObj: {fileID: 7561203064661679315, guid: 0cf3eaf101585dc42a79079e9d05487c,
+    type: 3}
+  img: {fileID: 21300000, guid: 2b542128d562e9947843e29ddcaf49fa, type: 3}
+  imgDevice: {fileID: 21300000, guid: 6dc538ff497df034a9a9efbee73fde49, type: 3}
+  price: 500
+  timeProduceDetail: 40
+  levelMinTimeProduceDetail: 1
+  levelMaxAmountDetail: 5

@@ -408,13 +408,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2aa5108f66b65349bba5352acce8590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characters:
-  - {fileID: -31785739501052809, guid: 4b3863dd36f0a8448a131ef4fc3630ce, type: 3}
-  - {fileID: -31785739501052809, guid: 2e66d638ff420ea42bc1195b7a77e35f, type: 3}
-  - {fileID: -31785739501052809, guid: 84833f7dddeaa7945b5bd0000b97a2ae, type: 3}
-  - {fileID: -31785739501052809, guid: 0bb38292b5c61cb44a171c93dc05fd44, type: 3}
-  - {fileID: -31785739501052809, guid: 6b0767683e3d7934c81655ad573b836f, type: 3}
-  - {fileID: -31785739501052809, guid: b69a3e42215973c43ab3f01ff363a4d8, type: 3}
+  machinesDevice:
+  - {fileID: 11400000, guid: 39023e943be24c94cafd7442e5ee16ab, type: 2}
+  - {fileID: 11400000, guid: 14671de1f7474b14894ce9e65cd32eee, type: 2}
+  - {fileID: 11400000, guid: 5232c02e0b65d7e4d95a6066758c3022, type: 2}
+  - {fileID: 11400000, guid: 4b71cb9120a28634eb813b0d41da7460, type: 2}
+  - {fileID: 11400000, guid: 3b0405d9cec2b524aaace66e59038dfb, type: 2}
+  - {fileID: 11400000, guid: 14e08c91bb084804788c5fd53152d6aa, type: 2}
   button1: {fileID: 21300000, guid: 673919b00a23d584eb41abf101e86255, type: 3}
   button2: {fileID: 21300000, guid: cd7226ccee0b2d740a11078c3af858f8, type: 3}
   ImageDevice: {fileID: 1412649509007354132}

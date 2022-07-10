@@ -639,6 +639,7 @@ MonoBehaviour:
   - {fileID: 1856927786}
   - {fileID: 1722381180}
   bookMarkSelected: 0
+  newOrdersInList: 0
   orders: []
   ordersSelected: []
   countOrders: 0

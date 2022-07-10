@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ItemShopMaschineForDevice : MonoBehaviour
 {
-    public List<ItemElementMachineD> characters = new List<ItemElementMachineD>();
+    public List<MachineDevice> machinesDevice = new List<MachineDevice>();
     [SerializeField] private Sprite button1;
     [SerializeField] private Sprite button2;
     [SerializeField] private Image ImageDevice;
@@ -30,16 +30,16 @@ public class ItemShopMaschineForDevice : MonoBehaviour
     public void BuildContent(int idElement)             // вызываем в начале когда строим палитру магазина
     {
         int number = GetNumberMachine(idElement);
-        ImageDevice.sprite = characters[number].GetImgDevice();
-        gameObject.GetComponent<Image>().sprite = characters[number].GetImg();
+        ImageDevice.sprite = machinesDevice[number].GetImgDevice();
+        gameObject.GetComponent<Image>().sprite = machinesDevice[number].GetImg();
         currentNumberMachine = number;
-        cost = characters[number].GetPrice();
-        timeProduceDetail = characters[number].GetTimeProduceDetail();                  //Dw
-        levelMinTimeProduceDetail = characters[number].GetLevelMinTimeProduceDetail();  //Dw
-        levelMaxAmountDetail = characters[number].GetLevelMaxAmountDetail();            //Dw
-        device = characters[number].GetDevice();
+        cost = machinesDevice[number].GetPrice();
+        timeProduceDetail = machinesDevice[number].GetTimeProduceDetail();                  //Dw
+        levelMinTimeProduceDetail = machinesDevice[number].GetLevelMinTimeProduceDetail();  //Dw
+        levelMaxAmountDetail = machinesDevice[number].GetLevelMaxAmountDetail();            //Dw
+        device = machinesDevice[number].GetDevice();
         idDevice = device.id;
-        deviceObj = characters[number].GetDeviceObj();
+        deviceObj = machinesDevice[number].GetDeviceObj();
         myText.text = cost.ToString();
         imageButton.sprite = Purse.Instance.money >= cost ? button1 : button2;
     }
@@ -69,10 +69,10 @@ public class ItemShopMaschineForDevice : MonoBehaviour
 
     private int GetNumberMachine(int idElement)
     {
-        for (int i = 0; i < characters.Count; i++)
+        for (int i = 0; i < machinesDevice.Count; i++)
         {
 
-            if (characters[i].GetDevice().id == idElement)
+            if (machinesDevice[i].GetDevice().id == idElement)
             {
                 return i;
             }
