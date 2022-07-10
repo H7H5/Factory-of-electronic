@@ -12,10 +12,7 @@ public class MachineDeviceHelper : MachineOld
 
     void Start()
     {
-        if (deviceObj)
-        {
-            spriteDetail = device.sprite;
-        }
+        spriteDetail = device.sprite;
     }
   
     public override void InitMachine(int x)

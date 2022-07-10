@@ -1,30 +1,34 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class ItemMachine : MonoBehaviour
+[CreateAssetMenu(fileName = "New MachineDevice", menuName = "MachineDevice")]
+public class MachineDevice : ScriptableObject
 {
-    [SerializeField] private Element detail;
-    [SerializeField] private Element[] detailsToModern;
+    [SerializeField] private Device device;
+    [SerializeField] private GameObject deviceObj;
     [SerializeField] private Sprite img;
     [SerializeField] private int price;
+    [Header("Properties Machine")]
     [SerializeField] private int timeProduceDetail;                                            //Dw
     [SerializeField] private int levelMinTimeProduceDetail;
     [SerializeField] private float levelMaxAmountDetail;
 
-    public Element GetDetail()
+    public Device GetDevice()
     {
-        return detail;
+        return device;
     }
-    public Element[] GetDetailsToModern()
+    public GameObject GetDeviceObj()
     {
-        return detailsToModern;
-    }
-    public Element GetOneDetailsToModern(int n)
-    {
-        return detailsToModern[n];
+        return deviceObj;
     }
     public Sprite GetImg()
     {
         return img;
+    }
+    public Sprite GetImgDevice()
+    {
+        return device.sprite;
     }
     public int GetPrice()
     {
@@ -41,5 +45,5 @@ public class ItemMachine : MonoBehaviour
     public float GetLevelMaxAmountDetail()
     {
         return levelMaxAmountDetail;
-    }  
+    }
 }
