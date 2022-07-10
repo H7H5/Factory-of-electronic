@@ -35,7 +35,7 @@ public class ManagerMachineHelper : PanelOld
         detailsToModern = machineHelper.detailsToModern;
         imageDetail.sprite = detailsToModern[machineHelper.selectedDetail].sprite;
         priceOneDetail = detailsToModern[machineHelper.selectedDetail].GetPrice();
-        upgradeAmountDetailsCost = Convert.ToInt32(machineHelper.price * 1.5);
+        upgradeAmountDetailsCost = Convert.ToInt32(machineHelper.detail.costMachine * 1.5);
     }
 
     private void ShowParameters()

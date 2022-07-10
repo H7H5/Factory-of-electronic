@@ -57,10 +57,13 @@ public class OrderListHelper : MonoBehaviour
     {
         orderListController = orderListControllerObject.GetComponent<OrderListController>();
         UpdateOrderList();
-        orderListController.SetOpenOrderListColor();
+        //orderListController.SetOpenOrderListColor();
+
         if(orderListController.orderList.activeInHierarchy == true)
         {
             StartCoroutine(TimeDelayToUpdate());
+            orderListController.newOrdersInList = false;
+            orderListController.SetColorOrdersIcon();
         }
     }
 
@@ -104,14 +107,16 @@ public class OrderListHelper : MonoBehaviour
         {
             if (panelsOrder[i].transform.childCount >= 1)
             {
-                Destroy(panelsOrder[i].transform.GetChild(0).gameObject);
+                foreach (Transform child in panelsOrder[i].transform) Destroy(child.gameObject);
+                //Destroy(panelsOrder[i].transform.GetChild(0).gameObject);
             }
         }
         for (int i = 0; i <= 3; i++)
         {
             if (panelsOrderSelected[i].transform.childCount >= 1)
             {
-                Destroy(panelsOrderSelected[i].transform.GetChild(0).gameObject);
+                foreach (Transform child in panelsOrderSelected[i].transform) Destroy(child.gameObject);
+                //Destroy(panelsOrderSelected[i].transform.GetChild(0).gameObject);
             }
         }
     }
