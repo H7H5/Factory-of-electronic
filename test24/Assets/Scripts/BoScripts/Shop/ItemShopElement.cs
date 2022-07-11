@@ -10,12 +10,13 @@ public class ItemShopElement : MonoBehaviour
     [SerializeField] private Text textPrice;
     [SerializeField] private GameObject button;
     private Image imageButton;
+    [SerializeField] private Image image;
     private int currentNumberElement = 0;
     private int price;
 
     public void BuildContent(int number) // вызываем в начале когда строим палитру магазина
     {
-        gameObject.GetComponent<Image>().sprite = characters[number].spriteForShop;
+        image.sprite = characters[number].sprite;
         currentNumberElement = number;
         price = characters[number].GetPrice();
         textPrice.text = price.ToString();

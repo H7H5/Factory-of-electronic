@@ -8,7 +8,6 @@ public class Machine : ScriptableObject
     [SerializeField] private Element detail;
     [SerializeField] private Element[] detailsToModern;
     public Sprite sprite;
-    public Sprite spriteForShop;
     [SerializeField] private int timeProduceDetail;                                            //Dw
     [SerializeField] private int levelMinTimeProduceDetail;
     [SerializeField] private float levelMaxAmountDetail;

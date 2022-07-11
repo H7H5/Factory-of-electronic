@@ -21,7 +21,8 @@ public class ItemShopMaschineForDevice : MonoBehaviour
     private int levelMinTimeProduceDetail;                                //Dw
     private float levelMaxAmountDetail;                                   //Dw
     private int idDevice;
-                                    
+    [SerializeField] private Image image;
+
     void Start()
     {
         GameObject grid = GameObject.Find("Grid");                       //Dw
@@ -31,7 +32,7 @@ public class ItemShopMaschineForDevice : MonoBehaviour
     {
         int number = GetNumberMachine(idElement);
         ImageDevice.sprite = machinesDevice[number].GetImgDevice();
-        gameObject.GetComponent<Image>().sprite = machinesDevice[number].GetImg();
+        image.sprite = machinesDevice[number].GetImg();
         currentNumberMachine = number;
         cost = machinesDevice[number].GetPrice();
         timeProduceDetail = machinesDevice[number].GetTimeProduceDetail();                  //Dw
