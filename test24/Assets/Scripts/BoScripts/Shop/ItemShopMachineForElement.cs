@@ -20,6 +20,7 @@ public class ItemShopMachineForElement : MonoBehaviour
     private float levelMaxAmountDetail;                                   //Dw
     private int idDetail;
     public int[] idDetailsToModern;                                       //BO
+    [SerializeField] private Image image;
 
     void Start()
     {
@@ -29,8 +30,7 @@ public class ItemShopMachineForElement : MonoBehaviour
     public void BuildContent(int idElement)    // вызываем в начале когда строим палитру магазина
     {
         int number = GetNumberMachine(idElement);
-        spriteMachine = machines[number].spriteForShop;
-        gameObject.GetComponent<Image>().sprite = spriteMachine;
+        image.sprite = machines[number].sprite;
         currentNumberMachine = number;
         timeProduceDetail = machines[number].GetTimeProduceDetail();                  //Dw
         levelMinTimeProduceDetail = machines[number].GetLevelMinTimeProduceDetail();  //Dw

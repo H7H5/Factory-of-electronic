@@ -8,7 +8,6 @@ public class ScriptObjParent : ScriptableObject
     public new string name;
     public string description;
     public Sprite sprite;
-    public Sprite spriteForShop;
     public int id;
     public int needScience;
     public int price;
