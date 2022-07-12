@@ -82,6 +82,7 @@ public class OrderListHelper : MonoBehaviour
             orderHelper.idDevice = orderListController.orders[i].idDevice;
             orderHelper.amountDevice = orderListController.orders[i].amountDevice;
             orderHelper.incomeOrder = orderListController.orders[i].incomeOrder;
+            orderHelper.incomeOrderBonus = orderListController.orders[i].incomeOrderBonus;
             orderHelper.timeForOrder = orderListController.orders[i].timeForOrder;
         }
 
@@ -96,6 +97,7 @@ public class OrderListHelper : MonoBehaviour
             orderHelper.idDevice = orderListController.ordersSelected[i].idDevice;
             orderHelper.amountDevice = orderListController.ordersSelected[i].amountDevice;
             orderHelper.incomeOrder = orderListController.ordersSelected[i].incomeOrder;
+            orderHelper.incomeOrderBonus = orderListController.ordersSelected[i].incomeOrderBonus;
             orderHelper.timeForOrder = orderListController.ordersSelected[i].timeForOrder;
             orderHelper.timeStartOrder = orderListController.ordersSelected[i].timeStartOrder;
         }
@@ -108,7 +110,6 @@ public class OrderListHelper : MonoBehaviour
             if (panelsOrder[i].transform.childCount >= 1)
             {
                 foreach (Transform child in panelsOrder[i].transform) Destroy(child.gameObject);
-                //Destroy(panelsOrder[i].transform.GetChild(0).gameObject);
             }
         }
         for (int i = 0; i <= 3; i++)
@@ -116,7 +117,6 @@ public class OrderListHelper : MonoBehaviour
             if (panelsOrderSelected[i].transform.childCount >= 1)
             {
                 foreach (Transform child in panelsOrderSelected[i].transform) Destroy(child.gameObject);
-                //Destroy(panelsOrderSelected[i].transform.GetChild(0).gameObject);
             }
         }
     }
