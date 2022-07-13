@@ -14,6 +14,7 @@ public class OrderListController : MonoBehaviour
         public string nameCompany;
         public int countLines;
         public int incomeOrder;
+        public int incomeOrderBonus;
         public int timeForOrder;
         public string timeStartOrder;
         public List<int> typeDevice = new List<int>();
@@ -115,7 +116,6 @@ public class OrderListController : MonoBehaviour
     public void OpenOrderList()
     {
         bookmarks[bookMarkSelected].SetActive(true);
-        //bookmarks[bookMarkSelected].gameObject.GetComponent<OrderListHelper>().OpenOrderList();
         orderListHelper.OpenOrderList();
     }
     
@@ -225,21 +225,13 @@ public class OrderListController : MonoBehaviour
 
             orderListHelper.OpenOrderList();
 
-            newOrdersInList = true;
-            SetColorOrdersIcon();
+            if(orderList.activeInHierarchy == false)
+            {
+                newOrdersInList = true;
+                SetColorOrdersIcon();
+            }
         }
     }
-
-    //public void SetOpenOrderListColor()
-    //{
-    //    if(orderList.activeInHierarchy == true || orderListSelected.activeInHierarchy == true || bookMarkSelected == 1)
-    //    {
-    //        openOrderList.GetComponent<Image>().color = Color.white;
-    //    } else
-    //    {
-    //        openOrderList.GetComponent<Image>().color = Color.green;
-    //    }
-    //}
 
     public void GenerateCountOrders()
     {
@@ -249,7 +241,6 @@ public class OrderListController : MonoBehaviour
     public void Reclame()
     {
         GenerateOrders();
-        //SetOpenOrderListColor();
         newOrdersInList = true;
         SetColorOrdersIcon();
 
@@ -315,7 +306,9 @@ public class OrderListController : MonoBehaviour
                     income += dataBase.devicesParameters[orders[i].idDevice[j]].GetPrice() * orders[i].amountDevice[j];
                 }
             }
-            orders[i].incomeOrder = income + (income * percentIncome) / 100;
+            //orders[i].incomeOrder = income + (income * percentIncome) / 100;
+            orders[i].incomeOrder = income;
+            orders[i].incomeOrderBonus = (income * percentIncome) / 100;
         }
     }    
 

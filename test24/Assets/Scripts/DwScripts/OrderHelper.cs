@@ -28,6 +28,8 @@ public class OrderHelper : MonoBehaviour
 
     public Text textIncomeOrder;
     public int incomeOrder;
+    public Text textincomeOrderBonus;
+    public int incomeOrderBonus;
 
     public GameObject failedOrder;
 
@@ -113,7 +115,8 @@ public class OrderHelper : MonoBehaviour
 
     public void UpdateOrder()
     {
-        textIncomeOrder.text = incomeOrder.ToString();  
+        textIncomeOrder.text = incomeOrder.ToString();
+        textincomeOrderBonus.text = incomeOrderBonus.ToString();
 
         for (int i = 0; i < idDevice.Count; i++)
         {
