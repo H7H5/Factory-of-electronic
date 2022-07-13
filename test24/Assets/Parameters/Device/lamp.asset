@@ -16,11 +16,10 @@ MonoBehaviour:
   name: lamp
   description: "\u043D\u0430\u0441\u0442\u043E\u043B\u044C\u043D\u0430\u044F \u043B\u0430\u043C\u043F\u0430"
   sprite: {fileID: 21300000, guid: 60a031f167200d44d860b36e84042099, type: 3}
-  spriteForShop: {fileID: 21300000, guid: 6dc538ff497df034a9a9efbee73fde49, type: 3}
   id: 2
   needScience: 500
   price: 150
-  sellPrice: 125
+  sellPrice: 150
   sellPriceScience: 12
   needElements:
   - {fileID: 11400000, guid: 06442f9d732dd51428162ad1016735f6, type: 2}

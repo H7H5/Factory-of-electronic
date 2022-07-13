@@ -16,11 +16,10 @@ MonoBehaviour:
   name: flashlight
   description: defoult device
   sprite: {fileID: 21300000, guid: e853d06725f49034cb06e3398a0533bb, type: 3}
-  spriteForShop: {fileID: 21300000, guid: c34bd3c3725c3c64bbde816c5ecfd892, type: 3}
   id: 1
   needScience: 500
   price: 120
-  sellPrice: 150
+  sellPrice: 120
   sellPriceScience: 15
   needElements:
   - {fileID: 11400000, guid: aa84578b97a16cd47bd9e520e8867078, type: 2}

@@ -16,11 +16,10 @@ MonoBehaviour:
   name: curling_iron
   description: "\u0434\u043B\u044F \u0436\u0435\u043D\u0449\u0438\u043D"
   sprite: {fileID: 21300000, guid: 940badbd964e84844a5680343c8e2a76, type: 3}
-  spriteForShop: {fileID: 21300000, guid: ef5cde34bd3b38d46869ad57ebdfb9e5, type: 3}
   id: 6
   needScience: 2500
   price: 450
-  sellPrice: 300
+  sellPrice: 450
   sellPriceScience: 30
   needElements:
   - {fileID: 11400000, guid: c063a524ede89564994af8ca09cc5881, type: 2}
