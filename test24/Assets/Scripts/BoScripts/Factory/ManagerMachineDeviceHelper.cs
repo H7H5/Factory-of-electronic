@@ -68,7 +68,7 @@ public class ManagerMachineDeviceHelper : PanelOld
             idNeedElement1 = machineHelper.deviceObj.transform.GetChild(0).gameObject.GetComponent<DeviceBilder>().GetNeedElements();
 
         }
-
+        
         idNeedElementCount = new List<int>();
         idNeedElement = temp.Distinct().ToList();
 
@@ -189,27 +189,16 @@ public class ManagerMachineDeviceHelper : PanelOld
         {
             if (DBase.Instance.GetComponent<DBase>().getElement(TempIdNeedElement[i]).GetCount() >= TempIdNeedElementCount[i] * (int)sliderAmountProduce.value)
             {
-                max.Add(TempIdNeedElement[i]);
-                maxIdAndCount.Add(new Vector2(TempIdNeedElement[i], TempIdNeedElementCount[i]));
+                result.Add(TempIdNeedElement[i]);
+                resultIdAndCount.Add(new Vector2(TempIdNeedElement[i], TempIdNeedElementCount[i]));
             }
             else
             {
-                min.Add(TempIdNeedElement[i]);
-                minIdAndCount.Add(new Vector2(TempIdNeedElement[i], TempIdNeedElementCount[i]));
+                result.Add(TempIdNeedElement[i]);
+                resultIdAndCount.Add(new Vector2(TempIdNeedElement[i], TempIdNeedElementCount[i]));
                 IsNeedElement = false;
             }
         }
-        for (int i = 0; i < min.Count; i++)
-        {
-            result.Add(min[i]);
-            resultIdAndCount.Add(minIdAndCount[i]);
-        }
-        for (int i = 0; i < max.Count; i++)
-        {
-            result.Add(max[i]);
-            resultIdAndCount.Add(maxIdAndCount[i]);
-        }
-
         return resultIdAndCount;
     }
 
