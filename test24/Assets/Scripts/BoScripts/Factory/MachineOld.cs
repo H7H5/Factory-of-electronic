@@ -29,6 +29,7 @@ public class MachineOld : MonoBehaviour
     public string x;
     public string y;
     public GameObject can;
+    public Device device;
 
     private void Awake()
     {
