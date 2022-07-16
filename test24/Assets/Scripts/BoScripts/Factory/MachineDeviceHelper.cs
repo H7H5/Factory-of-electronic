@@ -8,7 +8,7 @@ public class MachineDeviceHelper : MachineOld
     
     public Sprite sprt;                                           
     public GameObject deviceObj;
-    public Device device;
+  
 
     void Start()
     {
