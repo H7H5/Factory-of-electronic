@@ -32,6 +32,24 @@ public class DBase : MonoBehaviour
         Generate();
     }
 
+    public void SaveLearning(int x)
+    {
+        unitySQLite.UpdateInteger(x, 6);
+    }
+    public bool GetLearning()
+    {
+        int d = unitySQLite.ReadInteger(6);
+        if(d == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+
     public GameObject GetSaverDevice()
     {
         if (saverDevice == null)

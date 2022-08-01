@@ -9,12 +9,14 @@ public class UIPanels : MonoBehaviour
     [SerializeField] private GameObject machineDeviceMenu;
     [SerializeField] private GameObject moveMachinePanel;
     [SerializeField] private BasketBoardScript basket;
+    [SerializeField] private GameObject LearningPanel;
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
         }
+        LearningPanel.SetActive(DBase.Instance.GetLearning());
     }
     public void OpenMachineMenu(GameObject machine)
     {
