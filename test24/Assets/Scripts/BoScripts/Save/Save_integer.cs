@@ -27,6 +27,7 @@ public class Save_integer
         Insert_save_integer(unitySQLite, 3, 0, "countOrders");
         Insert_save_integer(unitySQLite, 4, 0, "countSelectedOrders");
         Insert_save_integer(unitySQLite, 5, 2, "sciense");
+        Insert_save_integer(unitySQLite, 5, 0, "learning");
     }
     public void UpdateInteger(unitySQLite unitySQLite, int count,int id)
     {
