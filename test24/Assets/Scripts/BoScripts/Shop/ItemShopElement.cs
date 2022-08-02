@@ -25,9 +25,9 @@ public class ItemShopElement : MonoBehaviour
     }
     public void BuyThisElement()       // вызываем когда покупаем елемент
     {
-        if (Purse.Instance.money >= price)
+        if (Purse.Instance.diamonds >= price)
         {
-            Purse.Instance.SetMoney(Purse.Instance.money -= price);
+            Purse.Instance.SetDiamonds(Purse.Instance.diamonds -= price);
             DBase.Instance.addElement(characters[currentNumberElement]);
         }
     }

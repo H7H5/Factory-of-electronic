@@ -340,10 +340,15 @@ public class DBase : MonoBehaviour
     {
         unitySQLite.UpdateInteger(sciense, 5);
     }
+    public void SaveDiamonds(int diamonds)
+    {
+        unitySQLite.UpdateInteger(diamonds, 7);
+    }
     public void Generate()           
     {
         Purse.Instance.SetMoney(unitySQLite.ReadInteger(1));
         Purse.Instance.SetSciense(unitySQLite.ReadInteger(5));
+        Purse.Instance.SetDiamonds(unitySQLite.ReadInteger(7));
         LoadElements();
         LoadDevices();
     }
