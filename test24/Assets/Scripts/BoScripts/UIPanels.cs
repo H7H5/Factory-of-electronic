@@ -16,7 +16,8 @@ public class UIPanels : MonoBehaviour
         {
             Instance = this;
         }
-        LearningPanel.SetActive(DBase.Instance.GetLearning());
+        GameObject learningPanel = Instantiate(LearningPanel, transform);
+        learningPanel.SetActive(DBase.Instance.GetLearning());
     }
     public void OpenMachineMenu(GameObject machine)
     {

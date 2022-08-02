@@ -234,7 +234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 673919b00a23d584eb41abf101e86255, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5cd5c5bb79ab900448aae56b2682987c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -422,8 +422,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fcf658cc37f49fb4ead034127ca8df1f, type: 2}
   - {fileID: 11400000, guid: 5bc06a168c90f554980645ccc695617d, type: 2}
   - {fileID: 11400000, guid: 81356fb47787b2e40af13657a1871331, type: 2}
-  button1: {fileID: 21300000, guid: 673919b00a23d584eb41abf101e86255, type: 3}
-  button2: {fileID: 21300000, guid: cd7226ccee0b2d740a11078c3af858f8, type: 3}
+  button1: {fileID: 21300000, guid: 5cd5c5bb79ab900448aae56b2682987c, type: 3}
+  button2: {fileID: 21300000, guid: 06f23756a10e57940938add47a42c51d, type: 3}
   textPrice: {fileID: 8040333935953015864}
   button: {fileID: 5785072104795651424}
   image: {fileID: 3395632087162572898}
