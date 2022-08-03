@@ -12,7 +12,7 @@ public class ManagerMachineHelper : PanelOld
     public Element[] detailsToModern;
     public int upgradeDetailToModernCost = 100000;
     public MachineHelper machineHelper;
-    public SwitchElementManager switchElementManager;    
+    public SwitchElementManager switchElementManager;
     private void Awake()
     {
         sliderAmountProduce = GetComponentInChildren<Slider>();
@@ -70,7 +70,7 @@ public class ManagerMachineHelper : PanelOld
     public void ShowLevelTimeDetails()
     {
         textLevelTimeDetails.text = machineHelper.timeProduceDetail.ToString() + "/" + machineHelper.levelMinTimeProduceDetail;
-        timeProduceDetailText.text = machineHelper.timeProduceDetail.ToString();
+        //timeProduceDetailText.text = machineHelper.timeProduceDetail.ToString();
     }
     public void ShowUpgradePrices()
     {
@@ -100,7 +100,7 @@ public class ManagerMachineHelper : PanelOld
             buttonStart.interactable = false;
             buttonUpgradeMaxDetail.interactable = false;
             buttonUpgradeTime.interactable = false;
-            buttonMax.interactable = false;
+            //buttonMax.interactable = false;
             buttonStop.interactable = true;
             buttonMoveMachine.interactable = false;
             buttonSellMachine.interactable = false;
@@ -112,7 +112,7 @@ public class ManagerMachineHelper : PanelOld
             buttonStart.interactable = priceProduce < Purse.Instance.money ? true : false;
             buttonUpgradeMaxDetail.interactable = Purse.Instance.money >= upgradeAmountDetailsCost ? true : false;
             buttonUpgradeTime.interactable = Purse.Instance.money >= upgradeTimeProduceDetailCost ? true : false;
-            buttonMax.interactable = sliderAmountProduce.value < sliderAmountProduce.maxValue ? true : false;
+            //buttonMax.interactable = sliderAmountProduce.value < sliderAmountProduce.maxValue ? true : false;
             buttonStop.interactable = false;
             buttonMoveMachine.interactable = true;
             buttonSellMachine.interactable = true;
