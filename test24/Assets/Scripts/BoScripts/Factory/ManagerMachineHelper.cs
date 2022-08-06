@@ -7,6 +7,7 @@ public class ManagerMachineHelper : PanelOld
     private float priceOneDetail;
     private float priceProduce;
     public Text textPriceMaterial;
+    public Text textPriceMoney;
     public Text textPriceOneDetail;
     public Text textPriceProduce;
     public Element[] detailsToModern;
@@ -56,6 +57,7 @@ public class ManagerMachineHelper : PanelOld
     {
         CalculatePriceProduce();
         textPriceProduce.text = priceProduce.ToString();
+        textPriceMoney.text = "- " + priceProduce.ToString();
         MoneyChangesDisplay.Instance.ShowMoneyChanges(-(int)priceProduce);
     }
     public void ShowLevelMaxDetails()
