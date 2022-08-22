@@ -18,12 +18,12 @@ public class BasketBoardScript : MonoBehaviour
     {
         isOpen = !isOpen;
         animator.SetBool(isOpenAnimator, isOpen);
-        image.sprite = isOpen ? button2: button1;
+        //image.sprite = isOpen ? button2: button1;
     }
     public void Hide()
     {
         isOpen = false;
         animator.SetBool(isOpenAnimator, isOpen);
-        image.sprite = button1;
+        //image.sprite = button1;
     }
 }

@@ -20,12 +20,12 @@ public class ScienceChangesDisplay : MonoBehaviour
 
     public void ActivateScienceChanges()
     {
-        scienceChanges.SetActive(true);
+        //scienceChanges.SetActive(true);
     }
 
     public void DisActivateScienceChanges()
     {
-        scienceChanges.SetActive(false);
+        //scienceChanges.SetActive(false);
     }
 
     public void ShowScienceChanges(int science)
