@@ -20,12 +20,12 @@ public class MoneyChangesDisplay : MonoBehaviour
 
     public void ActivateMoneyChanges()
     {
-        moneyChanges.SetActive(true);
+        //moneyChanges.SetActive(true);
     }
 
     public void DisActivateMoneyChanges()
     {
-        moneyChanges.SetActive(false);
+        //moneyChanges.SetActive(false);
     }
 
     public void ShowMoneyChanges(int money)
