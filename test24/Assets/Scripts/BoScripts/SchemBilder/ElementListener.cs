@@ -6,7 +6,6 @@ public class ElementListener : MonoBehaviour
     public int idElement = 0;
     public int needIdElement = 1;
     [SerializeField] private GameObject backPanel;
-    [SerializeField] private Sprite imgActivation;
     private DeviceBilder deviceBilder;
     private void Awake()
     {
@@ -20,10 +19,6 @@ public class ElementListener : MonoBehaviour
     public bool IsActivation()
     {
         return idElement == needIdElement ? true : false;
-    }
-    public void SetImg()
-    {
-        gameObject.GetComponent<Image>().sprite = imgActivation;
     }
     public void DestroyChild()
     {

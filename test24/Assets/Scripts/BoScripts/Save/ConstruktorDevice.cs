@@ -81,5 +81,7 @@ public class ConstruktorDevice
         InsertConstruktor(unitySQLite, 101, data);
         //data = "{\"\"rectWidth\"\": 0, \"\"rectHeight\"\": 0,\"\"countDevice\"\": 10, \"\"array\"\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\"\"id\"\": 102,   \"\"activation\"\": 0,\"\"data\"\": \"\"\"\", \"\"unitySQLite\"\": {  \"\"instanceID\"\": 14990 }}";
         InsertConstruktor(unitySQLite, 102, data);
+
+        InsertConstruktor(unitySQLite, 7, data);
     }
 }

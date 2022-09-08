@@ -51,11 +51,6 @@ public class SaverBase : MonoBehaviour
                 }
             }
             DeviceBilder deviceBilder = transform.GetChild(0).gameObject.GetComponent<DeviceBilder>();
-            if (activation == 1)
-            {
-                deviceBilder.activation = 1;
-                deviceBilder.SetActivationDevice();
-            }
             deviceBilder.ActivationDevice();
         }  
     }
