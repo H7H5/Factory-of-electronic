@@ -333,14 +333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef7128c15ce19f45b5e89ba53a171d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   button: {fileID: 7512755616757299938}
-  characters:
-  - {fileID: 21300000, guid: c34bd3c3725c3c64bbde816c5ecfd892, type: 3}
-  - {fileID: 21300000, guid: 6dc538ff497df034a9a9efbee73fde49, type: 3}
-  - {fileID: 21300000, guid: 176b9542d1bd5634693a87162c4e6da5, type: 3}
-  - {fileID: 21300000, guid: ef5cde34bd3b38d46869ad57ebdfb9e5, type: 3}
-  - {fileID: 21300000, guid: 602ec427af8b95e42abc3c7aef3740cc, type: 3}
-  - {fileID: 21300000, guid: dfee99208c5975d458e130a78f3f0c4c, type: 3}
   devices:
   - {fileID: 1760430406325497620, guid: 951135d4fbb1124419e552143bfe08a7, type: 3}
   - {fileID: 7561203064661679315, guid: 0cf3eaf101585dc42a79079e9d05487c, type: 3}
@@ -348,3 +342,4 @@ MonoBehaviour:
   - {fileID: 7561203064661679315, guid: e68e7a91880200b44a0e876a129ca06b, type: 3}
   - {fileID: 7561203064661679315, guid: 7cf890fe970bcc14b860aae9538c8262, type: 3}
   - {fileID: 6709151914968637103, guid: 6debdeaca216cd241a7b53b4a8a9c20b, type: 3}
+  - {fileID: 7561203064661679315, guid: 939ecee40688f5f468560a0f1e925779, type: 3}

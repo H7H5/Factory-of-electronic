@@ -1,13 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 public class DeviceBilder : MonoBehaviour
 {
     public int activation = 0;
     public int id;
     [SerializeField] private List<ElementListener> listeners = new List<ElementListener>();
-    [SerializeField] private Sprite noActiv;
-    [SerializeField] private Sprite imgActivation;
     [SerializeField] private GameObject deviceObj;
     public void ActivationDevice()
         {
@@ -54,20 +51,10 @@ public class DeviceBilder : MonoBehaviour
         }
         return collectedDevice;
     }
-    public void SetActivationDevice()
-    {
-         gameObject.GetComponent<Image>().sprite = imgActivation;
-         for (int i = 0; i < listeners.Count; i++)
-         {
-              listeners[i].SetImg();
-         }
-    }
     public void Collect()
     {
-        gameObject.GetComponent<Image>().sprite = imgActivation;
         for (int i = 0; i < listeners.Count; i++)
         {
-            listeners[i].SetImg();
             listeners[i].DestroyChild();
         }
         DBase.Instance.AddDevice(transform.parent.gameObject.GetComponent<ItemDevice>().device);
