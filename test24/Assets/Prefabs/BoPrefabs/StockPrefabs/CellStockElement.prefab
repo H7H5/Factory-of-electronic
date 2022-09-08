@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 117404848260236864}
   - component: {fileID: 7618425926778871266}
   m_Layer: 5
-  m_Name: CellStock
+  m_Name: CellStockElement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,13 +138,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 175706d471ed2114e9e2ddac85b0e491, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 33a5286bfaf46f147b2320e0a95a9f08, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -190,7 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4352b22a71853144089668e4fb17f4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemElement: {fileID: 0}
+  element: {fileID: 0}
+  device: {fileID: 0}
 --- !u!114 &117404848260236864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,13 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 0}
-  camera1: {fileID: 0}
   text: {fileID: 7075612861501683808}
-  parent: {fileID: 0}
-  oldparent: {fileID: 0}
-  stockHelper: {fileID: 0}
-  dBase: {fileID: 0}
-  inDrag: 0
 --- !u!225 &7618425926778871266
 CanvasGroup:
   m_ObjectHideFlags: 0
