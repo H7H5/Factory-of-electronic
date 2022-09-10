@@ -73,5 +73,6 @@ public class Devices
         Insert_device(unitySQLite, 5, 0, "solder");
         Insert_device(unitySQLite, 6, 0, "curling iron");
         Insert_device(unitySQLite, 7, 0, "sampler");
+        Insert_device(unitySQLite, 8, 0, "blender");
     }
 }

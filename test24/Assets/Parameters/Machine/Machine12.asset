@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a29a20a7f2d514582f721e6816e12f, type: 3}
   m_Name: Machine12
   m_EditorClassIdentifier: 
-  detail: {fileID: 11400000, guid: 81356fb47787b2e40af13657a1871331, type: 2}
+  detail: {fileID: 11400000, guid: b480c658ff6b37d48af7314aad91ed80, type: 2}
   detailsToModern:
-  - {fileID: 11400000, guid: 81356fb47787b2e40af13657a1871331, type: 2}
+  - {fileID: 11400000, guid: b480c658ff6b37d48af7314aad91ed80, type: 2}
   sprite: {fileID: 21300000, guid: ef821d258011e4a41be1ff9c0c50ab6a, type: 3}
-  spriteForShop: {fileID: 21300000, guid: 5795f9e5b8000314aba5951fb8b9fbec, type: 3}
   timeProduceDetail: 1000
   levelMinTimeProduceDetail: 20
   levelMaxAmountDetail: 50

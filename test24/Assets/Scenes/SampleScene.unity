@@ -474,6 +474,7 @@ MonoBehaviour:
   idDevice: 0
   slider: {fileID: 480114364}
   image: {fileID: 338196348}
+  background: {fileID: 21300000, guid: 33a5286bfaf46f147b2320e0a95a9f08, type: 3}
   text: {fileID: 1364156650}
   textPriceScience: {fileID: 1865923264}
   textPriceMoney: {fileID: 467164840}
@@ -6090,7 +6091,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 333
+  m_Text: 0
 --- !u!222 &167511596
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8668,6 +8669,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4e62df36452e4b84f9c7b711a7ad34d8, type: 3}
   - {fileID: 21300000, guid: 82488c7e1f7a43d42a6ca4fd4d2ba8f5, type: 3}
   - {fileID: 21300000, guid: 2865265bc4a786d4b95e60ebcbb9aa5d, type: 3}
+  - {fileID: 21300000, guid: 58287e57c19a32041a17ba7a75b44001, type: 3}
   elementsParameters:
   - {fileID: 11400000, guid: 844631280bee26c448b8f810c201b713, type: 2}
   - {fileID: 11400000, guid: ad2d326a440c3914698c3fefe1bb3019, type: 2}
@@ -8681,6 +8683,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 319e4b935d059d248ab784432b5730e8, type: 2}
   - {fileID: 11400000, guid: c063a524ede89564994af8ca09cc5881, type: 2}
   - {fileID: 11400000, guid: fcf658cc37f49fb4ead034127ca8df1f, type: 2}
+  - {fileID: 11400000, guid: 81356fb47787b2e40af13657a1871331, type: 2}
+  - {fileID: 11400000, guid: 89b24bf954e7bb84ca1ed26e08bb9ce7, type: 2}
+  - {fileID: 11400000, guid: b480c658ff6b37d48af7314aad91ed80, type: 2}
   devicesParameters:
   - {fileID: 11400000, guid: a5afddb4f5d024b47b4eba4f5d46a9c9, type: 2}
   - {fileID: 11400000, guid: 42b5ed16a1a0e7b47b0f8c918930472f, type: 2}
@@ -8689,6 +8694,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 727a45ae635496a4d9ba459ef93451c3, type: 2}
   - {fileID: 11400000, guid: 32b925166564c1141a07f3e0f786fb76, type: 2}
   - {fileID: 11400000, guid: 404a41f63085e17429f2eeb26e44eb8c, type: 2}
+  - {fileID: 11400000, guid: ecaafec506c49ed4a8ae0a5bf8976d33, type: 2}
   devicesPrefabs:
   - {fileID: 1760430406325497620, guid: 951135d4fbb1124419e552143bfe08a7, type: 3}
   - {fileID: 7561203064661679315, guid: 0cf3eaf101585dc42a79079e9d05487c, type: 3}
@@ -8697,6 +8703,7 @@ MonoBehaviour:
   - {fileID: 7561203064661679315, guid: 7cf890fe970bcc14b860aae9538c8262, type: 3}
   - {fileID: 7561203064661679315, guid: e68e7a91880200b44a0e876a129ca06b, type: 3}
   - {fileID: 7561203064661679315, guid: 939ecee40688f5f468560a0f1e925779, type: 3}
+  - {fileID: 7561203064661679315, guid: 670712f0a6d335943bb6ba019fb8cdd0, type: 3}
 --- !u!114 &256703942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14112,9 +14119,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '333
-
-'
+  m_Text: 0
 --- !u!222 &467164841
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -96446,9 +96451,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '333
-
-'
+  m_Text: 0
 --- !u!222 &1865923265
 CanvasRenderer:
   m_ObjectHideFlags: 0

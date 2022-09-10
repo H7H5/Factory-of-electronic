@@ -13,12 +13,14 @@ public class StockManager : MonoBehaviour
 
     public SliderAmountToSell slider;
     [SerializeField] private Image image;
+    [SerializeField] private Sprite background;
     [SerializeField] private Text text;
     [SerializeField] private Text textPriceScience;
     [SerializeField] private Text textPriceMoney;
     [SerializeField] private DescriptionHelper description;
     private int id = 1;
     private bool typeItem = false;//false = itemElement: true = itemDevice
+    private bool item = true;
     private void Awake()
     {
         if (Instance == null)
@@ -73,17 +75,30 @@ public class StockManager : MonoBehaviour
 
     public void SellByAmount()
     {
-        int count = slider.GetSliderValue();
-        for (int i = 0; i < count; i++)
+        if (item)
         {
-            Sell();
+            int count = slider.GetSliderValue();
+            for (int i = 0; i < count; i++)
+            {
+                Sell();
+            }
         }
     }
     
     public void UpdateManagerOfElement()
     {
         typeItem = false;
-        id = currentElement == null? 1: currentElement.id;
+        if(currentElement == null)
+        {
+            ClearInformation();
+            return;
+        }
+        id = currentElement.id;
+        if (currentElement.GetCount()==0)
+        {
+            ClearInformation();
+            return;
+        }
         currentElement = DBase.Instance.getElement(id);
         image.sprite = currentElement.sprite;
         text.text = currentElement.GetCount().ToString();
@@ -96,23 +111,25 @@ public class StockManager : MonoBehaviour
         //textPriceMoney.text = DBase.Instance.elementsParameters[idElementsParameters].sellPrice.ToString();
         textPriceMoney.text = DBase.Instance.elementsParameters[idElementsParameters].price.ToString();
         slider.ChangeSelect(currentElement.GetCount());
+        item = true;
     }
+  
 
     public void UpdateManagerOfDevice()
     {
         typeItem = true;
-
-        //id = itemDevice == null ? 1 : itemDevice.GetId();
-        //itemDevice = DBase.Instance.getDeviceElement(id);
-        //image.sprite = itemDevice.imgStock;
-        //text.text = itemDevice.GetCount().ToString();
-        //description.SetDevice(itemDevice);
-
         if(idDevice == 0)
         {
-            idDevice = 1;
+            ClearInformation();
+            return;
         }
+        
         device = DBase.Instance.GetDevice(idDevice);
+        if (device.GetCount() == 0)
+        {
+            ClearInformation();
+            return;
+        }
         image.sprite = device.sprite;
         text.text = device.GetCount().ToString();
         description.SetDevice(device);
@@ -120,5 +137,14 @@ public class StockManager : MonoBehaviour
         textPriceScience.text = device.sellPriceScience.ToString();
         textPriceMoney.text = device.sellPrice.ToString();
         slider.ChangeSelect(device.GetCount());
+        item = true;
+    }
+    private void ClearInformation()
+    {
+        item = false;
+        text.text = "0";
+        textPriceScience.text = "0";
+        textPriceMoney.text = "0";
+        image.sprite = background;
     }
 }

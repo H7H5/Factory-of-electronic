@@ -47,19 +47,21 @@ public class Elements
     }
     public void StartInsertElements(unitySQLite unitySQLite)
     {
-        Insert_element(unitySQLite, 1, 0, "rezistor");
+        Insert_element(unitySQLite,  1, 0, "rezistor");
         Insert_element(unitySQLite,  2, 0, "capacitor");
         Insert_element(unitySQLite,  3, 0, "tranzistor");
         Insert_element(unitySQLite,  4, 0, "battery");
         Insert_element(unitySQLite,  5, 0, "switch");
         Insert_element(unitySQLite,  6, 0, "light_bulb");
-        Insert_element(unitySQLite,  7, 0, "variable capacitor");
+        Insert_element(unitySQLite,  7, 0, "tan");
         Insert_element(unitySQLite,  8, 0, "led");
         Insert_element(unitySQLite,  9, 0, "electric_plug");
         Insert_element(unitySQLite, 10, 0, "button");
         Insert_element(unitySQLite, 11, 0, "diode");
         Insert_element(unitySQLite, 12, 0, "heating element");
         Insert_element(unitySQLite, 13, 0, "temperature_regulator");
+        Insert_element(unitySQLite, 14, 0, "relay");
+        Insert_element(unitySQLite, 15, 0, "motor");
     }
     public void UpdateElement(unitySQLite unitySQLite, int id, int count, string name)
     {

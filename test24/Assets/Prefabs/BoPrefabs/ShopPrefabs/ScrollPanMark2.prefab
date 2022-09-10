@@ -497,6 +497,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fcf658cc37f49fb4ead034127ca8df1f, type: 2}
   - {fileID: 11400000, guid: 5bc06a168c90f554980645ccc695617d, type: 2}
   - {fileID: 11400000, guid: 81356fb47787b2e40af13657a1871331, type: 2}
+  - {fileID: 11400000, guid: 89b24bf954e7bb84ca1ed26e08bb9ce7, type: 2}
+  - {fileID: 11400000, guid: b480c658ff6b37d48af7314aad91ed80, type: 2}
   button1: {fileID: 21300000, guid: 9c2272761b7824647b254cefe71ed85e, type: 3}
   button2: {fileID: 21300000, guid: 03a7bcfc7a916094685c594a64a347a8, type: 3}
   textPrice: {fileID: 8040333935953015864}
