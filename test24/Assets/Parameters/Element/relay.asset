@@ -10,14 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c8e1aa5583e7ec43a264d1acbbfa2ae, type: 3}
-  m_Name: dinamic
+  m_Name: relay
   m_EditorClassIdentifier: 
-  name: dinamic
-  description: "\u0434\u0435\u043B\u0430\u0435\u0442 \u0437\u0432\u0443\u043A"
-  sprite: {fileID: 21300000, guid: 90e4fe8ff6062e34597beb959ef866c9, type: 3}
-  spriteForShop: {fileID: 21300000, guid: b3d6ee8b0d9c36a49a631f357c7312bf, type: 3}
+  container: {fileID: 0}
+  name: relay
+  description: 
+  sprite: {fileID: 21300000, guid: 5a8713607cb4a4c49a5e8d5c214f1033, type: 3}
   id: 14
   needScience: 5
   price: 200
+  sellPrice: 0
+  sellPriceScience: 0
+  needElements:
+  - {fileID: 11400000, guid: 5c98dcd4711c0f64fbce9792b8377f08, type: 2}
+  countNeedElements: 02000000
   costMachine: 7000
   timeProduce: 9

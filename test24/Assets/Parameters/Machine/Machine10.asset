@@ -15,8 +15,8 @@ MonoBehaviour:
   detail: {fileID: 11400000, guid: c063a524ede89564994af8ca09cc5881, type: 2}
   detailsToModern:
   - {fileID: 11400000, guid: c063a524ede89564994af8ca09cc5881, type: 2}
+  - {fileID: 11400000, guid: 81356fb47787b2e40af13657a1871331, type: 2}
   sprite: {fileID: 21300000, guid: f9d0ce75b2d972d459fb8a6eab703cda, type: 3}
-  spriteForShop: {fileID: 21300000, guid: 73b776e7df73b4348a126a385ede86ad, type: 3}
   timeProduceDetail: 190
   levelMinTimeProduceDetail: 10
   levelMaxAmountDetail: 50

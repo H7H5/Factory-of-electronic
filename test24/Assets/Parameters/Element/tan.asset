@@ -10,17 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c8e1aa5583e7ec43a264d1acbbfa2ae, type: 3}
-  m_Name: variable_capacitor
+  m_Name: tan
   m_EditorClassIdentifier: 
-  name: variable_capacitor
-  description: "\u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0439 \u043A\u043E\u043D\u0434\u0435\u043D\u0441\u0430\u0442\u043E\u0440
-    \u043D\u0443\u0436\u0435\u043D \u0434\u043B\u044F \u0440\u0430\u0434\u0438\u043E"
-  sprite: {fileID: 21300000, guid: 574d3bbda9ccb264c81b3dec5ca1b4bf, type: 3}
-  spriteForShop: {fileID: 21300000, guid: 697e15ba28e80d34da55998af0489632, type: 3}
+  container: {fileID: 0}
+  name: tan
+  description: 
+  sprite: {fileID: 21300000, guid: 6e165a105db7792418b25b1301466bd4, type: 3}
   id: 7
   needScience: 1000
   price: 77
   sellPrice: 39
   sellPriceScience: 7
+  needElements:
+  - {fileID: 11400000, guid: 844631280bee26c448b8f810c201b713, type: 2}
+  - {fileID: 11400000, guid: 7b788a7311240644f9778b86b51eedc3, type: 2}
+  countNeedElements: 0100000001000000
   costMachine: 3500
   timeProduce: 1
