@@ -868,6 +868,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6a3618fd398ac2341acf7e85543b62c6, type: 2}
   - {fileID: 11400000, guid: 0f6efa2763a3f264db8c46115921da15, type: 2}
   - {fileID: 11400000, guid: eb3c7336b1bdcdb4ebb718c159be793d, type: 2}
+  - {fileID: 11400000, guid: d079be62857a33c4cbb56cb28135be03, type: 2}
+  - {fileID: 11400000, guid: d962a74d82b7d604e90c09fbb4717d74, type: 2}
+  - {fileID: 11400000, guid: bb0910350d072764c931a95c5b15d147, type: 2}
   button1: {fileID: 21300000, guid: 350a607b9cef21b4e870751d75cd04f1, type: 3}
   button2: {fileID: 21300000, guid: edd9db464ce1bcb42a15da5e5336c966, type: 3}
   ImageDevice: {fileID: 1412649509007354132}
