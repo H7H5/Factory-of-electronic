@@ -74,5 +74,9 @@ public class Devices
         Insert_device(unitySQLite, 6, 0, "curling iron");
         Insert_device(unitySQLite, 7, 0, "sampler");
         Insert_device(unitySQLite, 8, 0, "blender");
+        Insert_device(unitySQLite, 9, 0, "meat grinder");
+        Insert_device(unitySQLite, 10, 0, "teapot");
+        Insert_device(unitySQLite, 11, 0, "fan heater");
+        Insert_device(unitySQLite, 12, 0, "electric grill");
     }
 }
