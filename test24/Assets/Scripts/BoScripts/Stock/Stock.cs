@@ -12,6 +12,8 @@ public class Stock : MonoBehaviour
     [SerializeField] private GameObject placeInStockForDevices;
     [SerializeField] private GameObject canvas;
     [SerializeField] private List<GameObject> bookmarks = new List<GameObject>();
+
+    [SerializeField] private Scrollbar scrollbar;
     private void Awake()
     {
         if (Instance == null)
@@ -28,6 +30,7 @@ public class Stock : MonoBehaviour
     {
         SetElements();
         SetDevices();
+        scrollbar.value = 0;
     }
     private void SetElements()
     {
