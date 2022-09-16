@@ -18,16 +18,19 @@ public class StockManager : MonoBehaviour
     [SerializeField] private Text textPriceScience;
     [SerializeField] private Text textPriceMoney;
     [SerializeField] private DescriptionHelper description;
+    
 
     private int id = 1;
     private bool typeItem = false;//false = itemElement: true = itemDevice
     private bool item = true;
+    private bool setScrolbar = true;
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
         }
+       
     }
 
     public void Sell()
@@ -113,11 +116,18 @@ public class StockManager : MonoBehaviour
         textPriceMoney.text = DBase.Instance.elementsParameters[idElementsParameters].price.ToString();
         slider.ChangeSelect(currentElement.GetCount());
         item = true;
+        
     }
   
 
     public void UpdateManagerOfDevice()
     {
+        if (setScrolbar)
+        {
+            Stock.Instance.StartScrolbar2();
+            setScrolbar = false;
+        }
+       
         typeItem = true;
         if(idDevice == 0)
         {
@@ -139,6 +149,7 @@ public class StockManager : MonoBehaviour
         textPriceMoney.text = device.sellPrice.ToString();
         slider.ChangeSelect(device.GetCount());
         item = true;
+        
     }
     private void ClearInformation()
     {
