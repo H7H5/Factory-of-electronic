@@ -88,5 +88,8 @@ public class ConstruktorDevice
         InsertConstruktor(unitySQLite, 10, data);
         InsertConstruktor(unitySQLite, 11, data);
         InsertConstruktor(unitySQLite, 12, data);
+        InsertConstruktor(unitySQLite, 13, data);
+        InsertConstruktor(unitySQLite, 14, data);
+        InsertConstruktor(unitySQLite, 15, data);
     }
 }

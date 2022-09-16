@@ -13,24 +13,31 @@ public class Stock : MonoBehaviour
     [SerializeField] private GameObject canvas;
     [SerializeField] private List<GameObject> bookmarks = new List<GameObject>();
 
-    [SerializeField] private Scrollbar scrollbar;
+    [SerializeField] private Scrollbar scrollbar1;
+    [SerializeField] private Scrollbar scrollbar2;
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
         }
+        
     }
     void Start()
     {
+        //SwitchBookMark(1);
+        //StockManager.Instance.UpdateManagerOfDevice();
+        //scrollbar2.value = 1;
         SwitchBookMark(0);
         StockManager.Instance.UpdateManagerOfElement();
+        scrollbar1.value = 1;
+        
     }
     public void NewUpdate()
     {
         SetElements();
         SetDevices();
-        scrollbar.value = 0;
+        
     }
     private void SetElements()
     {
@@ -72,11 +79,19 @@ public class Stock : MonoBehaviour
     }
     public void SwitchBookMark( int number)
     {
+       
         for (int i = 0; i < bookmarks.Count; i++)
         {
             bookmarks[i].SetActive(false);
         }
         bookmarks[number].SetActive(true);
+       
+
+    }
+    public void StartScrolbar2()
+    {
+        scrollbar2.value = 1;
+
     }
 }
                                              
