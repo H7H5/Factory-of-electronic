@@ -18,6 +18,7 @@ public class StockManager : MonoBehaviour
     [SerializeField] private Text textPriceScience;
     [SerializeField] private Text textPriceMoney;
     [SerializeField] private DescriptionHelper description;
+
     private int id = 1;
     private bool typeItem = false;//false = itemElement: true = itemDevice
     private bool item = true;
