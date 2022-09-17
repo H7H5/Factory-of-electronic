@@ -11,7 +11,6 @@ public class DBase : MonoBehaviour
     public GameObject OpenSchema;
     public List<int> listIdElementsUpGrade = new List<int>();
     public List<int> listIdDevicesUpGrade = new List<int>();
-    public List<Sprite> spriteMachinesForDevice = new List<Sprite>();
     public Element[] elementsParameters;
     public Device[] devicesParameters;
     [SerializeField] private List<GameObject> devicesPrefabs = new List<GameObject>();
