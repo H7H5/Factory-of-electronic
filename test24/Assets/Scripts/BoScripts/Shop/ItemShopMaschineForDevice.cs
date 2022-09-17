@@ -54,6 +54,7 @@ public class ItemShopMaschineForDevice : MonoBehaviour
             GameObject machine1 = Instantiate(machine, tilePositionCamera, gameObject.transform.rotation);    //Dw
             machine1.transform.SetParent(MachineParentScript.Instance.transform);
             MachineDeviceHelper machineDeviceHelper = machine1.GetComponent<MachineDeviceHelper>();
+            machineDeviceHelper.machineDevice = machinesDevice[currentNumberMachine];
             machineDeviceHelper.InitMachine(currentNumberMachine);
             machineDeviceHelper.price = cost;
             machineDeviceHelper.timeProduceDetail = timeProduceDetail;                     //Dw

@@ -18,8 +18,8 @@ public class MachineDeviceHelper : MachineOld
     public override void InitMachine(int x)
     {
         id = x;
-        gameObject.GetComponent<SpriteRenderer>().sprite = DBase.Instance.spriteMachinesForDevice[x];
-        sprt = DBase.Instance.spriteMachinesForDevice[x];
+        gameObject.GetComponent<SpriteRenderer>().sprite = machineDevice.GetImg();
+        sprt = machineDevice.GetImg();
         deviceObj = DBase.Instance.getDeviceObj(idDevice);
     }
    

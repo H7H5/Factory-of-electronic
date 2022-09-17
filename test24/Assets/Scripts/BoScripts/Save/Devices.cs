@@ -6,6 +6,9 @@ public class Devices
     private string sqlQuery;
     private IDbConnection dbconn;
     private IDbCommand dbcmd;
+    private string[] names = { "flashlight", "lamp", "chandelier", "garland", "solder", "curling iron", "sampler", "blender",
+        "meat grinder", "teapot", "fan heater", "electric grill", "fan", "electric shaver", "kettle"};
+
     public int Reader_Device(unitySQLite unitySQLite, int id)
     {
         dbconn = unitySQLite.dbconn;
@@ -66,21 +69,10 @@ public class Devices
     }
     public void StartInsertDevices(unitySQLite unitySQLite)
     {
-        Insert_device(unitySQLite,1, 0, "flashlight");
-        Insert_device(unitySQLite,2, 0, "lamp");
-        Insert_device(unitySQLite,3, 0, "chandelier");
-        Insert_device(unitySQLite,4, 0, "garland");
-        Insert_device(unitySQLite, 5, 0, "solder");
-        Insert_device(unitySQLite, 6, 0, "curling iron");
-        Insert_device(unitySQLite, 7, 0, "sampler");
-        Insert_device(unitySQLite, 8, 0, "blender");
-        Insert_device(unitySQLite, 9, 0, "meat grinder");
-        Insert_device(unitySQLite, 10, 0, "teapot");
-        Insert_device(unitySQLite, 11, 0, "fan heater");
-        Insert_device(unitySQLite, 12, 0, "electric grill");
-        Insert_device(unitySQLite, 13, 0, "fan");
-        Insert_device(unitySQLite, 14, 0, "electric shaver");
-        Insert_device(unitySQLite, 15, 0, "kettle");
-        
+        for (int i = 0; i < names.Length; i++)
+        {
+            Insert_device(unitySQLite, i, 0, names[i]);
+        }
     }
+    
 }

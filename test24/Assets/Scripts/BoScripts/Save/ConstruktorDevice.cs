@@ -65,31 +65,12 @@ public class ConstruktorDevice
     public void StartInsertConstruktorDevice(unitySQLite unitySQLite)
     {
         string data = "";
-        //data = "{\"\"rectWidth\"\": 0, \"\"rectHeight\"\": 0,\"\"countDevice\"\": 3, \"\"array\"\": [  0,  0, 0],\"\"id\"\": 1,   \"\"activation\"\": 0,\"\"data\"\": \"\"\"\", \"\"unitySQLite\"\": {  \"\"instanceID\"\": 14990 }}";
-        InsertConstruktor(unitySQLite,1, data);
-        //data = "{\"\"rectWidth\"\": 0, \"\"rectHeight\"\": 0,\"\"countDevice\"\": 3, \"\"array\"\": [  0,  0, 0],\"\"id\"\": 2,   \"\"activation\"\": 0,\"\"data\"\": \"\"\"\", \"\"unitySQLite\"\": {  \"\"instanceID\"\": 14990 }}";
-        InsertConstruktor(unitySQLite, 2, data);
-        //data = "{\"\"rectWidth\"\": 0, \"\"rectHeight\"\": 0,\"\"countDevice\"\": 5, \"\"array\"\": [  0,  0, 0, 0, 0],\"\"id\"\": 3,   \"\"activation\"\": 0,\"\"data\"\": \"\"\"\", \"\"unitySQLite\"\": {  \"\"instanceID\"\": 14990 }}";
-        InsertConstruktor(unitySQLite, 3, data);
-        //data = "{\"\"rectWidth\"\": 0, \"\"rectHeight\"\": 0,\"\"countDevice\"\": 9, \"\"array\"\": [0, 0, 0, 0, 0, 0, 0, 0, 0],\"\"id\"\": 4,   \"\"activation\"\": 0,\"\"data\"\": \"\"\"\", \"\"unitySQLite\"\": {  \"\"instanceID\"\": 14990 }}";
-        InsertConstruktor(unitySQLite, 4, data);
-        //data = "{\"\"rectWidth\"\": 0, \"\"rectHeight\"\": 0,\"\"countDevice\"\": 2, \"\"array\"\": [ 0, 0],\"\"id\"\": 5,   \"\"activation\"\": 0,\"\"data\"\": \"\"\"\", \"\"unitySQLite\"\": {  \"\"instanceID\"\": 14990 }}";
-        InsertConstruktor(unitySQLite, 5, data);
-        //data = "{\"\"rectWidth\"\": 0, \"\"rectHeight\"\": 0,\"\"countDevice\"\": 4, \"\"array\"\": [ 0, 0, 0, 0],\"\"id\"\": 6,   \"\"activation\"\": 0,\"\"data\"\": \"\"\"\", \"\"unitySQLite\"\": {  \"\"instanceID\"\": 14990 }}";
-        InsertConstruktor(unitySQLite, 6, data);
-        //data = "{\"\"rectWidth\"\": 0, \"\"rectHeight\"\": 0,\"\"countDevice\"\": 11, \"\"array\"\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\"\"id\"\": 101,   \"\"activation\"\": 0,\"\"data\"\": \"\"\"\", \"\"unitySQLite\"\": {  \"\"instanceID\"\": 14990 }}";
+        for (int i = 0; i < 15; i++)
+        {
+            InsertConstruktor(unitySQLite, i, data);
+        }
         InsertConstruktor(unitySQLite, 101, data);
-        //data = "{\"\"rectWidth\"\": 0, \"\"rectHeight\"\": 0,\"\"countDevice\"\": 10, \"\"array\"\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],\"\"id\"\": 102,   \"\"activation\"\": 0,\"\"data\"\": \"\"\"\", \"\"unitySQLite\"\": {  \"\"instanceID\"\": 14990 }}";
         InsertConstruktor(unitySQLite, 102, data);
-
-        InsertConstruktor(unitySQLite, 7, data);
-        InsertConstruktor(unitySQLite, 8, data);
-        InsertConstruktor(unitySQLite, 9, data);
-        InsertConstruktor(unitySQLite, 10, data);
-        InsertConstruktor(unitySQLite, 11, data);
-        InsertConstruktor(unitySQLite, 12, data);
-        InsertConstruktor(unitySQLite, 13, data);
-        InsertConstruktor(unitySQLite, 14, data);
-        InsertConstruktor(unitySQLite, 15, data);
+        //data = "{\"\"rectWidth\"\": 0, \"\"rectHeight\"\": 0,\"\"countDevice\"\": 3, \"\"array\"\": [  0,  0, 0],\"\"id\"\": 1,   \"\"activation\"\": 0,\"\"data\"\": \"\"\"\", \"\"unitySQLite\"\": {  \"\"instanceID\"\": 14990 }}";
     }
 }
