@@ -17,12 +17,14 @@ MonoBehaviour:
   description: 
   sprite: {fileID: 21300000, guid: 5a8713607cb4a4c49a5e8d5c214f1033, type: 3}
   id: 14
-  needScience: 5
-  price: 200
-  sellPrice: 0
-  sellPriceScience: 0
+  needScience: 240
+  price: 45
+  sellPrice: 45
+  sellPriceScience: 8
   needElements:
-  - {fileID: 11400000, guid: 5c98dcd4711c0f64fbce9792b8377f08, type: 2}
-  countNeedElements: 02000000
-  costMachine: 7000
-  timeProduce: 9
+  - {fileID: 11400000, guid: 7b788a7311240644f9778b86b51eedc3, type: 2}
+  - {fileID: 11400000, guid: 06442f9d732dd51428162ad1016735f6, type: 2}
+  - {fileID: 11400000, guid: ad2d326a440c3914698c3fefe1bb3019, type: 2}
+  countNeedElements: 050000000100000032000000
+  costMachine: 1500
+  timeProduce: 520

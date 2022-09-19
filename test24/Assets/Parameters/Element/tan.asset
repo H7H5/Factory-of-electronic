@@ -18,12 +18,13 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 6e165a105db7792418b25b1301466bd4, type: 3}
   id: 7
   needScience: 1000
-  price: 77
-  sellPrice: 39
-  sellPriceScience: 7
+  price: 130
+  sellPrice: 130
+  sellPriceScience: 10
   needElements:
-  - {fileID: 11400000, guid: 844631280bee26c448b8f810c201b713, type: 2}
-  - {fileID: 11400000, guid: 7b788a7311240644f9778b86b51eedc3, type: 2}
-  countNeedElements: 0100000001000000
-  costMachine: 3500
-  timeProduce: 1
+  - {fileID: 11400000, guid: aa84578b97a16cd47bd9e520e8867078, type: 2}
+  - {fileID: 11400000, guid: 5bc06a168c90f554980645ccc695617d, type: 2}
+  - {fileID: 11400000, guid: 06442f9d732dd51428162ad1016735f6, type: 2}
+  countNeedElements: 0a0000000a00000003000000
+  costMachine: 5000
+  timeProduce: 190

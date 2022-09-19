@@ -17,11 +17,14 @@ MonoBehaviour:
   description: "\u0447\u0430\u0439\u043D\u0438\u043A"
   sprite: {fileID: 21300000, guid: ea75651b49823ce408f5c2bccd627f2e, type: 3}
   id: 10
-  needScience: 1
-  price: 160
-  sellPrice: 160
-  sellPriceScience: 5
+  needScience: 1550
+  price: 240
+  sellPrice: 240
+  sellPriceScience: 12
   needElements:
+  - {fileID: 11400000, guid: 81356fb47787b2e40af13657a1871331, type: 2}
+  - {fileID: 11400000, guid: 06442f9d732dd51428162ad1016735f6, type: 2}
+  - {fileID: 11400000, guid: 89b24bf954e7bb84ca1ed26e08bb9ce7, type: 2}
   - {fileID: 11400000, guid: ad2d326a440c3914698c3fefe1bb3019, type: 2}
   - {fileID: 11400000, guid: 844631280bee26c448b8f810c201b713, type: 2}
-  countNeedElements: 0100000002000000
+  countNeedElements: 0100000001000000010000000500000005000000
