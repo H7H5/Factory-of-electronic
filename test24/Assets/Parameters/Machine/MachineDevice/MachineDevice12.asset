@@ -16,7 +16,7 @@ MonoBehaviour:
   deviceObj: {fileID: 7561203064661679315, guid: e4849126c3ddc6f4d9d978107eb45564,
     type: 3}
   img: {fileID: 21300000, guid: 83791e95a61a1204a96e71f5ba3125bc, type: 3}
-  price: 2000
-  timeProduceDetail: 5
+  price: 12000
+  timeProduceDetail: 150
   levelMinTimeProduceDetail: 1
   levelMaxAmountDetail: 5
