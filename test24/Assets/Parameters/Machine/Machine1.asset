@@ -17,7 +17,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 844631280bee26c448b8f810c201b713, type: 2}
   - {fileID: 11400000, guid: ad2d326a440c3914698c3fefe1bb3019, type: 2}
   sprite: {fileID: 21300000, guid: 48d65530c661b2440910934acbdde4b2, type: 3}
-  spriteForShop: {fileID: 21300000, guid: 2b0108e67e62e314e8d0165408c23ff6, type: 3}
   timeProduceDetail: 20
   levelMinTimeProduceDetail: 10
-  levelMaxAmountDetail: 50
+  levelMaxAmountDetail: 360

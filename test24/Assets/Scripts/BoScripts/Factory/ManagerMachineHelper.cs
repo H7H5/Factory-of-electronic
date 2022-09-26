@@ -14,14 +14,17 @@ public class ManagerMachineHelper : PanelOld
     public int upgradeDetailToModernCost = 100000;
     public MachineHelper machineHelper;
     public SwitchElementManager switchElementManager;
+    public int upgradeTimeProduceDetailCost = 30000;
     private void Awake()
     {
         sliderAmountProduce = GetComponentInChildren<Slider>();
+        
     }
 
     public override void select(GameObject Object)   
     {
         InitDataInMachine(Object);
+        
         ShowParameters();
         CalculateSliderValue();
         ButtonsON_OFF();
@@ -37,6 +40,7 @@ public class ManagerMachineHelper : PanelOld
         imageDetail.sprite = detailsToModern[machineHelper.selectedDetail].sprite;
         priceOneDetail = detailsToModern[machineHelper.selectedDetail].GetPrice();
         upgradeAmountDetailsCost = Convert.ToInt32(machineHelper.detail.costMachine * 1.5);
+        upgradeTimeProduceDetailCost = machineHelper.detail.costMachine;
     }
 
     private void ShowParameters()
@@ -106,7 +110,7 @@ public class ManagerMachineHelper : PanelOld
             buttonStop.interactable = true;
             buttonMoveMachine.interactable = false;
             buttonSellMachine.interactable = false;
-            buttonSendStock.interactable = false;
+            //buttonSendStock.interactable = false;
         }
         else
         {
@@ -118,7 +122,7 @@ public class ManagerMachineHelper : PanelOld
             buttonStop.interactable = false;
             buttonMoveMachine.interactable = true;
             buttonSellMachine.interactable = true;
-            buttonSendStock.interactable = true;
+            //buttonSendStock.interactable = true;
         }
     }
 
@@ -222,11 +226,12 @@ public class ManagerMachineHelper : PanelOld
         if (Purse.Instance.money > upgradeTimeProduceDetailCost && machineHelper.timeProduceDetail > machineHelper.levelMinTimeProduceDetail)
         {
             Purse.Instance.SetMoney(Purse.Instance.money -= upgradeTimeProduceDetailCost);
-            machineHelper.timeProduceDetail -= 1;
-            if (machineHelper.timeProduceDetail < 1)
-            {
-                machineHelper.timeProduceDetail = 1;
-            }
+            float subctract = machineHelper.levelMinTimeProduceDetail / 10;
+            machineHelper.timeProduceDetail -= subctract;
+            //if (machineHelper.timeProduceDetail < 1)
+            //{
+            //    machineHelper.timeProduceDetail = 1;
+            //}
         }
         select(moveObj);
         upDateDataBase();                                                                    
