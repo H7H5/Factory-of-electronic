@@ -107,7 +107,7 @@ public class ManagerMachineDeviceHelper : PanelOld
     {
         ShowProductionTimeText();
         ShowLevelMaxDetails();
-        ShowLevelTimeDetails();
+        //ShowLevelTimeDetails();
         ShowUpgradePrices();
     }
     public void ShowProductionTimeText()
@@ -122,15 +122,15 @@ public class ManagerMachineDeviceHelper : PanelOld
         test = (int)(test * 100);
         textPercentLevelMaxDetails.text = test.ToString() + "%";
     }
-    public void ShowLevelTimeDetails()
-    {
-        textLevelTimeDetails.text = machineHelper.timeProduceDetail.ToString() + "/" + machineHelper.levelMinTimeProduceDetail;
-        timeProduceDetailText.text = machineHelper.timeProduceDetail.ToString();
-    }
+    //public void ShowLevelTimeDetails()
+    //{
+    //    textLevelTimeDetails.text = machineHelper.timeProduceDetail.ToString() + "/" + machineHelper.levelMinTimeProduceDetail;
+    //    timeProduceDetailText.text = machineHelper.timeProduceDetail.ToString();
+    //}
     public void ShowUpgradePrices()
     {
         textUpgradeAmountDetailsCost.text = upgradeAmountDetailsCost.ToString();
-        textUpgradeTimeProduceDetailCost.text = upgradeTimeProduceDetailCost.ToString();
+        //textUpgradeTimeProduceDetailCost.text = upgradeTimeProduceDetailCost.ToString();
     }
 
     private float GetProductionTime()
@@ -150,24 +150,24 @@ public class ManagerMachineDeviceHelper : PanelOld
             sliderAmountProduce.interactable = false;
             buttonStart.interactable = false;
             buttonUpgradeMaxDetail.interactable = false;
-            buttonUpgradeTime.interactable = false;
+            //buttonUpgradeTime.interactable = false;
             buttonMax.interactable = false;
             buttonStop.interactable = true;
             buttonMoveMachine.interactable = false;
             buttonSellMachine.interactable = false;
-            buttonSendStock.interactable = false;
+            //buttonSendStock.interactable = false;
         }
         else
         {
             sliderAmountProduce.interactable = true;
             buttonStart.interactable = IsNeedElement ? true : false;
             buttonUpgradeMaxDetail.interactable = Purse.Instance.money >= upgradeAmountDetailsCost ? true : false;
-            buttonUpgradeTime.interactable = Purse.Instance.money >= upgradeTimeProduceDetailCost ? true : false;
+            //buttonUpgradeTime.interactable = Purse.Instance.money >= upgradeTimeProduceDetailCost ? true : false;
             buttonMax.interactable = sliderAmountProduce.value < sliderAmountProduce.maxValue ? true : false;
             buttonStop.interactable = false;
             buttonMoveMachine.interactable = true;
             buttonSellMachine.interactable = true;
-            buttonSendStock.interactable = true;
+            //buttonSendStock.interactable = true;
         }
     }
 
@@ -276,20 +276,7 @@ public class ManagerMachineDeviceHelper : PanelOld
         UpDateDataBase();                                                                    
     }
 
-    public void upgradeLevelTimeDetails()
-    {
-        if (Purse.Instance.money > upgradeTimeProduceDetailCost && machineHelper.timeProduceDetail > machineHelper.levelMinTimeProduceDetail)
-        {
-            Purse.Instance.SetMoney(Purse.Instance.money -= upgradeTimeProduceDetailCost);
-            machineHelper.timeProduceDetail -= 1;
-            if (machineHelper.timeProduceDetail < 1)
-            {
-                machineHelper.timeProduceDetail = 1;
-            }
-        }
-        select(moveObj);
-        UpDateDataBase();                                                                    
-    }
+
 
     public void SetMaxValue()
     {

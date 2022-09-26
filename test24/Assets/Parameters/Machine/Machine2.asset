@@ -18,5 +18,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7b788a7311240644f9778b86b51eedc3, type: 2}
   sprite: {fileID: 21300000, guid: f76f52dd18395d64892d4b469e1e6b65, type: 3}
   timeProduceDetail: 40
-  levelMinTimeProduceDetail: 10
-  levelMaxAmountDetail: 70
+  levelMinTimeProduceDetail: 20
+  levelMaxAmountDetail: 180

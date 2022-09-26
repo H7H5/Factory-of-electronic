@@ -7,7 +7,7 @@ public class Element : ScriptObjParent
 {
     
     public int costMachine;
-    public int timeProduce;
+    //public int timeProduce;
 
 
 

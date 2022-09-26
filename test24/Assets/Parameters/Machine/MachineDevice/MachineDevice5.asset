@@ -19,4 +19,4 @@ MonoBehaviour:
   price: 1000
   timeProduceDetail: 45
   levelMinTimeProduceDetail: 1
-  levelMaxAmountDetail: 5
+  levelMaxAmountDetail: 160
