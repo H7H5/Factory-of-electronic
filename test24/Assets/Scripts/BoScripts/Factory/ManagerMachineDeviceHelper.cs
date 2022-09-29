@@ -17,7 +17,8 @@ public class ManagerMachineDeviceHelper : PanelOld
     List<int> idNeedElement;
     private float curentSlider = 0;
     public MachineDeviceHelper machineHelper;
-  
+    public Text textPriceMachine;
+
     private void Awake()
     {
         sliderAmountProduce = GetComponentInChildren<Slider>();
@@ -30,6 +31,10 @@ public class ManagerMachineDeviceHelper : PanelOld
             buildScroll();
             curentSlider = sliderAmountProduce.value;
         }
+    }
+    public void ShowPriceMachine()
+    {
+        textPriceMachine.text = machineHelper.price.ToString();
     }
     public override void select(GameObject Object)                                                      
     {
@@ -47,7 +52,7 @@ public class ManagerMachineDeviceHelper : PanelOld
         img.sprite = machineHelper.sprt;
         amountDetails = machineHelper.amountDetails;
         imageDetail.sprite = machineHelper.device.sprite;
-        upgradeAmountDetailsCost = Convert.ToInt32(machineHelper.price * 1.5);
+        upgradeAmountDetailsCost = machineHelper.upgradeAmountDetailsCost;
     }
 
     private void buildScroll()
@@ -265,6 +270,7 @@ public class ManagerMachineDeviceHelper : PanelOld
         if (Purse.Instance.money > upgradeAmountDetailsCost && machineHelper.maxAmountDetails < machineHelper.levelMaxAmountDetail)
         {
             Purse.Instance.SetMoney(Purse.Instance.money -= upgradeAmountDetailsCost);
+            machineHelper.price += upgradeAmountDetailsCost / 2;
             machineHelper.maxAmountDetails += 1;
             if (machineHelper.maxAmountDetails > machineHelper.levelMaxAmountDetail)
             {

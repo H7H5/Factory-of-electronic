@@ -32,6 +32,7 @@ public class MachineOld : MonoBehaviour
     public GameObject can;
     public Device device;
 
+
     private void Awake()
     {
         detailProduced = gameObject.transform.GetChild(6).gameObject.transform.GetChild(1).gameObject;
