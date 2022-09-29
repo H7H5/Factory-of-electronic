@@ -12,19 +12,20 @@ public class CreatePartDevice : MonoBehaviour
     [SerializeField] private List<Button> buttons = new List<Button>();
     private void Awake()
     {
+        bool all_elements = true;
         for (int i = 0; i < listeners.Count; i++)
         {
             if (DBase.Instance.Reader_partDevice(listeners[i].transform.GetChild(0).GetComponent<DeviceBilder>().id) == 0)
             {
                 buttons[i].GetComponent<Image>().sprite = button1;
-                transform.parent.GetComponent<BildPanelHelper>().OnButtonCollect(false);
+                all_elements = false;
             }
             else
             {
                 buttons[i].GetComponent<Image>().sprite = button2;
-                transform.parent.GetComponent<BildPanelHelper>().OnButtonCollect(true);
             }
         }
+        transform.parent.GetComponent<BildPanelHelper>().OnButtonCollect(all_elements);
     }
     public void LoadPart(int number)
     {
