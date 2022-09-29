@@ -15,10 +15,17 @@ public class ManagerMachineHelper : PanelOld
     public MachineHelper machineHelper;
     public SwitchElementManager switchElementManager;
     public int upgradeTimeProduceDetailCost = 30000;
+
+    public Text textPriceMachine;
+
     private void Awake()
     {
         sliderAmountProduce = GetComponentInChildren<Slider>();
         
+    }
+    public void ShowPriceMachine()
+    {
+        textPriceMachine.text = machineHelper.price.ToString();
     }
 
     public override void select(GameObject Object)   
@@ -212,6 +219,7 @@ public class ManagerMachineHelper : PanelOld
         {
             Purse.Instance.SetMoney(Purse.Instance.money -= upgradeAmountDetailsCost);
             machineHelper.maxAmountDetails += 1;
+            machineHelper.price += upgradeAmountDetailsCost / 2;
             if (machineHelper.maxAmountDetails > machineHelper.levelMaxAmountDetail)
             {
                 machineHelper.maxAmountDetails = machineHelper.levelMaxAmountDetail;
@@ -226,6 +234,7 @@ public class ManagerMachineHelper : PanelOld
         if (Purse.Instance.money > upgradeTimeProduceDetailCost && machineHelper.timeProduceDetail > machineHelper.levelMinTimeProduceDetail)
         {
             Purse.Instance.SetMoney(Purse.Instance.money -= upgradeTimeProduceDetailCost);
+            machineHelper.price += upgradeTimeProduceDetailCost / 2;
             float subctract = machineHelper.levelMinTimeProduceDetail / 10;
             machineHelper.timeProduceDetail -= subctract;
             //if (machineHelper.timeProduceDetail < 1)

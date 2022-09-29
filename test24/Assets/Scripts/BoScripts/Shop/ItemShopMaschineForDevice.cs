@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class ItemShopMaschineForDevice : MonoBehaviour
 {
@@ -56,7 +57,8 @@ public class ItemShopMaschineForDevice : MonoBehaviour
             MachineDeviceHelper machineDeviceHelper = machine1.GetComponent<MachineDeviceHelper>();
             machineDeviceHelper.machineDevice = machinesDevice[currentNumberMachine];
             machineDeviceHelper.InitMachine(currentNumberMachine);
-            machineDeviceHelper.price = cost;
+            machineDeviceHelper.upgradeAmountDetailsCost = Convert.ToInt32(cost * 1.5);
+            machineDeviceHelper.price = cost/2;
             machineDeviceHelper.timeProduceDetail = timeProduceDetail;                     //Dw
             machineDeviceHelper.levelMinTimeProduceDetail = levelMinTimeProduceDetail;     //Dw
             machineDeviceHelper.levelMaxAmountDetail = levelMaxAmountDetail;               //Dw
