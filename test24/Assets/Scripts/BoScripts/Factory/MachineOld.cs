@@ -76,6 +76,15 @@ public class MachineOld : MonoBehaviour
         Timer timer = timeBar.GetComponent<Timer>();
         timer.LoadTimer();
     }
+
+    void OnApplicationFocus(bool hasFocus)
+    {
+        if(hasFocus)
+        {
+            timer.LoadTimer();
+        }
+    }
+
     public void StartProduce()
     {
         isProduce = true;
