@@ -12,7 +12,17 @@ public class DirectionShoponates : MonoBehaviour
     public GameObject PanelMoney;
     public GameObject PanelSciense;
     public Text text;
+    public GameObject PanelNeedDiamonds;
     private string[] names = { "Buy diamonds for USD", "Exchange diamonds for money", "Swap diamonds for science" };
+
+    private int[] arrayDiamondsForMoney = {20, 150, 250, 800, 1500, 5000};
+    private int[] arrayMoneys = { 50, 500, 1000, 5000, 10000, 50000};
+
+    private int[] arrayDiamondsForSciense = { 20, 50, 500, 800, 1500, 5000 };
+    private int[] arraySciense = { 5, 15, 350, 700, 1450, 5000};
+
+    private int[] arrayDiamondsForUSD = { 55, 150, 325, 650, 1800, 5000 };
+    private float[] USD = { 1.99f, 4.99f, 9.99f, 19.99f, 99.99f, 1.99f };
 
     public void OpenDiamonds()
     {
@@ -45,4 +55,33 @@ public class DirectionShoponates : MonoBehaviour
         text.text = names[2];
     }
 
+    public void BuyDiamondsForUSD(int numberButton)
+    {
+        Purse.Instance.SetDiamonds(Purse.Instance.diamonds += arrayDiamondsForUSD[numberButton]);
+    }
+
+    public void ChangeMoney(int numberButton)
+    {
+        if (Purse.Instance.diamonds >= arrayDiamondsForMoney[numberButton])
+        {
+            Purse.Instance.SetMoney(Purse.Instance.money += arrayMoneys[numberButton]);
+            Purse.Instance.SetDiamonds(Purse.Instance.diamonds -= arrayDiamondsForMoney[numberButton]);
+        }
+        else
+        {
+            PanelNeedDiamonds.SetActive(true);
+        }
+    }
+    public void ChangeSciense(int numberButton)
+    {
+        if (Purse.Instance.diamonds >= arrayDiamondsForSciense[numberButton])
+        {
+            Purse.Instance.SetSciense(Purse.Instance.science += arraySciense[numberButton]);
+            Purse.Instance.SetDiamonds(Purse.Instance.diamonds -= arrayDiamondsForSciense[numberButton]);
+        }
+        else
+        {
+            PanelNeedDiamonds.SetActive(true);
+        }
+    }
 }
