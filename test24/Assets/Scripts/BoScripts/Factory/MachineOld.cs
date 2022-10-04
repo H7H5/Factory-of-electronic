@@ -81,7 +81,10 @@ public class MachineOld : MonoBehaviour
     {
         if(hasFocus)
         {
-            timer.LoadTimer();
+            if (isProduce)
+            {
+                timer.LoadTimer();
+            }
         }
     }
 
