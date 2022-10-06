@@ -52,7 +52,7 @@ public class StockManager : MonoBehaviour
         int price;
         if (typeItem)
         {
-            price = device.sellPrice;
+            price = device.price;
         }
         else
         {
@@ -146,7 +146,7 @@ public class StockManager : MonoBehaviour
         description.SetDevice(device);
 
         textPriceScience.text = device.sellPriceScience.ToString();
-        textPriceMoney.text = device.sellPrice.ToString();
+        textPriceMoney.text = device.price.ToString();
         slider.ChangeSelect(device.GetCount());
         item = true;
         

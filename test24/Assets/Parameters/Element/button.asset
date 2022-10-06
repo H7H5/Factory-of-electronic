@@ -16,15 +16,13 @@ MonoBehaviour:
   name: button
   description: "\u0442\u0430\u043A\u0442\u043E\u0432\u0430\u044F \u043A\u043D\u043E\u043F\u043A\u0430"
   sprite: {fileID: 21300000, guid: 642a2b176a0ad3045bb209bfd65ff87b, type: 3}
-  spriteForShop: {fileID: 21300000, guid: ba24a3c6b84155e469fba216255e5787, type: 3}
   id: 10
   needScience: 5
   price: 3
-  sellPrice: 3
   sellPriceScience: 1
-  costMachine: 120
-  timeProduce: 70
   needElements:
   - {fileID: 11400000, guid: 844631280bee26c448b8f810c201b713, type: 2}
   - {fileID: 11400000, guid: ad2d326a440c3914698c3fefe1bb3019, type: 2}
   countNeedElements: 0500000005000000
+  priceDiamonds: 1
+  costMachine: 120

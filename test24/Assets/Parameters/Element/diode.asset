@@ -17,14 +17,12 @@ MonoBehaviour:
   description: "\u0432\u044B\u043F\u0440\u044F\u043C\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439
     \u0434\u0438\u043E\u0434"
   sprite: {fileID: 21300000, guid: 1bce4e58ba772414388cd1a6e06efbf7, type: 3}
-  spriteForShop: {fileID: 21300000, guid: 2a762c6a5ccc4e14e9a70166830caf30, type: 3}
   id: 11
   needScience: 30
   price: 7
-  sellPrice: 3
   sellPriceScience: 2
-  costMachine: 240
-  timeProduce: 80
   needElements:
   - {fileID: 11400000, guid: 5c98dcd4711c0f64fbce9792b8377f08, type: 2}
   countNeedElements: 01000000
+  priceDiamonds: 2
+  costMachine: 240

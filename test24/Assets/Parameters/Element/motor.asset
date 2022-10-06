@@ -19,11 +19,10 @@ MonoBehaviour:
   id: 15
   needScience: 1800
   price: 300
-  sellPrice: 300
   sellPriceScience: 14
   needElements:
   - {fileID: 11400000, guid: 844631280bee26c448b8f810c201b713, type: 2}
   - {fileID: 11400000, guid: fcf658cc37f49fb4ead034127ca8df1f, type: 2}
   countNeedElements: 3200000001000000
+  priceDiamonds: 5
   costMachine: 9000
-  timeProduce: 610

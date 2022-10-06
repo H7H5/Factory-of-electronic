@@ -16,7 +16,7 @@ public class DirectionShoponates : MonoBehaviour
     private string[] names = { "Buy diamonds for USD", "Exchange diamonds for money", "Swap diamonds for science" };
 
     private int[] arrayDiamondsForMoney = {20, 150, 250, 800, 1500, 5000};
-    private int[] arrayMoneys = { 50, 500, 1000, 5000, 10000, 50000};
+    private int[] arrayMoneys = { 500, 5000, 10000, 50000, 100000, 500000};
 
     private int[] arrayDiamondsForSciense = { 20, 50, 500, 800, 1500, 5000 };
     private int[] arraySciense = { 5, 15, 350, 700, 1450, 5000};
