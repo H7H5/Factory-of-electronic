@@ -16,13 +16,11 @@ MonoBehaviour:
   name: led
   description: "\u0441\u0432\u0435\u0442\u043E\u0434\u0438\u043E\u0434"
   sprite: {fileID: 21300000, guid: 6760206cc77c63d4db4de136f787c029, type: 3}
-  spriteForShop: {fileID: 21300000, guid: 6a57604bc2cf0734d9b5e5d01e1d30b9, type: 3}
   id: 8
   needScience: 1
   price: 2
-  sellPrice: 1
   sellPriceScience: 1
-  costMachine: 100
-  timeProduce: 60
   needElements: []
   countNeedElements: 
+  priceDiamonds: 1
+  costMachine: 100

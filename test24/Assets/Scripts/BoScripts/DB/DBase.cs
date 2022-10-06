@@ -148,7 +148,7 @@ public class DBase : MonoBehaviour
         {
             if (device.id == devicesParameters[i].id)
             {
-                Purse.Instance.SetMoney(Purse.Instance.money += device.sellPrice);
+                Purse.Instance.SetMoney(Purse.Instance.money += device.price);
                 Purse.Instance.SetSciense(Purse.Instance.science += device.sellPriceScience);
                 devicesParameters[i].SetCount(devicesParameters[i].GetCount() - 1);
                 SaveOneDevicet(i);

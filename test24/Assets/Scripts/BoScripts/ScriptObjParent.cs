@@ -11,7 +11,6 @@ public class ScriptObjParent : ScriptableObject
     public int id;
     public int needScience;
     public int price;
-    public int sellPrice;
     public int sellPriceScience;
     protected int count = 0;
     public Element[] needElements;

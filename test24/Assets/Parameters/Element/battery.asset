@@ -16,16 +16,14 @@ MonoBehaviour:
   name: battery
   description: "\u0440\u043E\u0437\u043E\u0432\u0430\u044F \u0431\u0430\u0442\u0430\u0440\u0435\u0439\u043A\u0430"
   sprite: {fileID: 21300000, guid: ce3fff5f3d897f741ba877c197b8e6de, type: 3}
-  spriteForShop: {fileID: 21300000, guid: e21d5bfc42c54f14bbc1d7b79ff500f1, type: 3}
   id: 4
   needScience: 60
   price: 9
-  sellPrice: 12
   sellPriceScience: 4
   needElements:
   - {fileID: 11400000, guid: 844631280bee26c448b8f810c201b713, type: 2}
   - {fileID: 11400000, guid: 5bc06a168c90f554980645ccc695617d, type: 2}
   - {fileID: 11400000, guid: 08c373fb3abdef447904e204a9e8d252, type: 2}
   countNeedElements: 0a0000000700000008000000
+  priceDiamonds: 3
   costMachine: 300
-  timeProduce: 60

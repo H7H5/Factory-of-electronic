@@ -18,7 +18,7 @@ public class ItemShopElement : MonoBehaviour
     {
         image.sprite = characters[number].sprite;
         currentNumberElement = number;
-        price = characters[number].GetPrice();
+        price = characters[number].priceDiamonds;
         textPrice.text = price.ToString();
         imageButton = button.GetComponent<Image>();
         imageButton.sprite = Purse.Instance.money >= price ? button1 : button2;
