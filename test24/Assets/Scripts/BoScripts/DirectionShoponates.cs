@@ -21,8 +21,7 @@ public class DirectionShoponates : MonoBehaviour
     private int[] arrayDiamondsForSciense = { 20, 50, 500, 800, 1500, 5000 };
     private int[] arraySciense = { 5, 15, 350, 700, 1450, 5000};
 
-    private int[] arrayDiamondsForUSD = { 55, 150, 325, 650, 1800, 5000 };
-    private float[] USD = { 1.99f, 4.99f, 9.99f, 19.99f, 99.99f, 1.99f };
+   
 
     public void OpenDiamonds()
     {
@@ -55,10 +54,7 @@ public class DirectionShoponates : MonoBehaviour
         text.text = names[2];
     }
 
-    public void BuyDiamondsForUSD(int numberButton)
-    {
-        Purse.Instance.SetDiamonds(Purse.Instance.diamonds += arrayDiamondsForUSD[numberButton]);
-    }
+   
 
     public void ChangeMoney(int numberButton)
     {

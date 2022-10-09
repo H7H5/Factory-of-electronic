@@ -16,7 +16,7 @@ MonoBehaviour:
   name: light_bulb
   description: "\u043B\u0430\u043C\u043F\u043E\u0447\u043A\u0430 \u0434\u043B\u044F
     \u043E\u0441\u0432\u0435\u0449\u0435\u043D\u0438\u044F"
-  sprite: {fileID: 21300000, guid: 0784e910a21a50e4cb6a5c29fbf8ad7c, type: 3}
+  sprite: {fileID: 21300000, guid: 7954b37e51e0f084a89bb3e3d9c99851, type: 3}
   id: 6
   needScience: 250
   price: 49
