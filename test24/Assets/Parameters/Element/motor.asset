@@ -15,7 +15,7 @@ MonoBehaviour:
   container: {fileID: 0}
   name: motor
   description: 
-  sprite: {fileID: 21300000, guid: c6c5ca856cb286547a8a106f30e9dbd5, type: 3}
+  sprite: {fileID: 21300000, guid: 1cfbe34cb50dd3940885dcf825e49a21, type: 3}
   id: 15
   needScience: 1800
   price: 300

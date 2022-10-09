@@ -15,7 +15,7 @@ MonoBehaviour:
   container: {fileID: 0}
   name: battery
   description: "\u0440\u043E\u0437\u043E\u0432\u0430\u044F \u0431\u0430\u0442\u0430\u0440\u0435\u0439\u043A\u0430"
-  sprite: {fileID: 21300000, guid: ce3fff5f3d897f741ba877c197b8e6de, type: 3}
+  sprite: {fileID: 21300000, guid: 1ec284b4a4893fd4d891eefcd6f92baf, type: 3}
   id: 4
   needScience: 60
   price: 9

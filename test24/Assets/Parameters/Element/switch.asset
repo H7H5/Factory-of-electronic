@@ -15,7 +15,7 @@ MonoBehaviour:
   container: {fileID: 0}
   name: switch
   description: "\u043D\u0443 \u0442\u0430\u043A\u043E\u0435"
-  sprite: {fileID: 21300000, guid: 57d7847188bf2b144a072960d9819f44, type: 3}
+  sprite: {fileID: 21300000, guid: 6242bc2ab8e31a44ea73f47415399126, type: 3}
   id: 5
   needScience: 120
   price: 32

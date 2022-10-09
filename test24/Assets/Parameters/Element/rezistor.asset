@@ -16,7 +16,7 @@ MonoBehaviour:
   name: rezistor
   description: "\u043E\u0447\u0435\u043D\u044C \u0445\u043E\u0440\u043E\u0448\u0438\u0439
     \u0440\u0435\u0437\u0438\u0441\u0442\u043E\u0440"
-  sprite: {fileID: 21300000, guid: f85bb0731ee4af4449d69e92df8f9d3a, type: 3}
+  sprite: {fileID: 21300000, guid: f7272ed30bbf9f84d80aec13c254ed4f, type: 3}
   id: 1
   needScience: 1
   price: 2
