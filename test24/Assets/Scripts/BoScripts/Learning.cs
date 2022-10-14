@@ -9,13 +9,13 @@ public class Learning : MonoBehaviour
     private int step = -1;
     [SerializeField] private GameObject [] images;
     [SerializeField] private GameObject Learning_panel;
-    string[] learning_text = {"Привіт! у цій грі в тебе є власний завод по виготовленню електроніки. В головному цеху потрібно встановлювати станки які виготовляють радіоелементи або готові пристрої.",
-    "Тут можна заключати економічні угоди і отримувати над прибуток а також підвищувати свій авторитет серед продавців аналогічної продукції і отримувати кращі умови для торгівлі ",
-    "Це  магазин в ньому можна купити станки для виробництва радіоелементів, або електронних пристроїв. також тут можна придбати деякі радіоелементи",
-    "Тут знаходиться наша лабораторія де можливо відкривати технології для виготовлення радіоелементів і електронних пристроїв. Після відкриття нового елемента в магазині з'являється можливість придбати станок який його виробляє ",
-    "Це майстерня з виготовлення пристроїв власними руками. Після відкриття нового пристрою тут з'являється можливість його зібрати з потрібних елементів",
-    "Тут знаходиться ваш склад в ньому зберігаються виготовленні елементи та пристрої. Зі складу можна продати елементи будь який момент часу і з бонусом для науки яка потрібна для відкриття нових технологій  але по дешевій ціні",
-    "Це корзина в яку можна покласти радіоелементи зі складу і викласти з неї в майстерні для виготовлення пристроїв."};
+    string[] learning_text = {"Hello! In this game you have your own electronics factory. In the main workshop, it is necessary to install machines that manufacture radio elements or ready-made devices.",
+    "Here you can conclude economic agreements and receive extra income, as well as increase your authority among sellers of similar products and receive better conditions for trade ",
+    "This is a shop where you can buy machines for the production of radio elements or electronic devices. You can also buy some radio cells here",
+    "Our laboratory is located here, where it is possible to discover technologies for the manufacture of radio elements and electronic devices. After opening a new element in the store, there is an opportunity to purchase the machine that produces it ",
+    "This is a workshop for making devices with your own hands. After opening a new device, there is an opportunity to assemble it from the necessary elements",
+    "This is where your warehouse is located, where manufactured items and devices are stored. You can sell elements from the warehouse at any time and with a bonus for science, which is needed to discover new technologies, but at a cheap price",
+    "This is a basket in which you can put radio elements from the warehouse and put them in the workshop for the manufacture of devices."};
     void Start()
     {
         NextStep();
