@@ -6,7 +6,8 @@ using GoogleMobileAds.Api;
 public class AdInitialize : MonoBehaviour
 {
     private InterstitialAd interstitialAd;
-    private string openUnitId = "ca-app-pub-3940256099942544/3419835294";
+    //private string openUnitId = "ca-app-pub-3940256099942544/3419835294";
+    private string openUnitId = "ca-app-pub-5034189714312969/5980771872";
     private void Awake()
     {
         MobileAds.Initialize(initStatus => { });
