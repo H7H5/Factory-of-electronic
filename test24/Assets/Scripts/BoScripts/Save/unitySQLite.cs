@@ -28,28 +28,39 @@ public class unitySQLite : MonoBehaviour
     private Save_string save_String = new Save_string();
     private Machines_JSON machines_JSON = new Machines_JSON();
     private Machine_device machine_Device = new Machine_device();
+    string filepath = "";
+
     private void Awake()
     {
+
+
+
+
 #if UNITY_EDITOR
-        string filepath = Application.dataPath + "/Plugins/" + DatabaseName;
+        filepath = Application.dataPath + "/Plugins/" + DatabaseName;
         conn = "URI=file:" + filepath;
         dbconn = new SqliteConnection(conn);
         dbconn.Open();
 #elif UNITY_ANDROID
         ///*
-        //Application database Path android
-        string filepath = Application.persistentDataPath + "/" + DatabaseName;
+       
+        filepath = Path.Combine(Application.persistentDataPath, DatabaseName);
         if (!File.Exists(filepath))
         {
             // If not found on android will create Tables and database
             Debug.LogWarning("File \"" + filepath + "\" does not exist. Attempting to create from \"" +
-                             Application.dataPath + "!/assets/mydb");
+                                 Application.dataPath + "!/assets/mydb");
             // UNITY_ANDROID
             WWW loadDB = new WWW("jar:file://" + Application.dataPath + "!/assets/mydb.s3db");
             while (!loadDB.isDone) { }
             // then save to Application.persistentDataPath
             File.WriteAllBytes(filepath, loadDB.bytes);
+        } else
+        {
+            Debug.LogWarning("Начальная база данных SQLite отсутствует в ресурсе '" + DatabaseName + "'. Будет создана пустая БД.");
+            File.AppendAllText(filepath, "");
         }
+        
         conn = "URI=file:" + filepath;
         Debug.Log("Stablishing connection to: " + conn);
         dbconn = new SqliteConnection(conn);
