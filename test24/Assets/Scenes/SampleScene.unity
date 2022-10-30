@@ -8418,7 +8418,7 @@ GameObject:
   - component: {fileID: 212838917}
   - component: {fileID: 212838916}
   m_Layer: 5
-  m_Name: Text USD
+  m_Name: Text UAH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8491,7 +8491,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '1.99 USD
+  m_Text: '80 UAH
 
 '
 --- !u!222 &212838918
@@ -23509,12 +23509,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606278049}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1107002928}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &606278051
 MonoBehaviour:
@@ -28417,7 +28417,7 @@ GameObject:
   - component: {fileID: 779028886}
   - component: {fileID: 779028885}
   m_Layer: 5
-  m_Name: Text USD
+  m_Name: Text UAH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28439,8 +28439,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -99.90019, y: -28.974915}
-  m_SizeDelta: {x: 205.69945, y: 57.98844}
+  m_AnchoredPosition: {x: -87.64, y: -28.974915}
+  m_SizeDelta: {x: 252.27, y: 57.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &779028885
 MonoBehaviour:
@@ -28490,9 +28490,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '49.99 USD
-
-'
+  m_Text: 2000 UAH
 --- !u!222 &779028887
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -60825,8 +60823,8 @@ Transform:
   - {fileID: 256703940}
   - {fileID: 1433588790}
   - {fileID: 1162718036}
-  - {fileID: 606278050}
   - {fileID: 1818134823}
+  - {fileID: 606278050}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -63689,7 +63687,7 @@ GameObject:
   - component: {fileID: 1188338557}
   - component: {fileID: 1188338556}
   m_Layer: 5
-  m_Name: Text USD
+  m_Name: Text UAH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63711,8 +63709,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -99.90019, y: -28.974915}
-  m_SizeDelta: {x: 205.69945, y: 57.98844}
+  m_AnchoredPosition: {x: -100.68, y: -28.974915}
+  m_SizeDelta: {x: 214.62, y: 57.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1188338556
 MonoBehaviour:
@@ -63762,7 +63760,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '99.99 USD
+  m_Text: '4000 UAH
 
 '
 --- !u!222 &1188338558
@@ -102044,7 +102042,7 @@ GameObject:
   - component: {fileID: 1645090408}
   - component: {fileID: 1645090407}
   m_Layer: 5
-  m_Name: Text USD
+  m_Name: Text UAH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102117,7 +102115,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '4.99 USD
+  m_Text: '200 UAH
 
 '
 --- !u!222 &1645090409
@@ -107683,7 +107681,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1107002928}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1818134824
 MonoBehaviour:
@@ -113329,7 +113327,7 @@ GameObject:
   - component: {fileID: 1996770622}
   - component: {fileID: 1996770621}
   m_Layer: 5
-  m_Name: Text USD
+  m_Name: Text UAH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113402,9 +113400,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '9.99 USD
-
-'
+  m_Text: 400 UAH
 --- !u!222 &1996770623
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -114520,7 +114516,7 @@ GameObject:
   - component: {fileID: 2012577884}
   - component: {fileID: 2012577883}
   m_Layer: 5
-  m_Name: Text USD
+  m_Name: Text UAH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114593,7 +114589,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '19.99 USD
+  m_Text: '800 UAH
 
 '
 --- !u!222 &2012577885
