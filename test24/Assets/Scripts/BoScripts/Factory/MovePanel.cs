@@ -55,7 +55,7 @@ public class MovePanel : MonoBehaviour
         undoMove();
         if (start)
         {
-            Purse.Instance.SetMoney(Purse.Instance.money += moveObj.GetComponent<MachineOld>().price);
+            Purse.Instance.SetMoney(Purse.Instance.money += moveObj.GetComponent<MachineOld>().price * 2);
             Destroy(moveObj);
         }
     }
