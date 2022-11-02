@@ -85,7 +85,7 @@ public class Equipment : MonoBehaviour
         for (int i = 0; i < boolDetailsToModern.Length; i++)
         {
             boolDetailsToModern[i] = false;
-            if (toggles[i].GetComponent<Toggle>().isOn)
+            if (toggles[i].activeInHierarchy)
             {
                 boolDetailsToModern[i] = true;
             }
